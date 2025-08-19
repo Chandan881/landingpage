@@ -263,7 +263,7 @@ export default function ShopLanding() {
                     Average order value
                   </h4>
                   <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Better understand your customers' average pre-discount
+                    Better understand your customers&apos; average pre-discount
                     spend.
                   </p>
                 </div>
@@ -322,7 +322,7 @@ export default function ShopLanding() {
                       </div>
                       <div className="flex-1">
                         <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                          Earn more when it's busy
+                          Earn more when it&apos;s busy
                         </h4>
                         <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                           Maximise your earnings with our dynamic pricing model,
@@ -385,7 +385,7 @@ export default function ShopLanding() {
                       </div>
                       <div className="flex-1">
                         <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                          Earn more when it's busy
+                          Earn more when it&apos;s busy
                         </h4>
                         <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                           Maximise your earnings with our dynamic pricing model,

@@ -111,7 +111,7 @@ export default function LocalStoresSection() {
             <div>
               <h2 style={styles.title}>Bringing Local Stores Closer to You</h2>
               <p style={styles.description}>
-                We're building a smarter, faster way to shop, connecting
+                We&apos;re building a smarter, faster way to shop, connecting
                 neighborhoods with the essentials they need, right when they
                 need them.
               </p>
