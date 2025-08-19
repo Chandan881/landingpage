@@ -30,36 +30,56 @@ export default function RiderLanding() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-white to-[#E3E1FF] py-20 lg:py-32">
+      <section className="relative overflow-hidden bg-gradient-to-b from-white to-[#E3E1FF] pt-24 py-20 lg:py-32">
         <Container>
           <div className="text-center max-w-4xl mx-auto">
             {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+            <h1 className="text-[36px] sm:text-[74px] font-[800] text-[#333333] mb-6 leading-[40px] sm:leading-[80px] tracking-[-0.05em] text-center font-helvetica-neue">
               Deliver with ZenZop and
               <br className="hidden sm:block" /> earn on your schedule
             </h1>
 
             {/* Subheading */}
-            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-12 leading-relaxed max-w-3xl mx-auto">
-              ZenZop is everything you need to start earning as a delivery
-              partner.
+            <p className="text-[16px] sm:text-[22px] font-helvetica-neue font-[500] text-[#686868] mb-12 leading-[30px] tracking-[-0.05em] text-center max-w-3xl mx-auto">
+              <span className="block sm:block">
+                ZenZop is everything you need to start earning as a delivery
+                partner.
+              </span>
             </p>
 
             {/* Call-to-Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 href="#download"
-                className="bg-black hover:bg-gray-800 text-white px-8 py-4 text-lg font-semibold rounded-xl transition-colors duration-300 flex items-center gap-2"
+                className="bg-[#171717] hover:bg-[#2a2a2a] text-white px-8 py-4 text-lg font-semibold rounded-xl transition-colors duration-300 flex items-center gap-3"
               >
-                <Image src={appleIcon} alt="App Store" width={20} height={20} />
-                Download
+                <Image
+                  src={appleIcon}
+                  alt="App Store Icon"
+                  width={24}
+                  height={24}
+                  className="w-6 h-6"
+                  unoptimized
+                />
+                <span className="font-helvetica-neue font-[400] text-[16px] leading-[25.6px] tracking-[-0.16px] text-center">
+                  Download now
+                </span>
               </Button>
               <Button
-                href="#how"
-                variant="secondary"
-                className="px-8 py-4 text-lg font-semibold rounded-xl"
+                href="#download"
+                className="bg-[#171717] hover:bg-[#2a2a2a] text-white px-8 py-4 text-lg font-semibold rounded-xl transition-colors duration-300 flex items-center gap-3"
               >
-                Browse opportunities
+                <Image
+                  src={playStoreIcon}
+                  alt="Play Store Icon"
+                  width={24}
+                  height={24}
+                  className="w-6 h-6"
+                  unoptimized
+                />
+                <span className="font-helvetica-neue font-[400] text-[16px] leading-[25.6px] tracking-[-0.16px] text-center">
+                  Download now
+                </span>
               </Button>
             </div>
           </div>
@@ -370,7 +390,7 @@ export default function RiderLanding() {
                       </div>
                       <div className="flex-1">
                         <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                          Earn more when it&apos;s busy
+                          Earn more when it's busy
                         </h4>
                         <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                           Maximise your earnings with our dynamic pricing model,
@@ -429,7 +449,7 @@ export default function RiderLanding() {
                       </div>
                       <div className="flex-1">
                         <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                          Earn more when it&apos;s busy
+                          Earn more when it's busy
                         </h4>
                         <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                           Maximise your earnings with our dynamic pricing model,

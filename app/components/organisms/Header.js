@@ -32,7 +32,7 @@ export default function Header() {
     <header
       className={`sticky top-0 z-30 ${getHeaderBackground()} transition-all duration-300`}
     >
-      <div className="w-full px-6 sm:px-10 md:px-16 lg:px-32 xl:px-40 h-16 lg:h-20 flex items-center justify-between">
+      <div className="w-full px-6 sm:px-10 md:px-16 lg:px-32 xl:px-40 h-26 lg:h-30 flex items-center justify-between">
         <Link href="/" className="flex items-center">
           <Image
             src={appIcon}

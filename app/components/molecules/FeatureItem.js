@@ -3,10 +3,20 @@ import Image from "next/image";
 
 export default function FeatureItem({ title, description, image }) {
   return (
-    <Card backgroundClassName="bg-[#F3F2FA]">
-      <h3 className="mt-4 font-semibold">{title}</h3>
+    <Card backgroundClassName="bg-[#F3F2FA]" className="group">
+      <h3 className="mt-4 text-[20px] sm:text-[28px] font-[700] text-[#000000] leading-[32px] sm:leading-[64px] tracking-[-0.05em] text-center font-helvetica-neue">
+        {title}
+      </h3>
+      <p className="mt-1 text-[14px] sm:text-[20px] font-helvetica-neue font-[500] text-[#858298] leading-[20px] sm:leading-[27px] tracking-[-0.03em] text-center">
+        {description.split("\n").map((line, index) => (
+          <span key={index}>
+            {line}
+            {index < description.split("\n").length - 1 && <br />}
+          </span>
+        ))}
+      </p>
       {image ? (
-        <div className="relative w-[65%] mx-auto rounded-lg overflow-hidden aspect-[307/416]">
+        <div className="relative w-[71.5%] mx-auto rounded-lg overflow-hidden aspect-[307/416] transition-all duration-300 ease-in-out group-hover:scale-130">
           <Image
             src={image}
             alt={title || "Feature"}
@@ -20,10 +30,6 @@ export default function FeatureItem({ title, description, image }) {
           {title?.[0]}
         </div>
       )}
-
-      <p className="mt-1 text-sm text-black/70 dark:text-white/70">
-        {description}
-      </p>
     </Card>
   );
 }

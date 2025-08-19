@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 
 export default function LocalStoresSection() {
   const [isMobile, setIsMobile] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -39,9 +40,10 @@ export default function LocalStoresSection() {
       flexDirection: isMobile ? "column" : "row",
       gap: isMobile ? "3rem" : "4rem",
       alignItems: isMobile ? "center" : "center",
-      backgroundColor: "#f9fafb",
-      borderRadius: "20px",
-      padding: "40px",
+      padding: "53px 81px 0",
+      overflow: "hidden",
+      transition: "all 0.3s ease-in-out",
+      cursor: "pointer",
     },
     leftSection: {
       display: "flex",
@@ -52,37 +54,54 @@ export default function LocalStoresSection() {
       flex: isMobile ? "none" : "1",
     },
     title: {
-      fontSize: "clamp(1.875rem, 4vw, 3rem)",
+      fontSize: "40px",
       fontWeight: "700",
-      color: "#111827",
-      lineHeight: "1.2",
+      color: "#000000",
+      lineHeight: "64px",
+      letterSpacing: "-5%",
       margin: "0",
+      position: "relative",
+      bottom: isMobile ? "0px" : "60px",
     },
     description: {
-      fontSize: "1.125rem",
-      color: "#4b5563",
-      lineHeight: "1.6",
+      fontSize: "29px",
+      fontWeight: "500",
+      color: "#858298",
+      lineHeight: "36px",
+      letterSpacing: "-3%",
       margin: "1.5rem 0 0 0",
+      position: "relative",
+      bottom: isMobile ? "0px" : "65px",
     },
     statsGrid: {
       display: "flex",
       justifyContent: "space-between",
       gap: "2rem",
+      position: "relative",
+      right: isMobile ? "0px" : "40px",
+      top: isMobile ? "0px" : "10px",
     },
     statItem: {
       textAlign: "center",
       flex: "1",
     },
     statNumber: {
-      fontSize: "clamp(1.875rem, 4vw, 2.25rem)",
+      fontSize: "50px",
       fontWeight: "700",
-      color: "#9333ea",
+      color: "#342CA1",
       margin: "0",
+      fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+      lineHeight: "64px",
+      letterSpacing: "-2%",
     },
     statLabel: {
-      fontSize: "clamp(0.875rem, 2vw, 1rem)",
-      color: "#6b7280",
+      fontSize: "20px",
+      fontWeight: "500",
+      color: "#858298",
       margin: "0.5rem 0 0 0",
+      fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
+      lineHeight: "27px",
+      letterSpacing: "-3%",
     },
     rightSection: {
       position: "relative",
@@ -93,9 +112,10 @@ export default function LocalStoresSection() {
     },
     imageContainer: {
       position: "relative",
-      width: isMobile ? "280px" : "384px",
-      height: isMobile ? "320px" : "650px",
-      bottom: isMobile ? "0" : "-32px",
+      width: isMobile ? "280px" : "444px",
+      height: isMobile ? "320px" : "510px",
+      bottom: isMobile ? "0" : "-12px",
+      transition: "all 0.3s ease-in-out",
     },
     image: {
       objectFit: "contain",
@@ -104,14 +124,23 @@ export default function LocalStoresSection() {
 
   return (
     <section style={styles.section}>
-      <div style={styles.container}>
-        <div style={styles.flexContainer}>
+      <Container className="py-16">
+        <div
+          style={{
+            ...styles.flexContainer,
+            backgroundColor: "#F3F2FA",
+            borderRadius: "24px",
+            boxShadow: isHovered ? "0 10px 25px rgba(0, 0, 0, 0.15)" : "none",
+          }}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
           {/* Left Section - Text and Statistics */}
           <div style={styles.leftSection}>
             <div>
               <h2 style={styles.title}>Bringing Local Stores Closer to You</h2>
               <p style={styles.description}>
-                We&apos;re building a smarter, faster way to shop, connecting
+                We're building a smarter, faster way to shop, connecting
                 neighborhoods with the essentials they need, right when they
                 need them.
               </p>
@@ -130,7 +159,12 @@ export default function LocalStoresSection() {
 
           {/* Right Section - Mobile App Preview */}
           <div style={styles.rightSection}>
-            <div style={styles.imageContainer}>
+            <div
+              style={{
+                ...styles.imageContainer,
+                transform: isHovered ? "scale(1.12)" : "scale(1)",
+              }}
+            >
               <Image
                 src={mobileImageVw}
                 alt="Mobile App Preview"
@@ -142,7 +176,7 @@ export default function LocalStoresSection() {
             </div>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

@@ -19,6 +19,8 @@ import SellZenZopImg from "@/app/assests/mainLanding/sellZenzop.png";
 import FaqAccordion from "@/app/components/organisms/FaqAccordion";
 import DownloadAppSection from "@/app/components/organisms/DownloadAppSection";
 import iPhone16 from "@/app/assests/mainLanding/iPhone16.png";
+import appleIcon from "@/app/assests/mainLanding/appleIcon.png";
+import playStoreIcon from "@/app/assests/mainLanding/playStoreIcon.png";
 
 export default function UserLanding() {
   // Debug: Check if images are imported correctly
@@ -29,34 +31,58 @@ export default function UserLanding() {
   return (
     <main className="min-h-screen">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-white to-[#E3E1FF] pt-24 py-20 lg:py-32">
+      <section className="relative overflow-hidden bg-gradient-to-b from-white to-[#E3E1FF] pt-34 py-28 lg:py-46">
         <Container>
           <div className="text-center max-w-4xl mx-auto">
             {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+            <h1 className="text-[36px] sm:text-[74px] font-[800] text-[#333333] mb-6 leading-[40px] sm:leading-[80px] tracking-[-0.05em] text-center font-helvetica-neue">
               Groceries Delivered
               <br className="hidden sm:block" /> in minutes
             </h1>
 
             {/* Subheading */}
-            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-12 leading-relaxed max-w-3xl mx-auto">
-              Zenzap is everything you need to get your groceries fast.
+            <p className="text-[16px] sm:text-[22px] font-helvetica-neue font-[500] text-[#686868] mb-12 leading-[30px] tracking-[-0.05em] text-center max-w-3xl mx-auto">
+              <span className="block sm:block">
+                Zenzop is a supermarket in your pocket
+              </span>
+              <span className="block sm:block">
+                - try it now in your favourite device
+              </span>
             </p>
 
             {/* Call-to-Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 href="#download"
-                className="bg-black hover:bg-gray-800 text-white px-8 py-4 text-lg font-semibold rounded-xl transition-colors duration-300"
+                className="bg-[#171717] hover:bg-[#2a2a2a] text-white px-8 py-4 text-lg font-semibold rounded-xl transition-colors duration-300 flex items-center gap-3"
               >
-                Download
+                <Image
+                  src={appleIcon}
+                  alt="App Store Icon"
+                  width={24}
+                  height={24}
+                  className="w-6 h-6"
+                  unoptimized
+                />
+                <span className="font-helvetica-neue font-[400] text-[16px] leading-[25.6px] tracking-[-0.16px] text-center">
+                  Download now
+                </span>
               </Button>
               <Button
-                href="#how"
-                variant="secondary"
-                className="px-8 py-4 text-lg font-semibold rounded-xl"
+                href="#download"
+                className="bg-[#171717] hover:bg-[#2a2a2a] text-white px-8 py-4 text-lg font-semibold rounded-xl transition-colors duration-300 flex items-center gap-3"
               >
-                Browse stores
+                <Image
+                  src={playStoreIcon}
+                  alt="Play Store Icon"
+                  width={24}
+                  height={24}
+                  className="w-6 h-6"
+                  unoptimized
+                />
+                <span className="font-helvetica-neue font-[400] text-[16px] leading-[25.6px] tracking-[-0.16px] text-center">
+                  Download now
+                </span>
               </Button>
             </div>
           </div>
@@ -65,7 +91,7 @@ export default function UserLanding() {
 
       {/* Edge-to-edge banner image strip */}
       <section aria-hidden className="w-full">
-        <div className="relative h-48 sm:h-56 md:h-80 lg:h-[28rem] xl:h-[28rem] bg-gray-200 overflow-hidden">
+        <div className="relative h-48 sm:h-56 md:h-80 lg:h-[38.64rem] xl:h-[38.64rem] bg-gray-200 overflow-hidden">
           <Image
             src={GrocerieImg}
             alt="Groceries"
@@ -83,81 +109,98 @@ export default function UserLanding() {
         </div>
       </section>
 
-      {/* What is Zenzap */}
+      {/* What is ZenZop */}
       <section>
-        <Container className="py-16">
-          <SectionTitle
-            title="What is ZenZop?"
-            subtitle="ZenZop is an online food market, offering a wide selection of products, from fresh produce to pantry staples, household essentials, and more. The best bit? It's fast, convenient and easy. You can have your groceries delivered direct to your door within 10 minutes."
-          />
-          {/* Mobile: Horizontal scroll, Desktop: Grid */}
-          <div className="mt-8 lg:hidden overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory -mx-2 px-2">
-            <div className="flex gap-4 min-w-max pr-2">
-              {[
-                {
-                  t: "Support Local Businesses",
-                  d: "Your orders directly help neighborhood stores thrive and grow",
-                  image: SupportLocalsImg,
-                },
-                {
-                  t: "Lightning-Fast Delivery",
-                  d: "Get groceries in 5-10 minutes or less from shops just around the corner",
-                  image: fastDeliveryImg,
-                },
-                {
-                  t: "Fresh & Diverse Selection",
-                  d: "Access the best products from multiple local stores in one place",
-                  image: freshDiningImg,
-                },
-              ].map((f) => (
-                <div key={f.t} className="snap-start w-[280px] flex-shrink-0">
-                  <FeatureItem title={f.t} description={f.d} image={f.image} />
-                </div>
-              ))}
-            </div>
+        <Container className="pt-32 pb-16">
+          <div className="text-center max-w-4xl mx-auto">
+            <h2 className="text-[32px] sm:text-[50px] font-[800] text-[#000000] mb-6 leading-[40px] sm:leading-[88px] tracking-[-0.05em] text-center font-helvetica-neue">
+              What is ZenZop?
+            </h2>
+            <p className="text-[16px] sm:text-[20px] font-helvetica-neue font-[500] text-[#88878E] leading-[22px] sm:leading-[27px] tracking-[-0.05em] text-center max-w-3xl mx-auto">
+              ZenZop is an online food market, offering a wide selection of
+              products, from fresh produce to pantry staples, household
+              essentials, and more. The best bit? It&apos;s fast, convenient and
+              easy. You can have your groceries delivered direct to your door
+              within 10 minutes.
+            </p>
           </div>
+        </Container>
 
-          {/* Desktop: Grid layout */}
-          <div className="mt-8 hidden lg:grid grid-cols-3 gap-6">
+        {/* Mobile: Horizontal scroll, Desktop: Grid */}
+        <div className="mt-12 lg:hidden overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory -mx-2 px-2">
+          <div className="flex gap-4 min-w-max pr-2">
             {[
               {
                 t: "Support Local Businesses",
-                d: "Your orders directly help neighborhood stores thrive and grow",
+                d: "Your orders directly help\nneighborhood stores thrive and grow",
                 image: SupportLocalsImg,
               },
               {
                 t: "Lightning-Fast Delivery",
-                d: "Get groceries in 5-10 minutes or less from shops just around the corner",
+                d: "Get groceries in 5-10 minutes or less\nfrom shops just around the corner",
                 image: fastDeliveryImg,
               },
               {
                 t: "Fresh & Diverse Selection",
-                d: "Access the best products from multiple local stores in one place",
+                d: "Access the best products from\nmultiple local stores in one place",
                 image: freshDiningImg,
               },
             ].map((f) => (
-              <FeatureItem
-                key={f.t}
-                title={f.t}
-                description={f.d}
-                image={f.image}
-              />
+              <div key={f.t} className="snap-start w-[280px] flex-shrink-0">
+                <FeatureItem title={f.t} description={f.d} image={f.image} />
+              </div>
             ))}
           </div>
-        </Container>
+        </div>
+
+        {/* Desktop: Grid layout */}
+        <div className="mt-12 hidden lg:grid grid-cols-3 gap-6 max-w-6xl lg:max-w-none mx-auto lg:mx-[160px] px-6 sm:px-10 md:px-16 lg:px-0">
+          {[
+            {
+              t: "Support Local Businesses",
+              d: "Your orders directly help\nneighborhood stores thrive and grow",
+              image: SupportLocalsImg,
+            },
+            {
+              t: "Lightning-Fast Delivery",
+              d: "Get groceries in 5-10 minutes or less\nfrom shops just around the corner",
+              image: fastDeliveryImg,
+            },
+            {
+              t: "Fresh & Diverse Selection",
+              d: "Access the best products from\nmultiple local stores in one place",
+              image: freshDiningImg,
+            },
+          ].map((f) => (
+            <FeatureItem
+              key={f.t}
+              title={f.t}
+              description={f.d}
+              image={f.image}
+            />
+          ))}
+        </div>
       </section>
 
       {/* Bringing Local Stores Closer to You */}
       <LocalStoresSection />
 
+      {/* How to order groceries with Zenzop */}
+      <section>
+        <Container className="py-16 pb-24">
+          <div className="text-center max-w-4xl mx-auto">
+            <h2 className="text-[32px] sm:text-[50px] font-[800] text-[#000000] mb-6 leading-[40px] sm:leading-[88px] tracking-[-0.05em] text-center font-helvetica-neue">
+              How to order groceries
+              <br />
+              with Zenzop
+            </h2>
+          </div>
+        </Container>
+      </section>
+
       {/* Local Stores Carousel */}
       <section>
         <Container className="py-16">
-          <div className="mb-8 max-w-2xl">
-            <h3 className="text-xl sm:text-2xl font-semibold">
-              How to order groceries with ZenZop
-            </h3>
-          </div>
           <LocalStoresCarousel />
         </Container>
       </section>

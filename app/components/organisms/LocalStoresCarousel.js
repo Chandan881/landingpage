@@ -65,8 +65,52 @@ export default function LocalStoresCarousel() {
 
   return (
     <div className="relative">
+      <div
+        ref={scrollRef}
+        className="mt-8 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory -mx-2 px-2"
+      >
+        <ul className="flex gap-6 min-w-max pr-2">
+          {items.map((card, i) => (
+            <li key={`${card.title}-${i}`} className="snap-start">
+              <div className="w-[280px] sm:w-[320px] md:w-[380px] rounded-2xl bg-[#F3F2FA] p-6 h-[380px] sm:h-[400px] md:h-[420px] flex flex-col">
+                <h4 className="mt-2 text-[16px] sm:text-[18px] md:text-[24px] font-[700] tracking-[-0.05em] text-[#000000] font-helvetica-neue leading-[24px]">
+                  {card.title}
+                </h4>
+                <div className="mt-3 text-[13px] sm:text-[14px] md:text-[16px] font-[500] text-[#858298] font-helvetica-neue leading-[22px] tracking-[-0.03em] min-h-[48px] sm:min-h-[52px] md:min-h-[56px]">
+                  {card.subtitle}
+                </div>
+                {card.cta ? (
+                  <div className="mt-4 flex gap-2">
+                    <button className="rounded-full bg-[#1E0E62] text-white text-[12px] sm:text-sm px-8 py-2 mb-2 inline-block">
+                      {card.cta}
+                    </button>
+                  </div>
+                ) : null}
+                <div className="mt-auto relative w-full h-48 rounded-xl overflow-hidden bg-gradient-to-br from-indigo-100 to-violet-200 dark:from-zinc-800 dark:to-zinc-700">
+                  <Image
+                    src={card.image}
+                    alt={card.title}
+                    fill
+                    sizes="(max-width: 640px) 280px, (max-width: 768px) 320px, 380px"
+                    className="object-cover"
+                    priority={i < 3}
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                    }}
+                  />
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+
       {/* Navigation buttons - hidden on mobile, visible on md+ screens */}
-      <div className="hidden md:flex justify-between items-center mb-6">
+      <div className="hidden md:flex justify-end items-center mt-6 gap-2">
         <button
           onClick={() => scrollByAmount(-1)}
           className="p-2 rounded-full bg-white shadow-lg hover:shadow-xl transition-shadow"
@@ -105,49 +149,6 @@ export default function LocalStoresCarousel() {
             />
           </svg>
         </button>
-      </div>
-      <div
-        ref={scrollRef}
-        className="overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory -mx-2 px-2"
-      >
-        <ul className="flex gap-6 min-w-max pr-2">
-          {items.map((card, i) => (
-            <li key={`${card.title}-${i}`} className="snap-start">
-              <div className="w-[280px] sm:w-[320px] md:w-[380px] rounded-2xl bg-[#F3F2FA] p-6 h-[380px] sm:h-[400px] md:h-[420px] flex flex-col">
-                <h4 className="mt-2 text-[16px] sm:text-[18px] md:text-[20px] font-bold tracking-tight text-black dark:text-white">
-                  {card.title}
-                </h4>
-                <div className="mt-3 text-[13px] sm:text-[14px] md:text-[15px] leading-relaxed text-black/70 dark:text-white/70 min-h-[48px] sm:min-h-[52px] md:min-h-[56px]">
-                  {card.subtitle}
-                </div>
-                {card.cta ? (
-                  <div className="mt-4 flex gap-2">
-                    <button className="rounded-full bg-[#1E0E62] text-white text-[12px] sm:text-sm px-8 py-2 mb-2 inline-block">
-                      {card.cta}
-                    </button>
-                  </div>
-                ) : null}
-                <div className="mt-auto relative w-full h-48 rounded-xl overflow-hidden bg-gradient-to-br from-indigo-100 to-violet-200 dark:from-zinc-800 dark:to-zinc-700">
-                  <Image
-                    src={card.image}
-                    alt={card.title}
-                    fill
-                    sizes="(max-width: 640px) 280px, (max-width: 768px) 320px, 380px"
-                    className="object-cover"
-                    priority={i < 3}
-                    style={{
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      width: "100%",
-                      height: "100%",
-                    }}
-                  />
-                </div>
-              </div>
-            </li>
-          ))}
-        </ul>
       </div>
     </div>
   );
