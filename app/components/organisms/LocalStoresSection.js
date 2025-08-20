@@ -38,9 +38,9 @@ export default function LocalStoresSection() {
     flexContainer: {
       display: "flex",
       flexDirection: isMobile ? "column" : "row",
-      gap: isMobile ? "3rem" : "4rem",
+      gap: isMobile ? "1.5rem" : "4rem",
       alignItems: isMobile ? "center" : "center",
-      padding: "53px 81px 0",
+      padding: isMobile ? "20px 16px" : "53px 81px 0",
       overflow: "hidden",
       transition: "all 0.3s ease-in-out",
       cursor: "pointer",
@@ -54,20 +54,20 @@ export default function LocalStoresSection() {
       flex: isMobile ? "none" : "1",
     },
     title: {
-      fontSize: "40px",
+      fontSize: isMobile ? "28px" : "40px",
       fontWeight: "700",
       color: "#000000",
-      lineHeight: "64px",
+      lineHeight: isMobile ? "40px" : "64px",
       letterSpacing: "-5%",
       margin: "0",
       position: "relative",
       bottom: isMobile ? "0px" : "60px",
     },
     description: {
-      fontSize: "29px",
+      fontSize: isMobile ? "18px" : "29px",
       fontWeight: "500",
       color: "#858298",
-      lineHeight: "36px",
+      lineHeight: isMobile ? "27px" : "36px",
       letterSpacing: "-3%",
       margin: "1.5rem 0 0 0",
       position: "relative",
@@ -75,8 +75,8 @@ export default function LocalStoresSection() {
     },
     statsGrid: {
       display: "flex",
-      justifyContent: "space-between",
-      gap: "2rem",
+      justifyContent: isMobile ? "center" : "space-between",
+      gap: isMobile ? "1rem" : "2rem",
       position: "relative",
       right: isMobile ? "0px" : "40px",
       top: isMobile ? "0px" : "10px",
@@ -86,21 +86,21 @@ export default function LocalStoresSection() {
       flex: "1",
     },
     statNumber: {
-      fontSize: "50px",
+      fontSize: isMobile ? "32px" : "50px",
       fontWeight: "700",
       color: "#342CA1",
       margin: "0",
       fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
-      lineHeight: "64px",
+      lineHeight: isMobile ? "40px" : "64px",
       letterSpacing: "-2%",
     },
     statLabel: {
-      fontSize: "20px",
+      fontSize: isMobile ? "14px" : "20px",
       fontWeight: "500",
       color: "#858298",
       margin: "0.5rem 0 0 0",
       fontFamily: "Helvetica Neue, Helvetica, Arial, sans-serif",
-      lineHeight: "27px",
+      lineHeight: isMobile ? "20px" : "27px",
       letterSpacing: "-3%",
     },
     rightSection: {
@@ -112,8 +112,8 @@ export default function LocalStoresSection() {
     },
     imageContainer: {
       position: "relative",
-      width: isMobile ? "280px" : "444px",
-      height: isMobile ? "320px" : "510px",
+      width: isMobile ? "240px" : "444px",
+      height: isMobile ? "280px" : "510px",
       bottom: isMobile ? "0" : "-12px",
       transition: "all 0.3s ease-in-out",
     },
@@ -124,7 +124,7 @@ export default function LocalStoresSection() {
 
   return (
     <section style={styles.section}>
-      <Container className="py-16">
+      <Container className="xl:py-26  sm:py-4 ">
         <div
           style={{
             ...styles.flexContainer,

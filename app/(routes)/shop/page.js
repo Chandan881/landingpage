@@ -52,7 +52,7 @@ export default function ShopLanding() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-white to-[#E3E1FF] pt-24 py-20 lg:py-32">
+      <section className="relative overflow-hidden bg-gradient-to-b from-white to-[#E3E1FF] pt-12 py-16 sm:pt-24 sm:py-20 lg:py-32">
         <Container>
           <div className="text-center max-w-4xl mx-auto animate-fade-in-up">
             {/* Headline */}
@@ -69,36 +69,36 @@ export default function ShopLanding() {
             </p>
 
             {/* Call-to-Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-400">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fade-in-up animation-delay-400">
               <Button
                 href="#download"
-                className="bg-[#171717] hover:bg-[#2a2a2a] text-white px-8 py-4 text-lg font-semibold rounded-xl transition-colors duration-300 flex items-center gap-3"
+                className="bg-[#171717] hover:bg-[#2a2a2a] text-white px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-lg font-semibold rounded-xl transition-colors duration-300 flex items-center gap-2 sm:gap-3 min-w-[140px] sm:min-w-[180px]"
               >
                 <Image
                   src={appleIcon}
                   alt="App Store Icon"
                   width={24}
                   height={24}
-                  className="w-6 h-6"
+                  className="w-5 h-5 sm:w-6 sm:h-6"
                   unoptimized
                 />
-                <span className="font-helvetica-neue font-[400] text-[16px] leading-[25.6px] tracking-[-0.16px] text-center">
+                <span className="font-helvetica-neue font-[400] text-[14px] sm:text-[16px] leading-[22px] sm:leading-[25.6px] tracking-[-0.16px] text-center">
                   Download now
                 </span>
               </Button>
               <Button
                 href="#download"
-                className="bg-[#171717] hover:bg-[#2a2a2a] text-white px-8 py-4 text-lg font-semibold rounded-xl transition-colors duration-300 flex items-center gap-3"
+                className="bg-[#171717] hover:bg-[#2a2a2a] text-white px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-lg font-semibold rounded-xl transition-colors duration-300 flex items-center gap-2 sm:gap-3 min-w-[140px] sm:min-w-[180px]"
               >
                 <Image
                   src={playStoreIcon}
                   alt="Play Store Icon"
                   width={24}
                   height={24}
-                  className="w-6 h-6"
+                  className="w-5 h-5 sm:w-6 sm:h-6"
                   unoptimized
                 />
-                <span className="font-helvetica-neue font-[400] text-[16px] leading-[25.6px] tracking-[-0.16px] text-center">
+                <span className="font-helvetica-neue font-[400] text-[14px] sm:text-[16px] leading-[22px] sm:leading-[25.6px] tracking-[-0.16px] text-center">
                   Download now
                 </span>
               </Button>

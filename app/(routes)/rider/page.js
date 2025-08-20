@@ -57,7 +57,7 @@ export default function RiderLanding() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-white to-[#E3E1FF] pt-24 py-20 lg:py-32">
+      <section className="relative overflow-hidden bg-gradient-to-b from-white to-[#E3E1FF] pt-12 py-16 sm:pt-24 sm:py-20 lg:py-32">
         <Container>
           <div className="text-center max-w-4xl mx-auto animate-fade-in-up">
             {/* Headline */}
@@ -75,36 +75,36 @@ export default function RiderLanding() {
             </p>
 
             {/* Call-to-Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-400">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fade-in-up animation-delay-400">
               <Button
                 href="#download"
-                className="bg-[#171717] hover:bg-[#2a2a2a] text-white px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105 flex items-center gap-3"
+                className="bg-[#171717] hover:bg-[#2a2a2a] text-white px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105 flex items-center gap-2 sm:gap-3 min-w-[140px] sm:min-w-[180px]"
               >
                 <Image
                   src={appleIcon}
                   alt="App Store Icon"
                   width={24}
                   height={24}
-                  className="w-6 h-6"
+                  className="w-5 h-5 sm:w-6 sm:h-6"
                   unoptimized
                 />
-                <span className="font-helvetica-neue font-[400] text-[16px] leading-[25.6px] tracking-[-0.16px] text-center">
+                <span className="font-helvetica-neue font-[400] text-[14px] sm:text-[16px] leading-[22px] sm:leading-[25.6px] tracking-[-0.16px] text-center">
                   Download now
                 </span>
               </Button>
               <Button
                 href="#download"
-                className="bg-[#171717] hover:bg-[#2a2a2a] text-white px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105 flex items-center gap-3"
+                className="bg-[#171717] hover:bg-[#2a2a2a] text-white px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105 flex items-center gap-2 sm:gap-3 min-w-[140px] sm:min-w-[180px]"
               >
                 <Image
                   src={playStoreIcon}
                   alt="Play Store Icon"
                   width={24}
                   height={24}
-                  className="w-6 h-6"
+                  className="w-5 h-5 sm:w-6 sm:h-6"
                   unoptimized
                 />
-                <span className="font-helvetica-neue font-[400] text-[16px] leading-[25.6px] tracking-[-0.16px] text-center">
+                <span className="font-helvetica-neue font-[400] text-[14px] sm:text-[16px] leading-[22px] sm:leading-[25.6px] tracking-[-0.16px] text-center">
                   Download now
                 </span>
               </Button>
@@ -115,22 +115,22 @@ export default function RiderLanding() {
 
       {/* ZenZop Benefits Section */}
       <section id="zenzop-benefits" data-animate>
-        <Container className="py-40">
+        <Container className="sm:py-20 xl:py-40">
           <div
-            className={`text-center mb-12 transition-all duration-1000 ease-out transform ${
+            className={`text-center xl:mb-12 transition-all duration-1000 ease-out transform ${
               visibleSections.has("zenzop-benefits")
                 ? "translate-y-0 opacity-100"
                 : "translate-y-16 opacity-0"
             }`}
           >
-            <h2 className="text-[50px] font-[800] leading-[88px] tracking-[-0.05em] text-center font-helvetica-neue text-[#000000]">
+            <h2 className="text-[34px] md:text-[50px] font-[800] leading-[88px] tracking-[-0.05em] text-center font-helvetica-neue text-[#000000]">
               ZenZop Benefits
             </h2>
           </div>
 
           {/* Mobile: Horizontal scroll, Desktop: Grid */}
           <div
-            className={`mt-8 lg:hidden overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory -mx-2 px-2 transition-all duration-1000 ease-out transform delay-300 ${
+            className={`sm:mt-8 xl:mt-8 lg:hidden overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory -mx-2 px-2 transition-all duration-1000 ease-out transform delay-300 ${
               visibleSections.has("zenzop-benefits")
                 ? "translate-y-0 opacity-100"
                 : "translate-y-16 opacity-0"
@@ -202,7 +202,7 @@ export default function RiderLanding() {
 
       {/* ZenZop Rider Requirements Section */}
       <section id="rider-requirements" data-animate className="mt-16">
-        <Container className="py-16">
+        <Container className="sm:py-6 xl:py-16">
           <div
             className={`text-center mb-12 transition-all duration-1000 ease-out transform ${
               visibleSections.has("rider-requirements")
@@ -210,7 +210,7 @@ export default function RiderLanding() {
                 : "translate-y-16 opacity-0"
             }`}
           >
-            <h2 className="text-[50px] font-[800] leading-[88px] tracking-[-0.05em] text-center font-helvetica-neue text-[#000000]">
+            <h2 className="text-[34px] md:text-[50px] font-[800] leading-[44px] md:leading-[88px] tracking-[-0.05em] text-center font-helvetica-neue text-[#000000]">
               Zenzop Rider requirements
             </h2>
           </div>
@@ -347,7 +347,7 @@ export default function RiderLanding() {
               {/* Content Section */}
               <div className="order-2">
                 <div className="w-full">
-                  <h2 className="text-[42px] font-[800] leading-[48px] tracking-[-0.05em]  font-helvetica-neue text-[#000000] mb-10">
+                  <h2 className="text-[32px] md:text-[42px] font-[800] leading-[48px] tracking-[-0.05em]  font-helvetica-neue text-[#000000] mb-10">
                     Boost your earnings
                   </h2>
 
@@ -360,7 +360,7 @@ export default function RiderLanding() {
                           </span>
                         </div>
                         <div className="flex-1 flex flex-col justify-center">
-                          <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[48px] tracking-[-0.03em] text-[#000000]">
+                          <h4 className="text-[20px] md:text-[24px] font-helvetica-neue font-[700] leading-[48px] tracking-[-0.03em] text-[#000000]">
                             Earn more when it's busy
                           </h4>
                           <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">

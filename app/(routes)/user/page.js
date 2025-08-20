@@ -56,7 +56,7 @@ export default function UserLanding() {
   return (
     <main className="min-h-screen">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-white to-[#E3E1FF] pt-34 py-28 lg:py-46">
+      <section className="relative overflow-hidden bg-gradient-to-b from-white to-[#E3E1FF] pt-12 py-16 sm:pt-34 sm:py-28 lg:py-46">
         <Container>
           <div className="text-center max-w-4xl mx-auto">
             {/* Headline */}
@@ -76,36 +76,36 @@ export default function UserLanding() {
             </p>
 
             {/* Call-to-Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-400">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fade-in-up animation-delay-400">
               <Button
                 href="#download"
-                className="bg-[#171717] hover:bg-[#2a2a2a] text-white px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105 flex items-center gap-3"
+                className="bg-[#171717] hover:bg-[#2a2a2a] text-white px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105 flex items-center gap-2 sm:gap-3 min-w-[140px] sm:min-w-[180px]"
               >
                 <Image
                   src={appleIcon}
                   alt="App Store Icon"
                   width={24}
                   height={24}
-                  className="w-6 h-6"
+                  className="w-5 h-5 sm:w-6 sm:h-6"
                   unoptimized
                 />
-                <span className="font-helvetica-neue font-[400] text-[16px] leading-[25.6px] tracking-[-0.16px] text-center">
+                <span className="font-helvetica-neue font-[400] text-[14px] sm:text-[16px] leading-[22px] sm:leading-[25.6px] tracking-[-0.16px] text-center">
                   Download now
                 </span>
               </Button>
               <Button
                 href="#download"
-                className="bg-[#171717] hover:bg-[#2a2a2a] text-white px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105 flex items-center gap-3"
+                className="bg-[#171717] hover:bg-[#2a2a2a] text-white px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105 flex items-center gap-2 sm:gap-3 min-w-[140px] sm:min-w-[180px]"
               >
                 <Image
                   src={playStoreIcon}
                   alt="Play Store Icon"
                   width={24}
                   height={24}
-                  className="w-6 h-6"
+                  className="w-5 h-5 sm:w-6 sm:h-6"
                   unoptimized
                 />
-                <span className="font-helvetica-neue font-[400] text-[16px] leading-[25.6px] tracking-[-0.16px] text-center">
+                <span className="font-helvetica-neue font-[400] text-[14px] sm:text-[16px] leading-[22px] sm:leading-[25.6px] tracking-[-0.16px] text-center">
                   Download now
                 </span>
               </Button>
@@ -136,7 +136,7 @@ export default function UserLanding() {
 
       {/* What is ZenZop */}
       <section id="what-is-zenzop" data-animate>
-        <Container className="pt-32 pb-16">
+        <Container className="pt-16 sm:pt-32 sm:pb-4 xl:pb-12">
           <div
             className={`text-center max-w-4xl mx-auto transition-all duration-1000 ease-out transform ${
               visibleSections.has("what-is-zenzop")
@@ -165,7 +165,7 @@ export default function UserLanding() {
 
         {/* Mobile: Horizontal scroll, Desktop: Grid */}
         <div
-          className={`mt-12 lg:hidden overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory px-4 transition-all duration-1000 ease-out transform delay-300 ${
+          className={`mt-6 sm:mt-8 lg:hidden overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory px-4 transition-all duration-1000 ease-out transform delay-300 ${
             visibleSections.has("what-is-zenzop")
               ? "translate-y-0 opacity-100"
               : "translate-y-16 opacity-0"
@@ -249,7 +249,7 @@ export default function UserLanding() {
 
       {/* How to order groceries with Zenzop */}
       <section>
-        <Container className="pt-16 ">
+        <Container className="sm:pt-4 xl:pt-16 ">
           <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-[32px] sm:text-[50px] font-[800] text-[#000000]  leading-[40px] sm:leading-[88px] tracking-[-0.05em] text-center font-helvetica-neue">
               How to order groceries
@@ -262,7 +262,7 @@ export default function UserLanding() {
 
       {/* Local Stores Carousel */}
       <section>
-        <Container className="py-6">
+        <Container className="sm:py-2 xl:py-6">
           <LocalStoresCarousel />
         </Container>
       </section>
@@ -271,7 +271,7 @@ export default function UserLanding() {
 
       {/* Testimonials (Carousel) */}
       <section id="testimonials" data-animate>
-        <Container className="py-16 px-0 sm:px-0 md:px-0 mx-0 lg:mx-0">
+        <Container className="sm:pt-15 xl:pt-16 px-0 sm:px-0 md:px-0 mx-0 lg:mx-0">
           <div
             className={`transition-all duration-1000 ease-out transform ${
               visibleSections.has("testimonials")
@@ -301,11 +301,11 @@ export default function UserLanding() {
                 : "translate-y-16 opacity-0"
             }`}
           >
-            <h2 className="text-[74px] font-[800] leading-[88px] tracking-[-0.05em] text-center font-helvetica-neue text-[#EFEEFD]">
+            <h2 className="text-[54px] md:text-[74px] font-[800] leading-[88px] tracking-[-0.05em] text-center font-helvetica-neue text-[#EFEEFD]">
               Want to sell your products
               <br /> with ZenZop?
             </h2>
-            <p className="mt-10 text-[26px] font-[500] leading-[24px] tracking-[-0.05em] text-center font-helvetica-neue text-[#D0CCFF]">
+            <p className="mt-10 text-[18px] md:text-[26px] font-[500] leading-[24px] tracking-[-0.05em] text-center font-helvetica-neue text-[#D0CCFF]">
               Apply to become a ZenZop partner!
             </p>
             <div className="mt-6">

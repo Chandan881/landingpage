@@ -99,7 +99,7 @@ export default function TestimonialsCarousel() {
   const scrollTo = (i) => emblaApi && emblaApi.scrollTo(i);
 
   return (
-    <div className="mt-24 relative w-screen max-w-[100vw] -mx-[calc((100vw-100%)/2)]">
+    <div className="sm:mt-10 xl:mt-24 relative w-screen max-w-[100vw] -mx-[calc((100vw-100%)/2)]">
       <div className="overflow-hidden mt-10" ref={emblaRef}>
         <ul className="flex list-none gap-6 px-[9vw]">
           {slides.map((s, i) => (
