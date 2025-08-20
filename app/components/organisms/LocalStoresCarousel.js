@@ -72,21 +72,23 @@ export default function LocalStoresCarousel() {
         <ul className="flex gap-6 min-w-max pr-2">
           {items.map((card, i) => (
             <li key={`${card.title}-${i}`} className="snap-start">
-              <div className="w-[280px] sm:w-[320px] md:w-[380px] rounded-2xl bg-[#F3F2FA] p-6 h-[380px] sm:h-[400px] md:h-[420px] flex flex-col">
+              <div className="w-[280px] sm:w-[320px] md:w-[410px] rounded-2xl bg-[#F3F2FA] p-6 flex flex-col min-h-[380px] sm:min-h-[400px] md:min-h-[450px]">
                 <h4 className="mt-2 text-[16px] sm:text-[18px] md:text-[24px] font-[700] tracking-[-0.05em] text-[#000000] font-helvetica-neue leading-[24px]">
                   {card.title}
                 </h4>
-                <div className="mt-3 text-[13px] sm:text-[14px] md:text-[16px] font-[500] text-[#858298] font-helvetica-neue leading-[22px] tracking-[-0.03em] min-h-[48px] sm:min-h-[52px] md:min-h-[56px]">
+                <div className="mt-3 text-[13px] sm:text-[14px] md:text-[16px] font-[500] text-[#858298] font-helvetica-neue leading-[22px] tracking-[-0.03em] h-9 sm:h-10 md:h-11">
                   {card.subtitle}
                 </div>
-                {card.cta ? (
-                  <div className="mt-4 flex gap-2">
-                    <button className="rounded-full bg-[#1E0E62] text-white text-[12px] sm:text-sm px-8 py-2 mb-2 inline-block">
+                <div className="mt-2 h-12 flex items-center">
+                  {card.cta ? (
+                    <button className="relative bottom-[20px] rounded-full bg-[#1E0E62] text-[#FFFFFF] text-[14px] font-[500] font-helvetica-neue leading-[20px] tracking-[-0.16px] text-center px-8 py-2 inline-block">
                       {card.cta}
                     </button>
-                  </div>
-                ) : null}
-                <div className="mt-auto relative w-full h-48 rounded-xl overflow-hidden bg-gradient-to-br from-indigo-100 to-violet-200 dark:from-zinc-800 dark:to-zinc-700">
+                  ) : (
+                    <div className="h-8"></div>
+                  )}
+                </div>
+                <div className="mt-auto relative w-full h-48 sm:h-52 md:h-[374px] rounded-xl overflow-hidden bg-gradient-to-br from-indigo-100 to-violet-200 dark:from-zinc-800 dark:to-zinc-700">
                   <Image
                     src={card.image}
                     alt={card.title}

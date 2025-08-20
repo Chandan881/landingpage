@@ -17,15 +17,26 @@ function FaqItem({ q, a, defaultOpen = false }) {
         className="w-full flex items-center justify-between py-4 text-left"
         aria-expanded={open}
       >
-        <span className="text-base sm:text-lg font-medium">{q}</span>
-        <span
-          className={`ml-4 inline-flex h-6 w-6 items-center justify-center rounded-full border border-black/20 dark:border-white/20 text-sm transition-transform ${
+        <span className="text-[24px] font-[500] leading-[27px] tracking-[-0.05em] font-helvetica-neue text-[#88878E]">
+          {q}
+        </span>
+        <svg
+          className={`ml-4 h-6 w-6 transition-transform ${
             open ? "rotate-180" : "rotate-0"
           }`}
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
           aria-hidden
         >
-          ˅
-        </span>
+          <path
+            d="M6 9L12 15L18 9"
+            stroke="#4B5563"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
       </button>
       <div
         className="overflow-hidden transition-all duration-300 ease-out"
@@ -33,7 +44,7 @@ function FaqItem({ q, a, defaultOpen = false }) {
       >
         <div
           ref={contentRef}
-          className="pb-4 text-sm text-black/70 dark:text-white/70"
+          className="pb-4 text-[16px] sm:text-[18px] md:text-[20px] font-helvetica-neue text-black/70 dark:text-white/70"
         >
           {a}
         </div>
@@ -48,10 +59,10 @@ export default function FaqAccordion({
 }) {
   return (
     <div>
-      <h3 className="text-2xl sm:text-3xl font-semibold text-center mb-8">
+      <h3 className="text-[50px] font-[800] leading-[64px] tracking-[-0.05em] text-center mb-8 font-helvetica-neue text-[#000000]">
         {title}
       </h3>
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-3xl mx-auto mt-14">
         {items.map((it, i) => (
           <FaqItem key={it.q + i} q={it.q} a={it.a} />
         ))}

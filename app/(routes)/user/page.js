@@ -1,5 +1,6 @@
-export const metadata = { title: "User | Landing" };
+"use client";
 
+import { useState, useEffect } from "react";
 import Container from "@/app/components/atoms/Container";
 import SectionTitle from "@/app/components/atoms/SectionTitle";
 import Button from "@/app/components/atoms/Button";
@@ -19,6 +20,7 @@ import SellZenZopImg from "@/app/assests/mainLanding/sellZenzop.png";
 import FaqAccordion from "@/app/components/organisms/FaqAccordion";
 import DownloadAppSection from "@/app/components/organisms/DownloadAppSection";
 import iPhone16 from "@/app/assests/mainLanding/iPhone16.png";
+import iPhone17 from "@/app/assests/mainLanding/iPhone17.png";
 import appleIcon from "@/app/assests/mainLanding/appleIcon.png";
 import playStoreIcon from "@/app/assests/mainLanding/playStoreIcon.png";
 
@@ -28,6 +30,29 @@ export default function UserLanding() {
   console.log("SellZenZopImg:", SellZenZopImg);
   console.log("iPhone16:", iPhone16);
 
+  // Scroll animation state
+  const [visibleSections, setVisibleSections] = useState(new Set());
+
+  // Intersection Observer for scroll animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleSections((prev) => new Set(prev).add(entry.target.id));
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: "-50px" }
+    );
+
+    // Observe all sections
+    const sections = document.querySelectorAll("[data-animate]");
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <main className="min-h-screen">
       {/* Hero */}
@@ -35,13 +60,13 @@ export default function UserLanding() {
         <Container>
           <div className="text-center max-w-4xl mx-auto">
             {/* Headline */}
-            <h1 className="text-[36px] sm:text-[74px] font-[800] text-[#333333] mb-6 leading-[40px] sm:leading-[80px] tracking-[-0.05em] text-center font-helvetica-neue">
+            <h1 className="text-[36px] sm:text-[74px] font-[800] text-[#333333] mb-6 leading-[40px] sm:leading-[80px] tracking-[-0.05em] text-center font-helvetica-neue animate-fade-in-up">
               Groceries Delivered
               <br className="hidden sm:block" /> in minutes
             </h1>
 
             {/* Subheading */}
-            <p className="text-[16px] sm:text-[22px] font-helvetica-neue font-[500] text-[#686868] mb-12 leading-[30px] tracking-[-0.05em] text-center max-w-3xl mx-auto">
+            <p className="text-[16px] sm:text-[22px] font-helvetica-neue font-[500] text-[#686868] mb-12 leading-[30px] tracking-[-0.05em] text-center max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
               <span className="block sm:block">
                 Zenzop is a supermarket in your pocket
               </span>
@@ -51,10 +76,10 @@ export default function UserLanding() {
             </p>
 
             {/* Call-to-Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-400">
               <Button
                 href="#download"
-                className="bg-[#171717] hover:bg-[#2a2a2a] text-white px-8 py-4 text-lg font-semibold rounded-xl transition-colors duration-300 flex items-center gap-3"
+                className="bg-[#171717] hover:bg-[#2a2a2a] text-white px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105 flex items-center gap-3"
               >
                 <Image
                   src={appleIcon}
@@ -70,7 +95,7 @@ export default function UserLanding() {
               </Button>
               <Button
                 href="#download"
-                className="bg-[#171717] hover:bg-[#2a2a2a] text-white px-8 py-4 text-lg font-semibold rounded-xl transition-colors duration-300 flex items-center gap-3"
+                className="bg-[#171717] hover:bg-[#2a2a2a] text-white px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105 flex items-center gap-3"
               >
                 <Image
                   src={playStoreIcon}
@@ -110,13 +135,25 @@ export default function UserLanding() {
       </section>
 
       {/* What is ZenZop */}
-      <section>
+      <section id="what-is-zenzop" data-animate>
         <Container className="pt-32 pb-16">
-          <div className="text-center max-w-4xl mx-auto">
+          <div
+            className={`text-center max-w-4xl mx-auto transition-all duration-1000 ease-out transform ${
+              visibleSections.has("what-is-zenzop")
+                ? "translate-y-0 opacity-100"
+                : "translate-y-16 opacity-0"
+            }`}
+          >
             <h2 className="text-[32px] sm:text-[50px] font-[800] text-[#000000] mb-6 leading-[40px] sm:leading-[88px] tracking-[-0.05em] text-center font-helvetica-neue">
               What is ZenZop?
             </h2>
-            <p className="text-[16px] sm:text-[20px] font-helvetica-neue font-[500] text-[#88878E] leading-[22px] sm:leading-[27px] tracking-[-0.05em] text-center max-w-3xl mx-auto">
+            <p
+              className={`text-[16px] sm:text-[20px] font-helvetica-neue font-[500] text-[#88878E] leading-[22px] sm:leading-[27px] tracking-[-0.05em] text-center max-w-3xl mx-auto transition-all duration-1000 ease-out transform delay-200 ${
+                visibleSections.has("what-is-zenzop")
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-16 opacity-0"
+              }`}
+            >
               ZenZop is an online food market, offering a wide selection of
               products, from fresh produce to pantry staples, household
               essentials, and more. The best bit? It&apos;s fast, convenient and
@@ -127,7 +164,13 @@ export default function UserLanding() {
         </Container>
 
         {/* Mobile: Horizontal scroll, Desktop: Grid */}
-        <div className="mt-12 lg:hidden overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory -mx-2 px-2">
+        <div
+          className={`mt-12 lg:hidden overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory -mx-2 px-2 transition-all duration-1000 ease-out transform delay-300 ${
+            visibleSections.has("what-is-zenzop")
+              ? "translate-y-0 opacity-100"
+              : "translate-y-16 opacity-0"
+          }`}
+        >
           <div className="flex gap-4 min-w-max pr-2">
             {[
               {
@@ -154,7 +197,13 @@ export default function UserLanding() {
         </div>
 
         {/* Desktop: Grid layout */}
-        <div className="mt-12 hidden lg:grid grid-cols-3 gap-6 max-w-6xl lg:max-w-none mx-auto lg:mx-[160px] px-6 sm:px-10 md:px-16 lg:px-0">
+        <div
+          className={`mt-12 hidden lg:grid grid-cols-3 gap-6 max-w-6xl lg:max-w-none mx-auto lg:mx-[160px] px-6 sm:px-10 md:px-16 lg:px-0 transition-all duration-1000 ease-out transform delay-400 ${
+            visibleSections.has("what-is-zenzop")
+              ? "translate-y-0 opacity-100"
+              : "translate-y-16 opacity-0"
+          }`}
+        >
           {[
             {
               t: "Support Local Businesses",
@@ -183,13 +232,23 @@ export default function UserLanding() {
       </section>
 
       {/* Bringing Local Stores Closer to You */}
-      <LocalStoresSection />
+      <section id="local-stores" data-animate>
+        <div
+          className={`transition-all duration-1000 ease-out transform ${
+            visibleSections.has("local-stores")
+              ? "translate-y-0 opacity-100"
+              : "translate-y-16 opacity-0"
+          }`}
+        >
+          <LocalStoresSection />
+        </div>
+      </section>
 
       {/* How to order groceries with Zenzop */}
       <section>
-        <Container className="py-16 pb-24">
+        <Container className="pt-16 ">
           <div className="text-center max-w-4xl mx-auto">
-            <h2 className="text-[32px] sm:text-[50px] font-[800] text-[#000000] mb-6 leading-[40px] sm:leading-[88px] tracking-[-0.05em] text-center font-helvetica-neue">
+            <h2 className="text-[32px] sm:text-[50px] font-[800] text-[#000000]  leading-[40px] sm:leading-[88px] tracking-[-0.05em] text-center font-helvetica-neue">
               How to order groceries
               <br />
               with Zenzop
@@ -200,7 +259,7 @@ export default function UserLanding() {
 
       {/* Local Stores Carousel */}
       <section>
-        <Container className="py-16">
+        <Container className="py-6">
           <LocalStoresCarousel />
         </Container>
       </section>
@@ -208,24 +267,42 @@ export default function UserLanding() {
       {/* What our users has to say */}
 
       {/* Testimonials (Carousel) */}
-      <section>
+      <section id="testimonials" data-animate>
         <Container className="py-16 px-0 sm:px-0 md:px-0 mx-0 lg:mx-0">
-          <h3 className="text-2xl font-semibold text-center mb-8">
-            What our users has to say
-          </h3>
-          <TestimonialsCarousel />
+          <div
+            className={`transition-all duration-1000 ease-out transform ${
+              visibleSections.has("testimonials")
+                ? "translate-y-0 opacity-100"
+                : "translate-y-16 opacity-0"
+            }`}
+          >
+            <h3 className="text-[32px] sm:text-[50px] font-[800] text-[#000000] mb-8 mt-10 leading-[40px] sm:leading-[64px] tracking-[-0.05em] text-center font-helvetica-neue">
+              What our users has to say
+            </h3>
+            <TestimonialsCarousel />
+          </div>
         </Container>
       </section>
 
       {/* CTA to sell */}
-      <section className="bg-[#0E0B3D] text-white">
-        <Container className="py-20">
-          <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl sm:text-6xl font-bold leading-tight">
+      <section
+        id="cta-sell"
+        data-animate
+        className="bg-[#110C58] text-white mt-30"
+      >
+        <Container className="py-40">
+          <div
+            className={`text-center transition-all duration-1000 ease-out transform ${
+              visibleSections.has("cta-sell")
+                ? "translate-y-0 opacity-100"
+                : "translate-y-16 opacity-0"
+            }`}
+          >
+            <h2 className="text-[74px] font-[800] leading-[88px] tracking-[-0.05em] text-center font-helvetica-neue text-[#EFEEFD]">
               Want to sell your products
               <br /> with ZenZop?
             </h2>
-            <p className="mt-3 text-white/80">
+            <p className="mt-10 text-[26px] font-[500] leading-[24px] tracking-[-0.05em] text-center font-helvetica-neue text-[#D0CCFF]">
               Apply to become a ZenZop partner!
             </p>
             <div className="mt-6">
@@ -237,14 +314,14 @@ export default function UserLanding() {
               </a>
             </div>
           </div>
-          <div className="mt-10 rounded-2xl overflow-hidden bg-white/10 border border-white/20">
-            <div className="relative w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 bg-gray-300 overflow-hidden">
+          <div className="mt-30 rounded-2xl overflow-hidden bg-white/10 border border-white/20">
+            <div className="relative w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[462px] bg-gray-300 overflow-hidden">
               <Image
                 src={SellZenZopImg}
                 alt="Sell on ZenZop"
-                width={1200}
-                height={600}
-                sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 100vw, 1200px"
+                width={1192}
+                height={462}
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 100vw, 1192px"
                 className="object-cover w-full h-full"
                 priority
                 style={{
@@ -259,39 +336,47 @@ export default function UserLanding() {
       </section>
 
       {/* FAQ */}
-      <section>
-        <Container className="py-16">
-          <FaqAccordion
-            items={[
-              {
-                q: "What is ZenZop?",
-                a: "ZenZop is an online food market connecting you with local stores for fast delivery.",
-              },
-              {
-                q: "Is ZenZop available in my area?",
-                a: "We’re rapidly expanding. Open the app and enter your address to check availability.",
-              },
-              {
-                q: "How can I track my delivery?",
-                a: "You can track your order in real-time within the app from checkout to delivery.",
-              },
-              {
-                q: "How long does it take to deliver?",
-                a: "Most orders arrive within minutes depending on distance and store preparation time.",
-              },
-              {
-                q: "What can I expect from the app?",
-                a: "A smooth browsing and checkout experience with secure payments and live updates.",
-              },
-            ]}
-          />
+      <section id="faq" data-animate>
+        <Container className="py-50">
+          <div
+            className={`transition-all duration-1000 ease-out transform ${
+              visibleSections.has("faq")
+                ? "translate-y-0 opacity-100"
+                : "translate-y-16 opacity-0"
+            }`}
+          >
+            <FaqAccordion
+              items={[
+                {
+                  q: "What is ZenZop?",
+                  a: "ZenZop is an online food market connecting you with local stores for fast delivery.",
+                },
+                {
+                  q: "Is ZenZop available in my area?",
+                  a: "We’re rapidly expanding. Open the app and enter your address to check availability.",
+                },
+                {
+                  q: "How can I track my delivery?",
+                  a: "You can track your order in real-time within the app from checkout to delivery.",
+                },
+                {
+                  q: "How long does it take to deliver?",
+                  a: "Most orders arrive within minutes depending on distance and store preparation time.",
+                },
+                {
+                  q: "What can I expect from the app?",
+                  a: "A smooth browsing and checkout experience with secure payments and live updates.",
+                },
+              ]}
+            />
+          </div>
         </Container>
       </section>
 
       {/* Download App - reusable */}
       <section>
-        <Container className="py-16">
-          <DownloadAppSection image={iPhone16} />
+        <Container className="pb-16">
+          <DownloadAppSection image={iPhone17} />
         </Container>
       </section>
     </main>
