@@ -1,5 +1,6 @@
-export const metadata = { title: "Rider | Landing" };
+"use client";
 
+import { useState, useEffect } from "react";
 import Container from "@/app/components/atoms/Container";
 import Button from "@/app/components/atoms/Button";
 import Image from "next/image";
@@ -17,6 +18,9 @@ import deliveryUn from "@/app/assests/mainLanding/deliveryUn.png";
 import iPhoneMax from "@/app/assests/mainLanding/iPhoneMax.png";
 import FaqAccordion from "@/app/components/organisms/FaqAccordion";
 import DownloadAppSection from "@/app/components/organisms/DownloadAppSection";
+import mobileImg from "@/app/assests/mainLanding/mobileImg.png";
+import groupImg from "@/app/assests/mainLanding/groupImg.png";
+import cycleImg from "@/app/assests/mainLanding/cycleImg.png";
 
 export default function RiderLanding() {
   // Debug: Check if images are imported correctly
@@ -27,12 +31,35 @@ export default function RiderLanding() {
   console.log("deliveryUn:", deliveryUn);
   console.log("iPhoneMax:", iPhoneMax);
 
+  // Scroll animation state
+  const [visibleSections, setVisibleSections] = useState(new Set());
+
+  // Intersection Observer for scroll animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleSections((prev) => new Set(prev).add(entry.target.id));
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: "-50px" }
+    );
+
+    // Observe all sections
+    const sections = document.querySelectorAll("[data-animate]");
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-b from-white to-[#E3E1FF] pt-24 py-20 lg:py-32">
         <Container>
-          <div className="text-center max-w-4xl mx-auto">
+          <div className="text-center max-w-4xl mx-auto animate-fade-in-up">
             {/* Headline */}
             <h1 className="text-[36px] sm:text-[74px] font-[800] text-[#333333] mb-6 leading-[40px] sm:leading-[80px] tracking-[-0.05em] text-center font-helvetica-neue">
               Deliver with ZenZop and
@@ -40,7 +67,7 @@ export default function RiderLanding() {
             </h1>
 
             {/* Subheading */}
-            <p className="text-[16px] sm:text-[22px] font-helvetica-neue font-[500] text-[#686868] mb-12 leading-[30px] tracking-[-0.05em] text-center max-w-3xl mx-auto">
+            <p className="text-[16px] sm:text-[22px] font-helvetica-neue font-[500] text-[#686868] mb-12 leading-[30px] tracking-[-0.05em] text-center max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
               <span className="block sm:block">
                 ZenZop is everything you need to start earning as a delivery
                 partner.
@@ -48,10 +75,10 @@ export default function RiderLanding() {
             </p>
 
             {/* Call-to-Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-400">
               <Button
                 href="#download"
-                className="bg-[#171717] hover:bg-[#2a2a2a] text-white px-8 py-4 text-lg font-semibold rounded-xl transition-colors duration-300 flex items-center gap-3"
+                className="bg-[#171717] hover:bg-[#2a2a2a] text-white px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105 flex items-center gap-3"
               >
                 <Image
                   src={appleIcon}
@@ -67,7 +94,7 @@ export default function RiderLanding() {
               </Button>
               <Button
                 href="#download"
-                className="bg-[#171717] hover:bg-[#2a2a2a] text-white px-8 py-4 text-lg font-semibold rounded-xl transition-colors duration-300 flex items-center gap-3"
+                className="bg-[#171717] hover:bg-[#2a2a2a] text-white px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105 flex items-center gap-3"
               >
                 <Image
                   src={playStoreIcon}
@@ -87,53 +114,65 @@ export default function RiderLanding() {
       </section>
 
       {/* ZenZop Benefits Section */}
-      <section>
-        <Container className="py-16">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">
+      <section id="zenzop-benefits" data-animate>
+        <Container className="py-40">
+          <div
+            className={`text-center mb-12 transition-all duration-1000 ease-out transform ${
+              visibleSections.has("zenzop-benefits")
+                ? "translate-y-0 opacity-100"
+                : "translate-y-16 opacity-0"
+            }`}
+          >
+            <h2 className="text-[50px] font-[800] leading-[88px] tracking-[-0.05em] text-center font-helvetica-neue text-[#000000]">
               ZenZop Benefits
             </h2>
           </div>
 
           {/* Mobile: Horizontal scroll, Desktop: Grid */}
-          <div className="mt-8 lg:hidden overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory -mx-2 px-2">
+          <div
+            className={`mt-8 lg:hidden overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory -mx-2 px-2 transition-all duration-1000 ease-out transform delay-300 ${
+              visibleSections.has("zenzop-benefits")
+                ? "translate-y-0 opacity-100"
+                : "translate-y-16 opacity-0"
+            }`}
+          >
             <div className="flex gap-4 min-w-max pr-2 mx-auto justify-center">
               {[
                 {
-                  t: "Flexible Work Schedule",
-                  d: "Work whenever you want - mornings, evenings, or weekends. You control your own hours",
+                  t: "Weekly payouts",
+                  d: "Receive your earnings at the end of each week, with no monthly fees.",
                   image: SupportLocalsImg,
                 },
                 {
-                  t: "Competitive Earnings",
-                  d: "Earn ₹300-800+ per day with transparent pricing and weekly payouts",
+                  t: "Flexible schedule",
+                  d: "Choose when and how often to earn money delivering orders.",
                   image: fastDeliveryImg,
                 },
                 {
-                  t: "24/7 Support System",
-                  d: "Round-the-clock assistance and dedicated rider support team",
+                  t: "Deliver food your way",
+                  d: "Want to make money as a delivery driver, or get some exercise on your bike? You decide.",
                   image: freshDiningImg,
                 },
               ].map((f) => (
                 <div key={f.t} className="snap-start w-[280px] flex-shrink-0">
-                  <div className="bg-[#F3F2FA] rounded-2xl p-6 h-full">
-                    <div className="relative w-[65%] mx-auto rounded-lg overflow-hidden mb-4">
+                  <div className="bg-[#F3F2FA] rounded-2xl p-6 h-full shadow-lg hover:shadow-2xl transition-shadow duration-300 group">
+                    <h3 className="text-[28px] font-[700] leading-[64px] tracking-[-0.05em] text-center font-helvetica-neue text-[#000000] mb-2">
+                      {f.t}
+                    </h3>
+                    <p className="text-[20px] font-[500] leading-[27px] tracking-[-0.03em] text-center font-helvetica-neue text-[#858298]">
+                      {f.d}
+                    </p>
+                    <div className="relative mx-auto rounded-lg overflow-hidden mb-4 w-[200px] h-[200px] sm:w-[260px] sm:h-[260px] md:w-[309px] md:h-[309px] transition-transform duration-300 group-hover:scale-[1.2]">
                       <Image
                         src={f.image}
                         alt={f.t}
-                        width={200}
-                        height={270}
-                        className="w-full h-auto object-cover rounded-lg"
+                        width={309}
+                        height={309}
+                        className="w-full h-full object-cover rounded-lg"
                         unoptimized
                         priority
                       />
                     </div>
-                    <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
-                      {f.t}
-                    </h3>
-                    <p className="text-sm text-black/70 dark:text-white/70">
-                      {f.d}
-                    </p>
                   </div>
                 </div>
               ))}
@@ -141,42 +180,51 @@ export default function RiderLanding() {
           </div>
 
           {/* Desktop: Grid layout */}
-          <div className="mt-8 hidden lg:grid grid-cols-3 gap-6">
+          <div
+            className={`mt-8 hidden lg:grid grid-cols-3 gap-6 transition-all duration-1000 ease-out transform delay-400 ${
+              visibleSections.has("zenzop-benefits")
+                ? "translate-y-0 opacity-100"
+                : "translate-y-16 opacity-0"
+            }`}
+          >
             {[
               {
-                t: "Flexible Work Schedule",
-                d: "Work whenever you want - mornings, evenings, or weekends. You control your own hours",
+                t: "Weekly payouts",
+                d: "Receive your earnings at the end of each week, with no monthly fees.",
                 image: SupportLocalsImg,
               },
               {
-                t: "Competitive Earnings",
-                d: "Earn ₹300-800+ per day with transparent pricing and weekly payouts",
+                t: "Flexible schedule",
+                d: "Choose when and how often to earn money delivering orders.",
                 image: fastDeliveryImg,
               },
               {
-                t: "24/7 Support System",
-                d: "Round-the-clock assistance and dedicated rider support team",
+                t: "Deliver food your way",
+                d: "Want to make money as a delivery driver, or get some exercise on your bike? You decide.",
                 image: freshDiningImg,
               },
             ].map((f) => (
-              <div key={f.t} className="bg-[#F3F2FA] rounded-2xl p-6 h-full">
-                <div className="relative w-[65%] mx-auto rounded-lg overflow-hidden mb-4">
+              <div
+                key={f.t}
+                className="pt-20 pb-20 bg-[#F3F2FA] rounded-2xl p-6 h-full shadow-lg hover:shadow-2xl transition-shadow duration-300 group"
+              >
+                <h3 className="text-[28px] font-[700] leading-[64px] tracking-[-0.05em] text-center font-helvetica-neue text-[#000000] mb-2">
+                  {f.t}
+                </h3>
+                <p className="text-[20px] font-[500] leading-[27px] tracking-[-0.03em] text-center font-helvetica-neue text-[#858298]">
+                  {f.d}
+                </p>
+                <div className="relative my-20 mx-auto rounded-lg overflow-hidden mb-4 w-[200px] h-[200px] sm:w-[260px] sm:h-[260px] md:w-[309px] md:h-[309px] transition-transform duration-300 group-hover:scale-[1.2]">
                   <Image
                     src={f.image}
                     alt={f.t}
-                    width={200}
-                    height={270}
-                    className="w-full h-auto object-cover rounded-lg"
+                    width={309}
+                    height={309}
+                    className="w-full h-full object-cover rounded-lg"
                     unoptimized
                     priority
                   />
                 </div>
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
-                  {f.t}
-                </h3>
-                <p className="text-sm text-black/70 dark:text-white/70">
-                  {f.d}
-                </p>
               </div>
             ))}
           </div>
@@ -184,87 +232,64 @@ export default function RiderLanding() {
       </section>
 
       {/* ZenZop Rider Requirements Section */}
-      <section className="mt-16">
+      <section id="rider-requirements" data-animate className="mt-16">
         <Container className="py-16">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">
-              ZenZee Rider requirements
+          <div
+            className={`text-center mb-12 transition-all duration-1000 ease-out transform ${
+              visibleSections.has("rider-requirements")
+                ? "translate-y-0 opacity-100"
+                : "translate-y-16 opacity-0"
+            }`}
+          >
+            <h2 className="text-[50px] font-[800] leading-[88px] tracking-[-0.05em] text-center font-helvetica-neue text-[#000000]">
+              Zenzop Rider requirements
             </h2>
           </div>
 
           {/* Mobile: Vertical Stack, Desktop: Grid */}
-          <div className="mt-8 lg:hidden">
+          <div
+            className={`mt-8 lg:hidden transition-all duration-1000 ease-out transform delay-300 ${
+              visibleSections.has("rider-requirements")
+                ? "translate-y-0 opacity-100"
+                : "translate-y-16 opacity-0"
+            }`}
+          >
             <div className="space-y-6 px-4">
               {[
                 {
-                  icon: (
-                    <svg
-                      className="w-8 h-8 text-purple-600 dark:text-purple-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V4a2 2 0 114 0v2m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"
-                      />
-                    </svg>
-                  ),
+                  image: groupImg,
                   title: "Valid Photo ID",
                   description:
                     "Proving that you meet the minimum age requirement.",
                 },
                 {
-                  icon: (
-                    <svg
-                      className="w-8 h-8 text-purple-600 dark:text-purple-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
-                      />
-                    </svg>
-                  ),
+                  image: mobileImg,
                   title: "Smartphone",
                   description: "Android 9.0+ or iOS 12+, with a local number.",
                 },
                 {
-                  icon: (
-                    <svg
-                      className="w-8 h-8 text-purple-600 dark:text-purple-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M13 10V3L4 14h7v7l9-11h-7z"
-                      />
-                    </svg>
-                  ),
+                  image: cycleImg,
                   title: "Scooter, Bike or Car",
                   description:
                     "With a valid licence and insurance registered in your name.",
                 },
               ].map((item, index) => (
                 <div key={index} className="w-full">
-                  <div className="bg-white dark:bg-gray-800 rounded-2xl p-6">
-                    <div className="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mb-4">
-                      {item.icon}
+                  <div className="p-0">
+                    <div className="mb-4">
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        width={48}
+                        height={48}
+                        className="w-12 h-12 object-contain"
+                        unoptimized
+                      />
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 text-left leading-tight">
+                    <h3 className="text-left font-helvetica-neue text-[#000000] font-[500] text-[22px] sm:text-[24px] md:text-[28px] leading-[40px] sm:leading-[52px] md:leading-[64px] tracking-[-0.05em] mb-3">
                       {item.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm text-left leading-relaxed line-clamp-2">
+                    <p className="font-helvetica-neue font-[500] text-[20px] leading-[27px] tracking-[-0.03em] text-left text-[#858298] line-clamp-2">
                       {item.description}
                     </p>
                   </div>
@@ -274,79 +299,47 @@ export default function RiderLanding() {
           </div>
 
           {/* Desktop: Grid layout */}
-          <div className="mt-8 hidden lg:grid grid-cols-3 gap-20 max-w-4xl mx-auto justify-between">
+          <div
+            className={`mt-30 ml-20 hidden lg:grid grid-cols-3 gap-20 mx-auto justify-between transition-all duration-1000 ease-out transform delay-400 ${
+              visibleSections.has("rider-requirements")
+                ? "translate-y-0 opacity-100"
+                : "translate-y-16 opacity-0"
+            }`}
+          >
             {[
               {
-                icon: (
-                  <svg
-                    className="w-8 h-8 text-purple-600 dark:text-purple-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V4a2 2 0 114 0v2m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"
-                    />
-                  </svg>
-                ),
+                image: groupImg,
                 title: "Valid Photo ID",
                 description:
                   "Proving that you meet the minimum age requirement.",
               },
               {
-                icon: (
-                  <svg
-                    className="w-8 h-8 text-purple-600 dark:text-purple-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
-                    />
-                  </svg>
-                ),
+                image: mobileImg,
                 title: "Smartphone",
                 description: "Android 9.0+ or iOS 12+, with a local number.",
               },
               {
-                icon: (
-                  <svg
-                    className="w-8 h-8 text-purple-600 dark:text-purple-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M13 10V3L4 14h7v7l9-11h-7z"
-                    />
-                  </svg>
-                ),
+                image: cycleImg,
                 title: "Scooter, Bike or Car",
                 description:
                   "With a valid licence and insurance registered in your name.",
               },
             ].map((item, index) => (
-              <div
-                key={index}
-                className="bg-white dark:bg-gray-800 rounded-2xl p-6 h-full"
-              >
-                <div className="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mb-4">
-                  {item.icon}
+              <div key={index} className="p-0 h-full">
+                <div className="mb-4">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    width={48}
+                    height={48}
+                    className="w-12 h-12 object-contain"
+                    unoptimized
+                  />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 text-left leading-tight">
+                <h3 className="text-left font-helvetica-neue text-[#000000] font-[500] text-[22px] sm:text-[24px] md:text-[28px] leading-[40px] sm:leading-[52px] md:leading-[64px] tracking-[-0.05em] mb-3 whitespace-nowrap">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300 text-sm text-left leading-relaxed line-clamp-2">
+                <p className="font-helvetica-neue font-[500] text-[20px] leading-[27px] tracking-[-0.03em] text-left text-[#858298] line-clamp-2">
                   {item.description}
                 </p>
               </div>
@@ -356,19 +349,25 @@ export default function RiderLanding() {
       </section>
 
       {/* Boost Your Earnings Section - Custom Implementation */}
-      <section className="py-16">
-        <Container>
+      <section id="boost-earnings" data-animate className="py-16">
+        <Container className="max-w-none lg:mx-0 px-0">
           {/* First Section - Delivery Boy */}
-          <div className="py-16">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
+          <div
+            className={`py-16 transition-all duration-1000 ease-out transform ${
+              visibleSections.has("boost-earnings")
+                ? "translate-y-0 opacity-100"
+                : "translate-y-16 opacity-0"
+            }`}
+          >
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full mx-0">
               {/* Image Section */}
               <div className="order-1">
-                <div className="relative w-full h-[400px] sm:h-[500px] rounded-2xl overflow-hidden">
+                <div className="relative w-full h-[384px] sm:h-[504px] md:h-[624px] lg:h-[701px] rounded-2xl overflow-hidden">
                   <Image
                     src={deliveryboy}
                     alt="Delivery Boy"
-                    width={600}
-                    height={500}
+                    width={659}
+                    height={631}
                     className="w-full h-full object-cover"
                     unoptimized
                     priority
@@ -378,55 +377,63 @@ export default function RiderLanding() {
 
               {/* Content Section */}
               <div className="order-2">
-                <div className="max-w-lg mx-auto">
-                  <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                <div className="w-full">
+                  <h2 className="text-[42px] font-[800] leading-[48px] tracking-[-0.05em]  font-helvetica-neue text-[#000000] mb-10">
                     Boost your earnings
                   </h2>
 
-                  <ul className="space-y-6 mb-6">
-                    <li className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <span className="text-xl font-bold text-white">1</span>
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                          Earn more when it's busy
-                        </h4>
-                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                          Maximise your earnings with our dynamic pricing model,
-                          so you get paid more during busy times.
-                        </p>
-                      </div>
-                    </li>
-                    <li className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <span className="text-xl font-bold text-white">2</span>
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                          Earn more tips
-                        </h4>
-                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                          Customers who value your service can now tip you
-                          directly through the app!
-                        </p>
-                      </div>
-                    </li>
-                    <li className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <span className="text-xl font-bold text-white">3</span>
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                          Get paid more with bonuses
-                        </h4>
-                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                          Earn more money for completing deliveries on weekends,
-                          during late hours or on bad weather days.
-                        </p>
-                      </div>
-                    </li>
-                  </ul>
+                  <div className="relative">
+                    <ul className="space-y-8 relative">
+                      <li className="flex items-start gap-4 relative">
+                        <div className="w-12 h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg">
+                          <span className="text-xl font-bold text-white">
+                            1
+                          </span>
+                        </div>
+                        <div className="flex-1 flex flex-col justify-center">
+                          <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[48px] tracking-[-0.03em] text-[#000000]">
+                            Earn more when it's busy
+                          </h4>
+                          <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
+                            Maximise your earnings with our dynamic pricing
+                            model, so you get paid more during busy times.
+                          </p>
+                        </div>
+                      </li>
+                      <li className="flex items-start gap-4 relative">
+                        <div className="w-12 h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg">
+                          <span className="text-xl font-bold text-white">
+                            2
+                          </span>
+                        </div>
+                        <div className="flex-1 flex flex-col justify-center">
+                          <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[48px] tracking-[-0.03em] text-[#000000]">
+                            Earn more tips
+                          </h4>
+                          <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
+                            Customers who value your service can now tip you
+                            directly through the app!
+                          </p>
+                        </div>
+                      </li>
+                      <li className="flex items-start gap-4 relative">
+                        <div className="w-12 h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg">
+                          <span className="text-xl font-bold text-white">
+                            3
+                          </span>
+                        </div>
+                        <div className="flex-1 flex flex-col justify-center">
+                          <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[48px] tracking-[-0.03em] text-[#000000]">
+                            Get paid more with bonuses
+                          </h4>
+                          <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
+                            Earn more money for completing deliveries on
+                            weekends, during late hours or on bad weather days.
+                          </p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -434,69 +441,77 @@ export default function RiderLanding() {
 
           {/* Second Section - Delivery Union */}
           <div className="py-16">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full mx-0">
               {/* Content Section */}
               <div className="order-1">
-                <div className="max-w-lg mx-auto">
-                  <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                <div className="w-full">
+                  <h2 className="text-[42px] font-[800] leading-[48px] tracking-[-0.05em]  font-helvetica-neue text-[#000000] mb-10">
                     Boost your earnings
                   </h2>
 
-                  <ul className="space-y-6 mb-6">
-                    <li className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <span className="text-xl font-bold text-white">1</span>
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                          Earn more when it's busy
-                        </h4>
-                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                          Maximise your earnings with our dynamic pricing model,
-                          so you get paid more during busy times.
-                        </p>
-                      </div>
-                    </li>
-                    <li className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <span className="text-xl font-bold text-white">2</span>
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                          Earn more tips
-                        </h4>
-                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                          Customers who value your service can now tip you
-                          directly through the app!
-                        </p>
-                      </div>
-                    </li>
-                    <li className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <span className="text-xl font-bold text-white">3</span>
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                          Get paid more with bonuses
-                        </h4>
-                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                          Earn more money for completing deliveries on weekends,
-                          during late hours or on bad weather days.
-                        </p>
-                      </div>
-                    </li>
-                  </ul>
+                  <div className="relative">
+                    <ul className="space-y-8 relative">
+                      <li className="flex items-start gap-4 relative">
+                        <div className="w-12 h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg">
+                          <span className="text-xl font-bold text-white">
+                            1
+                          </span>
+                        </div>
+                        <div className="flex-1 flex flex-col justify-center">
+                          <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[48px] tracking-[-0.03em] text-[#000000]">
+                            Earn more when it's busy
+                          </h4>
+                          <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
+                            Maximise your earnings with our dynamic pricing
+                            model, so you get paid more during busy times.
+                          </p>
+                        </div>
+                      </li>
+                      <li className="flex items-start gap-4 relative">
+                        <div className="w-12 h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg">
+                          <span className="text-xl font-bold text-white">
+                            2
+                          </span>
+                        </div>
+                        <div className="flex-1 flex flex-col justify-center">
+                          <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[48px] tracking-[-0.03em] text-[#000000]">
+                            Earn more tips
+                          </h4>
+                          <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
+                            Customers who value your service can now tip you
+                            directly through the app!
+                          </p>
+                        </div>
+                      </li>
+                      <li className="flex items-start gap-4 relative">
+                        <div className="w-12 h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg">
+                          <span className="text-xl font-bold text-white">
+                            3
+                          </span>
+                        </div>
+                        <div className="flex-1 flex flex-col justify-center">
+                          <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[48px] tracking-[-0.03em] text-[#000000]">
+                            Get paid more with bonuses
+                          </h4>
+                          <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
+                            Earn more money for completing deliveries on
+                            weekends, during late hours or on bad weather days.
+                          </p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
 
               {/* Image Section */}
               <div className="order-2">
-                <div className="relative w-full h-[400px] sm:h-[500px] rounded-2xl overflow-hidden">
+                <div className="relative w-full h-[384px] sm:h-[504px] md:h-[624px] lg:h-[701px] rounded-2xl overflow-hidden">
                   <Image
                     src={deliveryUn}
                     alt="Delivery Union"
-                    width={600}
-                    height={500}
+                    width={659}
+                    height={631}
                     className="w-full h-full object-cover"
                     unoptimized
                     priority
@@ -509,14 +524,21 @@ export default function RiderLanding() {
       </section>
 
       {/* How the Rider app works Section */}
-      <section className="py-16">
+      <section id="how-app-works" data-animate className="py-16">
         <Container>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">
+          <div
+            className={`text-center mb-12 transition-all duration-1000 ease-out transform ${
+              visibleSections.has("how-app-works")
+                ? "translate-y-0 opacity-100"
+                : "translate-y-16 opacity-0"
+            }`}
+          >
+            <h2 className="text-[50px] font-helvetica-neue font-[800] leading-[88px] tracking-[-0.05em] text-center text-[#000000]">
               How the Rider app works
             </h2>
-            <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="mt-4 text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.05em] text-center text-[#88878E] max-w-3xl mx-auto">
               Our app is designed to help couriers receive, deliver and manage
+              <br className="hidden lg:block" />
               orders easily and effectively.
             </p>
           </div>
@@ -525,18 +547,18 @@ export default function RiderLanding() {
             {/* Layout: Phone in center, cards positioned around it */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
               {/* Left Column - 2 cards stacked */}
-              <div className="space-y-8 order-1 lg:order-1 h-[614px] flex flex-col justify-center">
+              <div className="space-y-4 order-1 lg:order-1 h-[614px] flex flex-col justify-center">
                 {/* Step 1 */}
                 <div className="bg-purple-50 dark:bg-purple-900/20 rounded-2xl p-6 text-center lg:text-left h-[296px] flex flex-col justify-center w-full lg:w-[414px] max-w-full">
                   <div className="inline-flex items-center justify-center w-12 h-12 rounded-full mb-4">
-                    <span className="text-sm font-bold text-purple-600 dark:text-purple-400">
+                    <span className="text-[12px] font-helvetica-neue font-[500] leading-[27px] tracking-[0.05em] text-[#858298]">
                       STEP 1
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold text-purple-600 dark:text-purple-400 mb-3">
+                  <h3 className="text-[28px] font-helvetica-neue font-[500] leading-[64px] tracking-[-0.05em] text-[#342CA1] mb-3">
                     Receive orders
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                  <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298] line-clamp-2">
                     View incoming orders, check their details, and get going.
                   </p>
                 </div>
@@ -544,14 +566,14 @@ export default function RiderLanding() {
                 {/* Step 2 */}
                 <div className="bg-purple-50 dark:bg-purple-900/20 rounded-2xl p-6 text-center lg:text-left h-[296px] flex flex-col justify-center w-full lg:w-[414px] max-w-full">
                   <div className="inline-flex items-center justify-center w-12 h-12 rounded-full mb-4">
-                    <span className="text-sm font-bold text-purple-600 dark:text-purple-400">
+                    <span className="text-[12px] font-helvetica-neue font-[500] leading-[27px] tracking-[0.05em] text-[#858298]">
                       STEP 2
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold text-purple-600 dark:text-purple-400 mb-3">
+                  <h3 className="text-[28px] font-helvetica-neue font-[500] leading-[64px] tracking-[-0.05em] text-[#342CA1] mb-3">
                     Pick up the order
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                  <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298] line-clamp-2">
                     Collect the order from the restaurant or store.
                   </p>
                 </div>
@@ -573,18 +595,18 @@ export default function RiderLanding() {
               </div>
 
               {/* Right Column - 2 cards stacked */}
-              <div className="space-y-8 order-3 lg:order-3 h-[614px] flex flex-col justify-center">
+              <div className="space-y-4 order-3 lg:order-3 h-[614px] flex flex-col justify-center">
                 {/* Step 3 */}
                 <div className="bg-purple-50 dark:bg-purple-900/20 rounded-2xl p-6 text-center lg:text-left h-[296px] flex flex-col justify-center w-full lg:w-[414px] max-w-full">
                   <div className="inline-flex items-center justify-center w-12 h-12 rounded-full mb-4">
-                    <span className="text-sm font-bold text-purple-600 dark:text-purple-400">
+                    <span className="text-[12px] font-helvetica-neue font-[500] leading-[27px] tracking-[0.05em] text-[#858298]">
                       STEP 3
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold text-purple-600 dark:text-purple-400 mb-3">
+                  <h3 className="text-[28px] font-helvetica-neue font-[500] leading-[64px] tracking-[-0.05em] text-[#342CA1] mb-3">
                     Deliver
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                  <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298] line-clamp-2">
                     Head to the delivery address as quickly and safely as
                     possible.
                   </p>
@@ -593,14 +615,14 @@ export default function RiderLanding() {
                 {/* Step 4 */}
                 <div className="bg-purple-50 dark:bg-purple-900/20 rounded-2xl p-6 text-center lg:text-left h-[296px] flex flex-col justify-center w-full lg:w-[414px] max-w-full">
                   <div className="inline-flex items-center justify-center w-12 h-12 rounded-full mb-4">
-                    <span className="text-sm font-bold text-purple-600 dark:text-purple-400">
+                    <span className="text-[12px] font-helvetica-neue font-[500] leading-[27px] tracking-[0.05em] text-[#858298]">
                       STEP 4
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold text-purple-600 dark:text-purple-400 mb-3">
+                  <h3 className="text-[28px] font-helvetica-neue font-[500] leading-[64px] tracking-[-0.05em] text-[#342CA1] mb-3">
                     Track your earnings
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                  <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298] line-clamp-2">
                     Track your progress in real-time and view your earnings
                     easily.
                   </p>
@@ -612,49 +634,65 @@ export default function RiderLanding() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="py-16 bg-gray-50 dark:bg-gray-900">
+      <section id="faq" data-animate className="py-16">
         <Container>
-          <FaqAccordion
-            title="Frequently Asked Questions"
-            items={[
-              {
-                q: "What are the basic requirements to become a rider?",
-                a: "You need to be 18+ years old, have a valid ID proof, own a smartphone, and have a two-wheeler or bicycle. We also require background verification for safety.",
-              },
-              {
-                q: "What type of vehicle do I need?",
-                a: "We accept motorcycles, scooters, and bicycles. Your vehicle should be in good condition and meet local safety standards. Electric vehicles are also welcome!",
-              },
-              {
-                q: "How much can I earn as a rider?",
-                a: "Earnings vary based on the number of deliveries, distance covered, and time spent. On average, riders earn ₹300-800 per day, with potential for more during peak hours.",
-              },
-              {
-                q: "How do I get paid?",
-                a: "We offer weekly payouts directly to your bank account. You can track your earnings in real-time through the rider app, and payments are processed every Monday.",
-              },
-              {
-                q: "What support do you provide to riders?",
-                a: "We offer 24/7 customer support, in-app navigation, insurance coverage, and regular training sessions. Our team is always available to help you succeed.",
-              },
-            ]}
-          />
+          <div
+            className={`transition-all duration-1000 ease-out transform ${
+              visibleSections.has("faq")
+                ? "translate-y-0 opacity-100"
+                : "translate-y-16 opacity-0"
+            }`}
+          >
+            <FaqAccordion
+              title="Frequently Asked Questions"
+              items={[
+                {
+                  q: "What are the basic requirements to become a rider?",
+                  a: "You need to be 18+ years old, have a valid ID proof, own a smartphone, and have a two-wheeler or bicycle. We also require background verification for safety.",
+                },
+                {
+                  q: "What type of vehicle do I need?",
+                  a: "We accept motorcycles, scooters, and bicycles. Your vehicle should be in good condition and meet local safety standards. Electric vehicles are also welcome!",
+                },
+                {
+                  q: "How much can I earn as a rider?",
+                  a: "Earnings vary based on the number of deliveries, distance covered, and time spent. On average, riders earn ₹300-800 per day, with potential for more during peak hours.",
+                },
+                {
+                  q: "How do I get paid?",
+                  a: "We offer weekly payouts directly to your bank account. You can track your earnings in real-time through the rider app, and payments are processed every Monday.",
+                },
+                {
+                  q: "What support do you provide to riders?",
+                  a: "We offer 24/7 customer support, in-app navigation, insurance coverage, and regular training sessions. Our team is always available to help you succeed.",
+                },
+              ]}
+            />
+          </div>
         </Container>
       </section>
 
       {/* Download App Section */}
-      <section id="download" className="py-16">
+      <section id="download" data-animate className="py-16">
         <Container>
-          <DownloadAppSection
-            title="Download the Rider app now!"
-            subtitle={
-              <>
-                Start earning with ZenZop <br /> Download the app and begin your
-                journey
-              </>
-            }
-            image={iPhoneMax}
-          />
+          <div
+            className={`transition-all duration-1000 ease-out transform ${
+              visibleSections.has("download")
+                ? "translate-y-0 opacity-100"
+                : "translate-y-16 opacity-0"
+            }`}
+          >
+            <DownloadAppSection
+              title="Download the Rider app now!"
+              subtitle={
+                <>
+                  Start earning with ZenZop <br /> Download the app and begin
+                  your journey
+                </>
+              }
+              image={iPhoneMax}
+            />
+          </div>
         </Container>
       </section>
     </main>
