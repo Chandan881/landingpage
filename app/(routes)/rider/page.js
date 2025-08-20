@@ -136,7 +136,7 @@ export default function RiderLanding() {
                 : "translate-y-16 opacity-0"
             }`}
           >
-            <div className="flex gap-4 min-w-max pr-2 mx-auto justify-center">
+            <div className="flex gap-4 min-w-max pr-2">
               {[
                 {
                   t: "Weekly payouts",
@@ -154,26 +154,11 @@ export default function RiderLanding() {
                   image: freshDiningImg,
                 },
               ].map((f) => (
-                <div key={f.t} className="snap-start w-[280px] flex-shrink-0">
-                  <div className="bg-[#F3F2FA] rounded-2xl p-6 h-full shadow-lg hover:shadow-2xl transition-shadow duration-300 group">
-                    <h3 className="text-[28px] font-[700] leading-[64px] tracking-[-0.05em] text-center font-helvetica-neue text-[#000000] mb-2">
-                      {f.t}
-                    </h3>
-                    <p className="text-[20px] font-[500] leading-[27px] tracking-[-0.03em] text-center font-helvetica-neue text-[#858298]">
-                      {f.d}
-                    </p>
-                    <div className="relative mx-auto rounded-lg overflow-hidden mb-4 w-[200px] h-[200px] sm:w-[260px] sm:h-[260px] md:w-[309px] md:h-[309px] transition-transform duration-300 group-hover:scale-[1.2]">
-                      <Image
-                        src={f.image}
-                        alt={f.t}
-                        width={309}
-                        height={309}
-                        className="w-full h-full object-cover rounded-lg"
-                        unoptimized
-                        priority
-                      />
-                    </div>
-                  </div>
+                <div
+                  key={f.t}
+                  className="snap-start w-[280px] flex-shrink-0 first:ml-4 last:mr-4"
+                >
+                  <FeatureItem title={f.t} description={f.d} image={f.image} />
                 </div>
               ))}
             </div>
@@ -204,28 +189,12 @@ export default function RiderLanding() {
                 image: freshDiningImg,
               },
             ].map((f) => (
-              <div
+              <FeatureItem
                 key={f.t}
-                className="pt-20 pb-20 bg-[#F3F2FA] rounded-2xl p-6 h-full shadow-lg hover:shadow-2xl transition-shadow duration-300 group"
-              >
-                <h3 className="text-[28px] font-[700] leading-[64px] tracking-[-0.05em] text-center font-helvetica-neue text-[#000000] mb-2">
-                  {f.t}
-                </h3>
-                <p className="text-[20px] font-[500] leading-[27px] tracking-[-0.03em] text-center font-helvetica-neue text-[#858298]">
-                  {f.d}
-                </p>
-                <div className="relative my-20 mx-auto rounded-lg overflow-hidden mb-4 w-[200px] h-[200px] sm:w-[260px] sm:h-[260px] md:w-[309px] md:h-[309px] transition-transform duration-300 group-hover:scale-[1.2]">
-                  <Image
-                    src={f.image}
-                    alt={f.t}
-                    width={309}
-                    height={309}
-                    className="w-full h-full object-cover rounded-lg"
-                    unoptimized
-                    priority
-                  />
-                </div>
-              </div>
+                title={f.t}
+                description={f.d}
+                image={f.image}
+              />
             ))}
           </div>
         </Container>

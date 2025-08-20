@@ -165,13 +165,13 @@ export default function UserLanding() {
 
         {/* Mobile: Horizontal scroll, Desktop: Grid */}
         <div
-          className={`mt-12 lg:hidden overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory -mx-2 px-2 transition-all duration-1000 ease-out transform delay-300 ${
+          className={`mt-12 lg:hidden overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory px-4 transition-all duration-1000 ease-out transform delay-300 ${
             visibleSections.has("what-is-zenzop")
               ? "translate-y-0 opacity-100"
               : "translate-y-16 opacity-0"
           }`}
         >
-          <div className="flex gap-4 min-w-max pr-2">
+          <div className="flex gap-4 min-w-max pl-4 pr-4">
             {[
               {
                 t: "Support Local Businesses",
@@ -189,7 +189,10 @@ export default function UserLanding() {
                 image: freshDiningImg,
               },
             ].map((f) => (
-              <div key={f.t} className="snap-start w-[280px] flex-shrink-0">
+              <div
+                key={f.t}
+                className="snap-start w-[280px] flex-shrink-0 first:ml-4 last:mr-4"
+              >
                 <FeatureItem title={f.t} description={f.d} image={f.image} />
               </div>
             ))}
