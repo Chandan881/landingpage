@@ -15,6 +15,7 @@ export default function DownloadAppSection({
     </>
   ),
   image,
+  imageFit = "cover",
 }) {
   // Use fallback image if main image is not available
   const displayImage = image || iPhone16Fallback;
@@ -98,10 +99,10 @@ export default function DownloadAppSection({
             width={350}
             height={472}
             sizes="(max-width: 640px) 280px, (max-width: 768px) 320px, 350px"
-            className="object-cover w-full h-full"
+            className={`object-${imageFit} w-full h-full`}
             priority
             style={{
-              objectFit: "cover",
+              objectFit: imageFit,
               objectPosition: "center",
             }}
             unoptimized

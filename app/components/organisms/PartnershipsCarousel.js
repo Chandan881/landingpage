@@ -11,13 +11,13 @@ export default function PartnershipsCarousel() {
 
   const scrollLeft = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollLeft -= 900; // Scroll 3 cards (300 * 3)
+      carouselRef.current.scrollLeft -= 1200; // Scroll 3 cards (400 * 3 on desktop)
     }
   };
 
   const scrollRight = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollLeft += 900; // Scroll 3 cards (300 * 3)
+      carouselRef.current.scrollLeft += 1200; // Scroll 3 cards (400 * 3 on desktop)
     }
   };
 
@@ -142,23 +142,26 @@ export default function PartnershipsCarousel() {
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {partnerships.map((item, index) => (
-          <div key={index} className="flex-shrink-0 w-[300px]">
-            <div className="bg-[#F3F2FA] rounded-2xl p-6 h-full shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="relative w-full h-48 rounded-lg overflow-hidden mb-4">
+          <div
+            key={index}
+            className="flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[400px]"
+          >
+            <div className="bg-[#F3F2FA] rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 h-auto lg:h-[438px]">
+              <div className="relative w-full h-40 sm:h-48 lg:h-[240px] rounded-lg overflow-hidden mb-4">
                 <Image
                   src={item.image}
                   alt={item.title}
-                  width={300}
-                  height={192}
+                  width={400}
+                  height={240}
                   className="w-full h-full object-cover rounded-lg"
                   unoptimized
                   priority
                 />
               </div>
-              <h3 className="font-semibold text-gray-900 dark:text-white mb-2 text-lg">
+              <h3 className="font-helvetica-neue font-[500] text-[28px] leading-[64px] tracking-[-0.05em] text-[#000000] mb-2">
                 {item.title}
               </h3>
-              <p className="text-sm text-black/70 dark:text-white/70 leading-relaxed">
+              <p className="font-helvetica-neue font-[500] text-[20px] leading-[27px] tracking-[-0.03em] text-[#858298]">
                 {item.description}
               </p>
             </div>

@@ -13,14 +13,14 @@ export default function Footer() {
           <div className="grid grid-cols-5 gap-12">
             {/* For Restaurants */}
             <div>
-              <h3 className="font-bold text-xl mb-6 text-white">
+              <h3 className="font-helvetica-neue font-[500] text-[20px] leading-[20px] tracking-[-0.03em] mb-6 text-white">
                 For Restaurants
               </h3>
               <ul className="space-y-3 text-gray-300">
                 <li>
                   <a
                     href="#"
-                    className="hover:text-white transition-colors duration-200 text-base"
+                    className="font-helvetica-neue font-[400] text-[18px] leading-[20px] tracking-[-0.03em] text-[#706F78] hover:text-white transition-colors duration-200"
                   >
                     Partner With Us
                   </a>
@@ -28,7 +28,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#"
-                    className="hover:text-white transition-colors duration-200 text-base"
+                    className="font-helvetica-neue font-[400] text-[18px] leading-[20px] tracking-[-0.03em] text-[#706F78] hover:text-white transition-colors duration-200"
                   >
                     Apps for you
                   </a>
@@ -38,12 +38,14 @@ export default function Footer() {
 
             {/* Learn More */}
             <div>
-              <h3 className="font-bold text-xl mb-6 text-white">Learn More</h3>
+              <h3 className="font-helvetica-neue font-[500] text-[20px] leading-[20px] tracking-[-0.03em] mb-6 text-white">
+                Learn More
+              </h3>
               <ul className="space-y-3 text-gray-300">
                 <li>
                   <a
                     href="#"
-                    className="hover:text-white transition-colors duration-200 text-base"
+                    className="font-helvetica-neue font-[400] text-[18px] leading-[20px] tracking-[-0.03em] text-[#706F78] hover:text-white transition-colors duration-200"
                   >
                     About us
                   </a>
@@ -51,7 +53,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#"
-                    className="hover:text-white transition-colors duration-200 text-base"
+                    className="font-helvetica-neue font-[400] text-[18px] leading-[20px] tracking-[-0.03em] text-[#706F78] hover:text-white transition-colors duration-200"
                   >
                     Privacy Policy
                   </a>
@@ -59,7 +61,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#"
-                    className="hover:text-white transition-colors duration-200 text-base"
+                    className="font-helvetica-neue font-[400] text-[18px] leading-[20px] tracking-[-0.03em] text-[#706F78] hover:text-white transition-colors duration-200"
                   >
                     Security
                   </a>
@@ -67,7 +69,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#"
-                    className="hover:text-white transition-colors duration-200 text-base"
+                    className="font-helvetica-neue font-[400] text-[18px] leading-[20px] tracking-[-0.03em] text-[#706F78] hover:text-white transition-colors duration-200"
                   >
                     Terms of Service
                   </a>
@@ -75,7 +77,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#"
-                    className="hover:text-white transition-colors duration-200 text-base"
+                    className="font-helvetica-neue font-[400] text-[18px] leading-[20px] tracking-[-0.03em] text-[#706F78] hover:text-white transition-colors duration-200"
                   >
                     Help & support
                   </a>
@@ -83,7 +85,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#"
-                    className="hover:text-white transition-colors duration-200 text-base"
+                    className="font-helvetica-neue font-[400] text-[18px] leading-[20px] tracking-[-0.03em] text-[#706F78] hover:text-white transition-colors duration-200"
                   >
                     Blog
                   </a>
@@ -93,14 +95,14 @@ export default function Footer() {
 
             {/* For Delivery Partners */}
             <div>
-              <h3 className="font-bold text-xl mb-6 text-white">
+              <h3 className="font-helvetica-neue font-[500] text-[20px] leading-[20px] tracking-[-0.03em] mb-6 text-white">
                 For Delivery Partners
               </h3>
               <ul className="space-y-3 text-gray-300">
                 <li>
                   <a
                     href="#"
-                    className="hover:text-white transition-colors duration-200 text-base"
+                    className="font-helvetica-neue font-[400] text-[18px] leading-[20px] tracking-[-0.03em] text-[#706F78] hover:text-white transition-colors duration-200"
                   >
                     Partner With Us
                   </a>
@@ -108,7 +110,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#"
-                    className="hover:text-white transition-colors duration-200 text-base"
+                    className="font-helvetica-neue font-[400] text-[18px] leading-[20px] tracking-[-0.03em] text-[#706F78] hover:text-white transition-colors duration-200"
                   >
                     Apps for you
                   </a>
@@ -118,14 +120,14 @@ export default function Footer() {
 
             {/* Social Links */}
             <div>
-              <h3 className="font-bold text-xl mb-6 text-white">
+              <h3 className="font-helvetica-neue font-[500] text-[20px] leading-[20px] tracking-[-0.03em] mb-6 text-white">
                 Social Links
               </h3>
               <ul className="space-y-3 text-gray-300">
                 <li>
                   <a
                     href="#"
-                    className="hover:text-white transition-colors duration-200 text-base"
+                    className="font-helvetica-neue font-[400] text-[18px] leading-[20px] tracking-[-0.03em] text-[#706F78] hover:text-white transition-colors duration-200"
                   >
                     Instagram
                   </a>
@@ -133,7 +135,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#"
-                    className="hover:text-white transition-colors duration-200 text-base"
+                    className="font-helvetica-neue font-[400] text-[18px] leading-[20px] tracking-[-0.03em] text-[#706F78] hover:text-white transition-colors duration-200"
                   >
                     LinkedIn
                   </a>
@@ -141,7 +143,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="#"
-                    className="hover:text-white transition-colors duration-200 text-base"
+                    className="font-helvetica-neue font-[400] text-[18px] leading-[20px] tracking-[-0.03em] text-[#706F78] hover:text-white transition-colors duration-200"
                   >
                     Twitter
                   </a>
@@ -197,7 +199,7 @@ export default function Footer() {
             <div className="space-y-8">
               {/* For Restaurants */}
               <div>
-                <h3 className="font-bold text-xl mb-4 text-white">
+                <h3 className="font-helvetica-neue font-[500] text-[20px] leading-[20px] tracking-[-0.03em] mb-4 text-white">
                   For Restaurants
                 </h3>
                 <ul className="space-y-3 text-gray-300">
@@ -222,7 +224,7 @@ export default function Footer() {
 
               {/* Learn More */}
               <div>
-                <h3 className="font-bold text-xl mb-4 text-white">
+                <h3 className="font-helvetica-neue font-[500] text-[20px] leading-[20px] tracking-[-0.03em] mb-4 text-white">
                   Learn More
                 </h3>
                 <ul className="space-y-3 text-gray-300">
@@ -282,7 +284,7 @@ export default function Footer() {
             <div className="space-y-8">
               {/* For Delivery Partners */}
               <div>
-                <h3 className="font-bold text-xl mb-4 text-white">
+                <h3 className="font-helvetica-neue font-[500] text-[20px] leading-[20px] tracking-[-0.03em] mb-4 text-white">
                   For Delivery Partners
                 </h3>
                 <ul className="space-y-3 text-gray-300">
@@ -307,7 +309,7 @@ export default function Footer() {
 
               {/* Social Links */}
               <div>
-                <h3 className="font-bold text-xl mb-4 text-white">
+                <h3 className="font-helvetica-neue font-[500] text-[20px] leading-[20px] tracking-[-0.03em] mb-4 text-white">
                   Social Links
                 </h3>
                 <ul className="space-y-3 text-gray-300">
@@ -388,7 +390,7 @@ export default function Footer() {
             <div className="space-y-6">
               {/* For Restaurants */}
               <div>
-                <h3 className="font-bold text-xl mb-4 text-white">
+                <h3 className="font-helvetica-neue font-[500] text-[20px] leading-[20px] tracking-[-0.03em] mb-4 text-white">
                   For Restaurants
                 </h3>
                 <ul className="space-y-3 text-gray-300">
@@ -413,7 +415,7 @@ export default function Footer() {
 
               {/* For Delivery Partners */}
               <div>
-                <h3 className="font-bold text-xl mb-4 text-white">
+                <h3 className="font-helvetica-neue font-[500] text-[20px] leading-[20px] tracking-[-0.03em] mb-4 text-white">
                   For Delivery Partners
                 </h3>
                 <ul className="space-y-3 text-gray-300">
@@ -438,7 +440,7 @@ export default function Footer() {
 
               {/* Social Links */}
               <div>
-                <h3 className="font-bold text-xl mb-4 text-white">
+                <h3 className="font-helvetica-neue font-[500] text-[20px] leading-[20px] tracking-[-0.03em] mb-4 text-white">
                   Social Links
                 </h3>
                 <ul className="space-y-3 text-gray-300">

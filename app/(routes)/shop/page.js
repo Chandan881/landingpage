@@ -1,3 +1,5 @@
+"use client";
+import { useEffect, useState } from "react";
 import Container from "@/app/components/atoms/Container";
 import Button from "@/app/components/atoms/Button";
 import Image from "next/image";
@@ -26,27 +28,47 @@ export default function ShopLanding() {
   console.log("mobileImageVw:", mobileImageVw);
   console.log("payModeImg:", payModeImg);
 
+  const [visibleSections, setVisibleSections] = useState(new Set());
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleSections((prev) => new Set(prev).add(entry.target.id));
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: "-50px" }
+    );
+
+    const sections = document.querySelectorAll("[data-animate]");
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-b from-white to-[#E3E1FF] pt-24 py-20 lg:py-32">
         <Container>
-          <div className="text-center max-w-4xl mx-auto">
+          <div className="text-center max-w-4xl mx-auto animate-fade-in-up">
             {/* Headline */}
             <h1 className="text-[36px] sm:text-[74px] font-[800] text-[#333333] mb-6 leading-[40px] sm:leading-[80px] tracking-[-0.05em] text-center font-helvetica-neue">
-              Become a ZenZee merchant and grow your revenue
+              Become a Zenzop merchant and grow your revenue
             </h1>
 
             {/* Subheading */}
-            <p className="text-[16px] sm:text-[22px] font-helvetica-neue font-[500] text-[#686868] mb-12 leading-[30px] tracking-[-0.05em] text-center max-w-3xl mx-auto">
+            <p className="text-[16px] sm:text-[22px] font-helvetica-neue font-[500] text-[#686868] mb-12 leading-[30px] tracking-[-0.05em] text-center max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
               <span className="block sm:block">
-                ZenZee merchants enjoy more orders, increased sales, and
+                Zenzop merchants enjoy more orders, increased sales, and
                 unmatched visibility — sign up today and reap the benefits!
               </span>
             </p>
 
             {/* Call-to-Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-400">
               <Button
                 href="#download"
                 className="bg-[#171717] hover:bg-[#2a2a2a] text-white px-8 py-4 text-lg font-semibold rounded-xl transition-colors duration-300 flex items-center gap-3"
@@ -85,16 +107,28 @@ export default function ShopLanding() {
       </section>
 
       {/* ZenZop Benefits Section */}
-      <section>
-        <Container className="py-16">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">
-              Achieve more with Zenzee
+      <section id="shop-benefits" data-animate>
+        <Container className="py-16 mt-30">
+          <div
+            className={`text-center mb-12 transition-all duration-1000 ease-out transform ${
+              visibleSections.has("shop-benefits")
+                ? "translate-y-0 opacity-100"
+                : "translate-y-16 opacity-0"
+            }`}
+          >
+            <h2 className="font-helvetica-neue font-[800] text-[50px] leading-[88px] tracking-[-0.05em] text-center text-[#000000]">
+              Achieve more with Zenzop
             </h2>
           </div>
 
-          {/* Mobile: Horizontal scroll, Desktop: Grid */}
-          <div className="mt-8 lg:hidden overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory -mx-2 px-2">
+          {/* Mobile: Horizontal scroll with benefits-card styling */}
+          <div
+            className={`mt-8 lg:hidden overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory -mx-2 px-2 transition-all duration-1000 ease-out transform delay-300 ${
+              visibleSections.has("shop-benefits")
+                ? "translate-y-0 opacity-100"
+                : "translate-y-16 opacity-0"
+            }`}
+          >
             <div className="flex gap-4 min-w-max pr-2 mx-auto justify-center">
               {[
                 {
@@ -114,32 +148,38 @@ export default function ShopLanding() {
                 },
               ].map((f) => (
                 <div key={f.t} className="snap-start w-[280px] flex-shrink-0">
-                  <div className="bg-[#F3F2FA] rounded-2xl p-6 h-full shadow-lg border border-gray-100">
-                    <div className="relative w-[65%] mx-auto rounded-lg overflow-hidden mb-4">
+                  <div className="bg-[#F3F2FA] rounded-2xl p-6 h-full shadow-lg hover:shadow-2xl transition-shadow duration-300 group">
+                    <h3 className="text-[28px] font-[700] leading-[64px] tracking-[-0.05em] text-center font-helvetica-neue text-[#000000] mb-2">
+                      {f.t}
+                    </h3>
+                    <p className="text-[20px] font-[500] leading-[27px] tracking-[-0.03em] text-center font-helvetica-neue text-[#858298]">
+                      {f.d}
+                    </p>
+                    <div className="relative mx-auto rounded-lg overflow-hidden mb-4 w-[200px] h-[200px] sm:w-[260px] sm:h-[260px] md:w-[309px] md:h-[309px] transition-transform duration-300 group-hover:scale-[1.2]">
                       <Image
                         src={f.image}
                         alt={f.t}
-                        width={200}
-                        height={270}
-                        className="w-full h-auto object-cover rounded-lg"
+                        width={309}
+                        height={309}
+                        className="w-full h-full object-cover rounded-lg"
                         unoptimized
                         priority
                       />
                     </div>
-                    <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
-                      {f.t}
-                    </h3>
-                    <p className="text-sm text-gray-700 dark:text-gray-300">
-                      {f.d}
-                    </p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Desktop: Grid layout */}
-          <div className="mt-8 hidden lg:grid grid-cols-3 gap-6">
+          {/* Desktop: Grid layout with benefits-card styling */}
+          <div
+            className={`mt-8 hidden lg:grid grid-cols-3 gap-6 transition-all duration-1000 ease-out transform delay-400 ${
+              visibleSections.has("shop-benefits")
+                ? "translate-y-0 opacity-100"
+                : "translate-y-16 opacity-0"
+            }`}
+          >
             {[
               {
                 t: "Increase Your Sales",
@@ -157,24 +197,27 @@ export default function ShopLanding() {
                 image: freshDiningImg,
               },
             ].map((f) => (
-              <div key={f.t} className="bg-[#F3F2FA] rounded-2xl p-6 h-full">
-                <div className="relative w-[65%] mx-auto rounded-lg overflow-hidden mb-4">
+              <div
+                key={f.t}
+                className="pt-20 pb-20 bg-[#F3F2FA] rounded-2xl p-6 h-full shadow-lg hover:shadow-2xl transition-shadow duration-300 group"
+              >
+                <h3 className="text-[28px] font-[700] leading-[64px] tracking-[-0.05em] text-center font-helvetica-neue text-[#000000] mb-2">
+                  {f.t}
+                </h3>
+                <p className="text-[20px] font-[500] leading-[27px] tracking-[-0.03em] text-center font-helvetica-neue text-[#858298]">
+                  {f.d}
+                </p>
+                <div className="relative my-20 mx-auto rounded-lg overflow-hidden mb-4 w-[200px] h-[200px] sm:w-[260px] sm:h-[260px] md:w-[309px] md:h-[309px] transition-transform duration-300 group-hover:scale-[1.2]">
                   <Image
                     src={f.image}
                     alt={f.t}
-                    width={200}
-                    height={270}
-                    className="w-full h-auto object-cover rounded-lg"
+                    width={309}
+                    height={309}
+                    className="w-full h-full object-cover rounded-lg"
                     unoptimized
                     priority
                   />
                 </div>
-                <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
-                  {f.t}
-                </h3>
-                <p className="text-sm text-black/70 dark:text-white/70">
-                  {f.d}
-                </p>
               </div>
             ))}
           </div>
@@ -182,113 +225,125 @@ export default function ShopLanding() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-900/50">
+      <section className="py-26">
         <Container>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          {/* <div className="text-center mb-12">
+            <h2 className="font-helvetica-neue font-[800] text-[50px] leading-[88px] tracking-[-0.05em] text-center text-[#000000] mb-4">
               What Our Merchants Say
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Hear from our successful merchants about their experience with
               ZenZee
             </p>
-          </div>
+          </div> */}
           <TestimonialsCarousel />
         </Container>
       </section>
 
       {/* Smart Insights Section */}
-      <section className="py-16 bg-[#F3F2FA] rounded-[28px] mx-8 lg:mx-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center justify-center">
-            {/* Left Section - iPhone Image */}
-            <div className="w-full lg:w-1/2 flex justify-center order-2 lg:order-1">
-              <div className="bg-white rounded-2xl p-4 sm:p-6 max-w-[320px] sm:max-w-[380px] lg:max-w-none">
-                <Image
-                  src={iPhone16}
-                  alt="Smart Insights App"
-                  width={380}
-                  height={720}
-                  className="w-[250px] sm:w-[300px] lg:w-[380px] h-auto object-contain"
-                  unoptimized
-                  priority
-                />
-              </div>
-            </div>
-
-            {/* Right Section - Title and Numbered Points */}
-            <div className="w-full lg:w-1/2 space-y-6 order-1 lg:order-2">
-              {/* Section Title */}
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6 text-center lg:text-left">
-                Smart insights for smart businesses
-              </h2>
-
-              {/* Point 1 */}
-              <div className="flex items-start gap-3 sm:gap-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-lg sm:text-xl font-bold text-white">
-                    1
-                  </span>
-                </div>
-                <div className="flex-1">
-                  <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                    Unique users
-                  </h4>
-                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
-                    The number of users who made their first order from your
-                    restaurant during the week.
-                  </p>
+      <section id="smart-insights" data-animate className="py-16">
+        <Container>
+          <div
+            className={`bg-[#F3F2FA] rounded-[28px] px-6 sm:px-10 md:px-16 lg:px-0 py-12 group shadow-lg transition-all duration-1000 ease-out transform ${
+              visibleSections.has("smart-insights")
+                ? "translate-y-0 opacity-100"
+                : "translate-y-16 opacity-0"
+            }`}
+          >
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center justify-center">
+              {/* Left Section - iPhone Image */}
+              <div className="w-full lg:w-1/2 flex justify-center order-2 lg:order-1">
+                <div className="bg-white rounded-2xl p-4 sm:p-6 max-w-[320px] sm:max-w-[380px] lg:max-w-none transform transition-transform duration-300 ease-out group-hover:scale-110">
+                  <Image
+                    src={iPhone16}
+                    alt="Smart Insights App"
+                    width={380}
+                    height={720}
+                    className="w-[250px] sm:w-[300px] lg:w-[380px] h-auto object-contain"
+                    unoptimized
+                    priority
+                  />
                 </div>
               </div>
 
-              {/* Point 2 */}
-              <div className="flex items-start gap-3 sm:gap-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-lg sm:text-xl font-bold text-white">
-                    2
+              {/* Right Section - Title and Numbered Points */}
+              <div className="w-full lg:w-1/2 space-y-8 order-1 lg:order-2 max-w-[640px] mx-auto lg:mx-0">
+                {/* Section Title */}
+                <h2 className="font-helvetica-neue font-[800] text-[50px] leading-[88px] tracking-[-0.05em]  text-[#000000] mb-6">
+                  <span className="whitespace-nowrap">
+                    Smart insights for smart
                   </span>
-                </div>
-                <div className="flex-1">
-                  <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                    Revenue
-                  </h4>
-                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Total order value before discounts, including VAT and
-                    excluding delivery fees.
-                  </p>
-                </div>
-              </div>
+                  <br />
+                  <span>businesses</span>
+                </h2>
 
-              {/* Point 3 */}
-              <div className="flex items-start gap-3 sm:gap-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-lg sm:text-xl font-bold text-white">
-                    3
-                  </span>
+                {/* Point 1 */}
+                <div className="flex items-start gap-4 relative">
+                  <div className="w-12 h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg mt-1">
+                    <span className="text-xl font-bold text-white">1</span>
+                  </div>
+                  <div className="flex-1 flex flex-col justify-center">
+                    <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[48px] tracking-[-0.03em] text-[#000000]">
+                      Unique users
+                    </h4>
+                    <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
+                      The number of users who made their first order from your
+                      restaurant during the week.
+                    </p>
+                  </div>
                 </div>
-                <div className="flex-1">
-                  <h4 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                    Average order value
-                  </h4>
-                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed">
-                    Better understand your customers' average pre-discount
-                    spend.
-                  </p>
+
+                {/* Point 2 */}
+                <div className="flex items-start gap-4 relative">
+                  <div className="w-12 h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg mt-1">
+                    <span className="text-xl font-bold text-white">2</span>
+                  </div>
+                  <div className="flex-1 flex flex-col justify-center">
+                    <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[48px] tracking-[-0.03em] text-[#000000]">
+                      Revenue
+                    </h4>
+                    <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
+                      Total order value before discounts, including VAT and
+                      excluding delivery fees.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Point 3 */}
+                <div className="flex items-start gap-4 relative">
+                  <div className="w-12 h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg mt-1">
+                    <span className="text-xl font-bold text-white">3</span>
+                  </div>
+                  <div className="flex-1 flex flex-col justify-center">
+                    <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[48px] tracking-[-0.03em] text-[#000000]">
+                      Average order value
+                    </h4>
+                    <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
+                      Better understand your customers' average pre-discount
+                      spend.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Partnerships Carousel Section */}
-      <section className="py-16">
+      <section id="partnerships" data-animate className="py-16">
         <Container>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          <div
+            className={`text-center mb-12 transition-all duration-1000 ease-out transform ${
+              visibleSections.has("partnerships")
+                ? "translate-y-0 opacity-100"
+                : "translate-y-16 opacity-0"
+            }`}
+          >
+            <h2 className="font-helvetica-neue font-[800] text-[50px] leading-[88px] tracking-[-0.05em] text-center text-[#000000]">
               Our partnerships expand beyond restaurants
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="font-helvetica-neue font-[500] text-[20px] leading-[27px] tracking-[-0.05em] text-center text-[#88878E] max-w-3xl mx-auto">
               We partner with businesses of all types
             </p>
           </div>
@@ -297,18 +352,24 @@ export default function ShopLanding() {
       </section>
 
       {/* First Section - Delivery Boy */}
-      <section className="py-16">
+      <section id="shop-first" data-animate className="py-16">
         <Container>
-          <div className="py-16">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
+          <div
+            className={`py-16 transition-all duration-1000 ease-out transform ${
+              visibleSections.has("shop-first")
+                ? "translate-y-0 opacity-100"
+                : "translate-y-16 opacity-0"
+            }`}
+          >
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full mx-0">
               {/* Image Section */}
               <div className="order-1">
-                <div className="relative w-full h-[400px] sm:h-[500px] rounded-2xl overflow-hidden">
+                <div className="relative w-full h-[346px] sm:h-[454px] md:h-[562px] lg:h-[631px] rounded-2xl overflow-hidden">
                   <Image
                     src={vegImg}
                     alt="Fresh Vegetables"
-                    width={600}
-                    height={500}
+                    width={659}
+                    height={631}
                     className="w-full h-full object-cover"
                     unoptimized
                     priority
@@ -318,49 +379,49 @@ export default function ShopLanding() {
 
               {/* Content Section */}
               <div className="order-2">
-                <div className="max-w-lg mx-auto">
-                  <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                <div className="w-full">
+                  <h2 className="text-[42px] font-[800] leading-[48px] tracking-[-0.05em]  font-helvetica-neue text-[#000000] mb-10">
                     Boost your earnings
                   </h2>
 
-                  <ul className="space-y-6 mb-6">
-                    <li className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <ul className="space-y-8">
+                    <li className="flex items-start gap-4 relative">
+                      <div className="w-12 h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg">
                         <span className="text-xl font-bold text-white">1</span>
                       </div>
-                      <div className="flex-1">
-                        <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                      <div className="flex-1 flex flex-col justify-center">
+                        <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[48px] tracking-[-0.03em] text-[#000000]">
                           Earn more when it's busy
                         </h4>
-                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
                           Maximise your earnings with our dynamic pricing model,
                           so you get paid more during busy times.
                         </p>
                       </div>
                     </li>
-                    <li className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <li className="flex items-start gap-4 relative">
+                      <div className="w-12 h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg">
                         <span className="text-xl font-bold text-white">2</span>
                       </div>
-                      <div className="flex-1">
-                        <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                      <div className="flex-1 flex flex-col justify-center">
+                        <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[48px] tracking-[-0.03em] text-[#000000]">
                           Earn more tips
                         </h4>
-                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
                           Customers who value your service can now tip you
                           directly through the app!
                         </p>
                       </div>
                     </li>
-                    <li className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <li className="flex items-start gap-4 relative">
+                      <div className="w-12 h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg">
                         <span className="text-xl font-bold text-white">3</span>
                       </div>
-                      <div className="flex-1">
-                        <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                      <div className="flex-1 flex flex-col justify-center">
+                        <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[48px] tracking-[-0.03em] text-[#000000]">
                           Get paid more with bonuses
                         </h4>
-                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
                           Earn more money for completing deliveries on weekends,
                           during late hours or on bad weather days.
                         </p>
@@ -375,55 +436,61 @@ export default function ShopLanding() {
       </section>
 
       {/* Second Section - Delivery Union */}
-      <section className="py-16">
+      <section id="shop-second" data-animate className="py-16">
         <Container>
-          <div className="py-16">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
+          <div
+            className={`py-16 transition-all duration-1000 ease-out transform ${
+              visibleSections.has("shop-second")
+                ? "translate-y-0 opacity-100"
+                : "translate-y-16 opacity-0"
+            }`}
+          >
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full mx-0">
               {/* Content Section */}
               <div className="order-1">
-                <div className="max-w-lg mx-auto">
-                  <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                <div className="w-full">
+                  <h2 className="text-[42px] font-[800] leading-[48px] tracking-[-0.05em]  font-helvetica-neue text-[#000000] mb-10">
                     Boost your earnings
                   </h2>
 
-                  <ul className="space-y-6 mb-6">
-                    <li className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <ul className="space-y-8">
+                    <li className="flex items-start gap-4 relative">
+                      <div className="w-12 h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg">
                         <span className="text-xl font-bold text-white">1</span>
                       </div>
-                      <div className="flex-1">
-                        <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                      <div className="flex-1 flex flex-col justify-center">
+                        <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[48px] tracking-[-0.03em] text-[#000000]">
                           Earn more when it's busy
                         </h4>
-                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
                           Maximise your earnings with our dynamic pricing model,
                           so you get paid more during busy times.
                         </p>
                       </div>
                     </li>
-                    <li className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <li className="flex items-start gap-4 relative">
+                      <div className="w-12 h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg">
                         <span className="text-xl font-bold text-white">2</span>
                       </div>
-                      <div className="flex-1">
-                        <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                      <div className="flex-1 flex flex-col justify-center">
+                        <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[48px] tracking-[-0.03em] text-[#000000]">
                           Earn more tips
                         </h4>
-                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
                           Customers who value your service can now tip you
                           directly through the app!
                         </p>
                       </div>
                     </li>
-                    <li className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <li className="flex items-start gap-4 relative">
+                      <div className="w-12 h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg">
                         <span className="text-xl font-bold text-white">3</span>
                       </div>
-                      <div className="flex-1">
-                        <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                      <div className="flex-1 flex flex-col justify-center">
+                        <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[48px] tracking-[-0.03em] text-[#000000]">
                           Get paid more with bonuses
                         </h4>
-                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
                           Earn more money for completing deliveries on weekends,
                           during late hours or on bad weather days.
                         </p>
@@ -435,12 +502,12 @@ export default function ShopLanding() {
 
               {/* Image Section */}
               <div className="order-2">
-                <div className="relative w-full h-[400px] sm:h-[500px] rounded-2xl overflow-hidden">
+                <div className="relative w-full h-[346px] sm:h-[454px] md:h-[562px] lg:h-[631px] rounded-2xl overflow-hidden">
                   <Image
                     src={fruitImg}
                     alt="Fresh Fruits"
-                    width={600}
-                    height={500}
+                    width={659}
+                    height={631}
                     className="w-full h-full object-cover"
                     unoptimized
                     priority
@@ -453,13 +520,13 @@ export default function ShopLanding() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="py-16 bg-gray-50 dark:bg-gray-900">
+      <section id="faq" className="py-16">
         <Container>
           <FaqAccordion
             title="Frequently Asked Questions"
             items={[
               {
-                q: "How do I get started selling on ZenZee?",
+                q: "How do I get started selling on Zenzop?",
                 a: "Getting started is easy! Simply download our business app, create your shop profile, upload your products, and start receiving orders. Our team will guide you through the entire process.",
               },
               {

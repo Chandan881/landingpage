@@ -362,7 +362,7 @@ export default function RiderLanding() {
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full mx-0">
               {/* Image Section */}
               <div className="order-1">
-                <div className="relative w-full h-[384px] sm:h-[504px] md:h-[624px] lg:h-[701px] rounded-2xl overflow-hidden">
+                <div className="relative w-full h-[346px] sm:h-[454px] md:h-[562px] lg:h-[631px] rounded-2xl overflow-hidden">
                   <Image
                     src={deliveryboy}
                     alt="Delivery Boy"
@@ -506,7 +506,7 @@ export default function RiderLanding() {
 
               {/* Image Section */}
               <div className="order-2">
-                <div className="relative w-full h-[384px] sm:h-[504px] md:h-[624px] lg:h-[701px] rounded-2xl overflow-hidden">
+                <div className="relative w-full h-[346px] sm:h-[454px] md:h-[562px] lg:h-[631px] rounded-2xl overflow-hidden">
                   <Image
                     src={deliveryUn}
                     alt="Delivery Union"
@@ -672,27 +672,20 @@ export default function RiderLanding() {
         </Container>
       </section>
 
-      {/* Download App Section */}
-      <section id="download" data-animate className="py-16">
-        <Container>
-          <div
-            className={`transition-all duration-1000 ease-out transform ${
-              visibleSections.has("download")
-                ? "translate-y-0 opacity-100"
-                : "translate-y-16 opacity-0"
-            }`}
-          >
-            <DownloadAppSection
-              title="Download the Rider app now!"
-              subtitle={
-                <>
-                  Start earning with ZenZop <br /> Download the app and begin
-                  your journey
-                </>
-              }
-              image={iPhoneMax}
-            />
-          </div>
+      {/* Download App Section - matched structure to shop */}
+      <section>
+        <Container className="py-16">
+          <DownloadAppSection
+            title="Download the Rider app now!"
+            subtitle={
+              <>
+                Start earning with ZenZop <br /> Download the app and begin your
+                journey
+              </>
+            }
+            image={iPhoneMax}
+            imageFit="contain"
+          />
         </Container>
       </section>
     </main>
