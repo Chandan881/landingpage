@@ -138,7 +138,7 @@ export default function PartnershipsCarousel() {
       {/* Carousel Items */}
       <div
         ref={carouselRef}
-        className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth px-4 py-2"
+        className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth px-4 py-0 lg:py-2"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {partnerships.map((item, index) => (
@@ -146,8 +146,8 @@ export default function PartnershipsCarousel() {
             key={index}
             className="flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[400px]"
           >
-            <div className="bg-[#F3F2FA] rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 h-auto lg:h-[438px]">
-              <div className="relative w-full h-40 sm:h-48 lg:h-[240px] rounded-lg overflow-hidden mb-4">
+            <div className="bg-[#F3F2FA] rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 h-[438px]">
+              <div className="relative w-full h-[240px] rounded-lg overflow-hidden mb-4">
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -158,10 +158,10 @@ export default function PartnershipsCarousel() {
                   priority
                 />
               </div>
-              <h3 className="font-helvetica-neue font-[500] text-[28px] leading-[64px] tracking-[-0.05em] text-[#000000] mb-2">
+              <h3 className="font-helvetica-neue font-[500] text-[22px] lg:text-[28px] leading-[64px] tracking-[-0.05em] text-[#000000] mb-2">
                 {item.title}
               </h3>
-              <p className="font-helvetica-neue font-[500] text-[20px] leading-[27px] tracking-[-0.03em] text-[#858298]">
+              <p className="font-helvetica-neue font-[500] text-[16px] lg:text-[20px]  leading-[27px] tracking-[-0.03em] text-[#858298]">
                 {item.description}
               </p>
             </div>

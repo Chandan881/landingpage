@@ -123,7 +123,7 @@ export default function UserLanding() {
             width={1920}
             height={1080}
             priority
-            sizes="100vw"
+            sizes="(min-width: 1024px) 100vw, (min-width: 640px) 80vw, 60vw"
             className="object-cover w-full h-full"
             style={{
               objectFit: "cover",
@@ -324,7 +324,7 @@ export default function UserLanding() {
                 alt="Sell on ZenZop"
                 width={1192}
                 height={462}
-                sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 100vw, 1192px"
+                sizes="(min-width: 1024px) 100vw, (min-width: 640px) 80vw, 60vw"
                 className="object-cover w-full h-full"
                 priority
                 style={{

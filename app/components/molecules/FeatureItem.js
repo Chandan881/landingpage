@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function FeatureItem({ title, description, image }) {
   return (
     <Card backgroundClassName="bg-[#F3F2FA]" className="group">
-      <h3 className="mt-4 text-[20px] sm:text-[28px] font-[700] text-[#000000] leading-[32px] sm:leading-[64px] tracking-[-0.05em] text-center font-helvetica-neue">
+      <h3 className="mt-0 lg:mt-4 text-[20px] sm:text-[28px] font-[700] text-[#000000] leading-[32px] sm:leading-[64px] tracking-[-0.05em] text-center font-helvetica-neue">
         {title}
       </h3>
       <p className="mt-1 text-[14px] sm:text-[20px] font-helvetica-neue font-[500] text-[#858298] leading-[20px] sm:leading-[27px] tracking-[-0.03em] text-center">

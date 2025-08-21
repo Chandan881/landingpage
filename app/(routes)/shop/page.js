@@ -109,22 +109,22 @@ export default function ShopLanding() {
 
       {/* ZenZop Benefits Section */}
       <section id="shop-benefits" data-animate>
-        <Container className="py-16 mt-30">
+        <Container className="py-6 lg:py-16 mt-8 lg:mt-30">
           <div
-            className={`text-center mb-12 transition-all duration-1000 ease-out transform ${
+            className={`text-center mb-0 lg:mb-12 transition-all duration-1000 ease-out transform ${
               visibleSections.has("shop-benefits")
                 ? "translate-y-0 opacity-100"
                 : "translate-y-16 opacity-0"
             }`}
           >
-            <h2 className="font-helvetica-neue font-[800] text-[50px] leading-[88px] tracking-[-0.05em] text-center text-[#000000]">
+            <h2 className="font-helvetica-neue font-[800] text-[28px] lg:text-[50px] leading-[88px] tracking-[-0.05em] text-center text-[#000000]">
               Achieve more with Zenzop
             </h2>
           </div>
 
           {/* Mobile: Horizontal scroll using FeatureItem structure */}
           <div
-            className={`mt-8 lg:hidden overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory px-4 transition-all duration-1000 ease-out transform delay-300 ${
+            className={`mt-0 lg:mt-8 lg:hidden overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory px-4 transition-all duration-1000 ease-out transform delay-300 ${
               visibleSections.has("shop-benefits")
                 ? "translate-y-0 opacity-100"
                 : "translate-y-16 opacity-0"
@@ -144,7 +144,7 @@ export default function ShopLanding() {
                 },
                 {
                   t: "24/7 Customer Support",
-                  d: "Get help whenever you need it with our dedicated business support team",
+                  d: "Get help whenever you need it with our dedicated business support team automated order processing",
                   image: freshDiningImg,
                 },
               ].map((f) => (
@@ -195,7 +195,7 @@ export default function ShopLanding() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-26">
+      <section className="py-8 lg:py-26">
         <Container>
           {/* <div className="text-center mb-12">
             <h2 className="font-helvetica-neue font-[800] text-[50px] leading-[88px] tracking-[-0.05em] text-center text-[#000000] mb-4">
@@ -211,7 +211,7 @@ export default function ShopLanding() {
       </section>
 
       {/* Smart Insights Section */}
-      <section id="smart-insights" data-animate className="py-16">
+      <section id="smart-insights" data-animate className="py-10 lg:py-16">
         <Container>
           <div
             className={`bg-[#F3F2FA] rounded-[28px] px-6 sm:px-10 md:px-16 lg:px-0 py-12 group shadow-lg transition-all duration-1000 ease-out transform ${
@@ -239,7 +239,7 @@ export default function ShopLanding() {
               {/* Right Section - Title and Numbered Points */}
               <div className="w-full lg:w-1/2 space-y-8 order-1 lg:order-2 max-w-[640px] mx-auto lg:mx-0">
                 {/* Section Title */}
-                <h2 className="font-helvetica-neue font-[800] text-[50px] leading-[88px] tracking-[-0.05em]  text-[#000000] mb-6">
+                <h2 className="mb-10  font-helvetica-neue font-[800]  text-[28px] lg:text-[50px] leading-[32px] sm:leading-[50px] lg:leading-[88px] tracking-[-0.05em]  text-[#000000] mb-6">
                   <span className="whitespace-nowrap">
                     Smart insights for smart
                   </span>
@@ -249,14 +249,16 @@ export default function ShopLanding() {
 
                 {/* Point 1 */}
                 <div className="flex items-start gap-4 relative">
-                  <div className="w-12 h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg mt-1">
-                    <span className="text-xl font-bold text-white">1</span>
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg flex-shrink-0">
+                    <span className="text-sm sm:text-lg lg:text-xl font-bold text-white">
+                      1
+                    </span>
                   </div>
-                  <div className="flex-1 flex flex-col justify-center">
-                    <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[48px] tracking-[-0.03em] text-[#000000]">
+                  <div className="flex-1 flex flex-col">
+                    <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[32px] sm:leading-[36px] lg:leading-[48px] tracking-[-0.03em] text-[#000000] mb-2">
                       Unique users
                     </h4>
-                    <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
+                    <p className="text-[17px] lg:text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
                       The number of users who made their first order from your
                       restaurant during the week.
                     </p>
@@ -265,14 +267,16 @@ export default function ShopLanding() {
 
                 {/* Point 2 */}
                 <div className="flex items-start gap-4 relative">
-                  <div className="w-12 h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg mt-1">
-                    <span className="text-xl font-bold text-white">2</span>
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg flex-shrink-0">
+                    <span className="text-sm sm:text-lg lg:text-xl font-bold text-white">
+                      2
+                    </span>
                   </div>
-                  <div className="flex-1 flex flex-col justify-center">
-                    <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[48px] tracking-[-0.03em] text-[#000000]">
+                  <div className="flex-1 flex flex-col">
+                    <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[32px] sm:leading-[36px] lg:leading-[48px] tracking-[-0.03em] text-[#000000] mb-2">
                       Revenue
                     </h4>
-                    <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
+                    <p className="text-[17px] lg:text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
                       Total order value before discounts, including VAT and
                       excluding delivery fees.
                     </p>
@@ -281,14 +285,16 @@ export default function ShopLanding() {
 
                 {/* Point 3 */}
                 <div className="flex items-start gap-4 relative">
-                  <div className="w-12 h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg mt-1">
-                    <span className="text-xl font-bold text-white">3</span>
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg flex-shrink-0">
+                    <span className="text-sm sm:text-lg lg:text-xl font-bold text-white">
+                      3
+                    </span>
                   </div>
-                  <div className="flex-1 flex flex-col justify-center">
-                    <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[48px] tracking-[-0.03em] text-[#000000]">
+                  <div className="flex-1 flex flex-col">
+                    <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[32px] sm:leading-[36px] lg:leading-[48px] tracking-[-0.03em] text-[#000000] mb-2">
                       Average order value
                     </h4>
-                    <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
+                    <p className="text-[17px] lg:text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
                       Better understand your customers&apos; average
                       pre-discount spend.
                     </p>
@@ -310,10 +316,10 @@ export default function ShopLanding() {
                 : "translate-y-16 opacity-0"
             }`}
           >
-            <h2 className="font-helvetica-neue font-[800] text-[50px] leading-[88px] tracking-[-0.05em] text-center text-[#000000]">
+            <h2 className="font-helvetica-neue font-[800] text-[28px] lg:text-[50px] leading-[40px] sm:leading-[50px] lg:leading-[88px] tracking-[-0.05em] text-center text-[#000000]">
               Our partnerships expand beyond restaurants
             </h2>
-            <p className="font-helvetica-neue font-[500] text-[20px] leading-[27px] tracking-[-0.05em] text-center text-[#88878E] max-w-3xl mx-auto">
+            <p className="mt-4 font-helvetica-neue font-[500]  text-[17px] lg:text-[20px] leading-[27px] tracking-[-0.05em] text-center text-[#88878E] max-w-3xl mx-auto">
               We partner with businesses of all types
             </p>
           </div>
@@ -322,7 +328,7 @@ export default function ShopLanding() {
       </section>
 
       {/* First Section - Delivery Boy */}
-      <section id="shop-first" data-animate className="py-16">
+      <section id="shop-first" data-animate className="py-0 lg:py-16">
         <Container>
           <div
             className={`py-16 transition-all duration-1000 ease-out transform ${
@@ -350,48 +356,54 @@ export default function ShopLanding() {
               {/* Content Section */}
               <div className="order-2">
                 <div className="w-full">
-                  <h2 className="text-[42px] font-[800] leading-[48px] tracking-[-0.05em]  font-helvetica-neue text-[#000000] mb-10">
+                  <h2 className="text-[30px] lg:text-[42px] font-[800] leading-[48px] tracking-[-0.05em]  font-helvetica-neue text-[#000000] mb-10">
                     Boost your earnings
                   </h2>
 
                   <ul className="space-y-8">
                     <li className="flex items-start gap-4 relative">
-                      <div className="w-12 h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg">
-                        <span className="text-xl font-bold text-white">1</span>
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg flex-shrink-0">
+                        <span className="text-sm sm:text-lg lg:text-xl font-bold text-white">
+                          1
+                        </span>
                       </div>
-                      <div className="flex-1 flex flex-col justify-center">
-                        <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[48px] tracking-[-0.03em] text-[#000000]">
+                      <div className="flex-1 flex flex-col">
+                        <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[32px] sm:leading-[36px] lg:leading-[48px] tracking-[-0.03em] text-[#000000] mb-2">
                           Earn more when it&apos;s busy
                         </h4>
-                        <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
+                        <p className="text-[17px] lg:text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
                           Maximise your earnings with our dynamic pricing model,
                           so you get paid more during busy times.
                         </p>
                       </div>
                     </li>
                     <li className="flex items-start gap-4 relative">
-                      <div className="w-12 h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg">
-                        <span className="text-xl font-bold text-white">2</span>
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg flex-shrink-0">
+                        <span className="text-sm sm:text-lg lg:text-xl font-bold text-white">
+                          2
+                        </span>
                       </div>
-                      <div className="flex-1 flex flex-col justify-center">
-                        <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[48px] tracking-[-0.03em] text-[#000000]">
+                      <div className="flex-1 flex flex-col">
+                        <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[32px] sm:leading-[36px] lg:leading-[48px] tracking-[-0.03em] text-[#000000] mb-2">
                           Earn more tips
                         </h4>
-                        <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
+                        <p className="text-[17px] lg:text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
                           Customers who value your service can now tip you
                           directly through the app!
                         </p>
                       </div>
                     </li>
                     <li className="flex items-start gap-4 relative">
-                      <div className="w-12 h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg">
-                        <span className="text-xl font-bold text-white">3</span>
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg flex-shrink-0">
+                        <span className="text-sm sm:text-lg lg:text-xl font-bold text-white">
+                          3
+                        </span>
                       </div>
-                      <div className="flex-1 flex flex-col justify-center">
-                        <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[48px] tracking-[-0.03em] text-[#000000]">
+                      <div className="flex-1 flex flex-col">
+                        <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[32px] sm:leading-[36px] lg:leading-[48px] tracking-[-0.03em] text-[#000000] mb-2">
                           Get paid more with bonuses
                         </h4>
-                        <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
+                        <p className="text-[17px] lg:text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
                           Earn more money for completing deliveries on weekends,
                           during late hours or on bad weather days.
                         </p>
@@ -406,7 +418,7 @@ export default function ShopLanding() {
       </section>
 
       {/* Second Section - Delivery Union */}
-      <section id="shop-second" data-animate className="py-16">
+      <section id="shop-second" data-animate className="py-0 lg:py-16">
         <Container>
           <div
             className={`py-16 transition-all duration-1000 ease-out transform ${
@@ -419,48 +431,54 @@ export default function ShopLanding() {
               {/* Content Section */}
               <div className="order-1">
                 <div className="w-full">
-                  <h2 className="text-[42px] font-[800] leading-[48px] tracking-[-0.05em]  font-helvetica-neue text-[#000000] mb-10">
-                    Boost your earnings
+                  <h2 className="text-[30px] lg:text-[42px] font-[800] leading-[48px] tracking-[-0.05em]  font-helvetica-neue text-[#000000] mb-10">
+                    Join for earnings
                   </h2>
 
                   <ul className="space-y-8">
                     <li className="flex items-start gap-4 relative">
-                      <div className="w-12 h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg">
-                        <span className="text-xl font-bold text-white">1</span>
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg flex-shrink-0">
+                        <span className="text-sm sm:text-lg lg:text-xl font-bold text-white">
+                          1
+                        </span>
                       </div>
-                      <div className="flex-1 flex flex-col justify-center">
-                        <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[48px] tracking-[-0.03em] text-[#000000]">
+                      <div className="flex-1 flex flex-col">
+                        <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[32px] sm:leading-[36px] lg:leading-[48px] tracking-[-0.03em] text-[#000000] mb-2">
                           Earn more when it&apos;s busy
                         </h4>
-                        <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
+                        <p className="text-[17px] lg:text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
                           Maximise your earnings with our dynamic pricing model,
                           so you get paid more during busy times.
                         </p>
                       </div>
                     </li>
                     <li className="flex items-start gap-4 relative">
-                      <div className="w-12 h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg">
-                        <span className="text-xl font-bold text-white">2</span>
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg flex-shrink-0">
+                        <span className="text-sm sm:text-lg lg:text-xl font-bold text-white">
+                          2
+                        </span>
                       </div>
-                      <div className="flex-1 flex flex-col justify-center">
-                        <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[48px] tracking-[-0.03em] text-[#000000]">
+                      <div className="flex-1 flex flex-col">
+                        <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[32px] sm:leading-[36px] lg:leading-[48px] tracking-[-0.03em] text-[#000000] mb-2">
                           Earn more tips
                         </h4>
-                        <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
+                        <p className="text-[17px] lg:text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
                           Customers who value your service can now tip you
                           directly through the app!
                         </p>
                       </div>
                     </li>
                     <li className="flex items-start gap-4 relative">
-                      <div className="w-12 h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg">
-                        <span className="text-xl font-bold text-white">3</span>
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg flex-shrink-0">
+                        <span className="text-sm sm:text-lg lg:text-xl font-bold text-white">
+                          3
+                        </span>
                       </div>
-                      <div className="flex-1 flex flex-col justify-center">
-                        <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[48px] tracking-[-0.03em] text-[#000000]">
+                      <div className="flex-1 flex flex-col">
+                        <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[32px] sm:leading-[36px] lg:leading-[48px] tracking-[-0.03em] text-[#000000] mb-2">
                           Get paid more with bonuses
                         </h4>
-                        <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
+                        <p className="text-[17px] lg:text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
                           Earn more money for completing deliveries on weekends,
                           during late hours or on bad weather days.
                         </p>
@@ -490,7 +508,7 @@ export default function ShopLanding() {
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="py-16">
+      <section id="faq" className="py-6 lg:py-16">
         <Container>
           <FaqAccordion
             title="Frequently Asked Questions"

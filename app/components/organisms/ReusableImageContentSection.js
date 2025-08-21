@@ -33,7 +33,7 @@ export default function ReusableImageContentSection({
                     alt={section.imageAlt || "Section image"}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    sizes="(min-width: 1024px) 50vw, (min-width: 640px) 80vw, 60vw"
                     priority={index === 0}
                   />
                 </div>

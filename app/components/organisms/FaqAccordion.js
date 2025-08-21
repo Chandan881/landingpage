@@ -59,7 +59,7 @@ export default function FaqAccordion({
 }) {
   return (
     <div>
-      <h3 className="text-[30px] lg:text-[40px] md:text-[50px] font-[800] leading-[64px] tracking-[-0.05em] text-center mb-8 font-helvetica-neue text-[#000000]">
+      <h3 className="text-[28px] lg:text-[40px] md:text-[50px] font-[800] leading-[64px] tracking-[-0.05em] text-center mb-8 font-helvetica-neue text-[#000000]">
         {title}
       </h3>
       <div className="max-w-3xl mx-auto mt-0 md:mt-10 lg:mt-30">

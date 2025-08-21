@@ -115,7 +115,7 @@ export default function RiderLanding() {
 
       {/* ZenZop Benefits Section */}
       <section id="zenzop-benefits" data-animate>
-        <Container className="sm:py-20 xl:py-40">
+        <Container className="py-10 sm:py-20 xl:py-40">
           <div
             className={`text-center xl:mb-12 transition-all duration-1000 ease-out transform ${
               visibleSections.has("zenzop-benefits")
@@ -123,14 +123,14 @@ export default function RiderLanding() {
                 : "translate-y-16 opacity-0"
             }`}
           >
-            <h2 className="text-[34px] md:text-[50px] font-[800] leading-[88px] tracking-[-0.05em] text-center font-helvetica-neue text-[#000000]">
+            <h2 className="text-[30px] lg:text-[50px] font-[800] leading-[88px] tracking-[-0.05em] text-center font-helvetica-neue text-[#000000]">
               ZenZop Benefits
             </h2>
           </div>
 
           {/* Mobile: Horizontal scroll, Desktop: Grid */}
           <div
-            className={`sm:mt-8 xl:mt-8 lg:hidden overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory -mx-2 px-2 transition-all duration-1000 ease-out transform delay-300 ${
+            className={` sm:mt-8 xl:mt-8 lg:hidden overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory -mx-2 px-2 transition-all duration-1000 ease-out transform delay-300 ${
               visibleSections.has("zenzop-benefits")
                 ? "translate-y-0 opacity-100"
                 : "translate-y-16 opacity-0"
@@ -150,7 +150,7 @@ export default function RiderLanding() {
                 },
                 {
                   t: "Deliver food your way",
-                  d: "Want to make money as a delivery driver, or get some exercise on your bike? You decide.",
+                  d: "Want to make money as a delivery? You decide.",
                   image: freshDiningImg,
                 },
               ].map((f) => (
@@ -185,7 +185,7 @@ export default function RiderLanding() {
               },
               {
                 t: "Deliver food your way",
-                d: "Want to make money as a delivery driver, or get some exercise on your bike? You decide.",
+                d: "Want to make money as a delivery,exercise on your bike? You decide.",
                 image: freshDiningImg,
               },
             ].map((f) => (
@@ -201,8 +201,8 @@ export default function RiderLanding() {
       </section>
 
       {/* ZenZop Rider Requirements Section */}
-      <section id="rider-requirements" data-animate className="mt-16">
-        <Container className="sm:py-6 xl:py-16">
+      <section id="rider-requirements" data-animate className="mt-6 xl:mt-16">
+        <Container className=" sm:py-6 xl:py-16">
           <div
             className={`text-center mb-12 transition-all duration-1000 ease-out transform ${
               visibleSections.has("rider-requirements")
@@ -210,7 +210,7 @@ export default function RiderLanding() {
                 : "translate-y-16 opacity-0"
             }`}
           >
-            <h2 className="text-[34px] md:text-[50px] font-[800] leading-[44px] md:leading-[88px] tracking-[-0.05em] text-center font-helvetica-neue text-[#000000]">
+            <h2 className="text-[30px] lg:text-[50px] font-[800] leading-[44px] md:leading-[88px] tracking-[-0.05em] text-center font-helvetica-neue text-[#000000]">
               Zenzop Rider requirements
             </h2>
           </div>
@@ -244,8 +244,8 @@ export default function RiderLanding() {
                 },
               ].map((item, index) => (
                 <div key={index} className="w-full">
-                  <div className="p-0">
-                    <div className="mb-4">
+                  <div className="mt-12">
+                    <div className="mb-2 xl:mb-4">
                       <Image
                         src={item.image}
                         alt={item.title}
@@ -255,10 +255,10 @@ export default function RiderLanding() {
                         unoptimized
                       />
                     </div>
-                    <h3 className="text-left font-helvetica-neue text-[#000000] font-[500] text-[22px] sm:text-[24px] md:text-[28px] leading-[40px] sm:leading-[52px] md:leading-[64px] tracking-[-0.05em] mb-3">
+                    <h3 className="text-left font-helvetica-neue text-[#000000] font-[500] text-[18px] sm:text-[24px] md:text-[28px] leading-[40px] sm:leading-[52px] md:leading-[64px] tracking-[-0.05em] mb-3">
                       {item.title}
                     </h3>
-                    <p className="font-helvetica-neue font-[500] text-[20px] leading-[27px] tracking-[-0.03em] text-left text-[#858298] line-clamp-2">
+                    <p className="font-helvetica-neue font-[500] text-[14px] md:text-[16px] xl:text-[16px] leading-[27px] tracking-[-0.03em] text-left text-[#858298] line-clamp-2">
                       {item.description}
                     </p>
                   </div>
@@ -269,7 +269,7 @@ export default function RiderLanding() {
 
           {/* Desktop: Grid layout */}
           <div
-            className={`mt-30 ml-20 hidden lg:grid grid-cols-3 gap-20 mx-auto justify-between transition-all duration-1000 ease-out transform delay-400 ${
+            className={`mt-0 xl:mt-30 ml-20 hidden lg:grid grid-cols-3 gap-20 mx-auto justify-between transition-all duration-1000 ease-out transform delay-400 ${
               visibleSections.has("rider-requirements")
                 ? "translate-y-0 opacity-100"
                 : "translate-y-16 opacity-0"
@@ -347,129 +347,125 @@ export default function RiderLanding() {
               {/* Content Section */}
               <div className="order-2">
                 <div className="w-full">
-                  <h2 className="text-[32px] md:text-[42px] font-[800] leading-[48px] tracking-[-0.05em]  font-helvetica-neue text-[#000000] mb-10">
+                  <h2 className="text-[30px] lg:text-[42px] font-[800] leading-[48px] tracking-[-0.05em]  font-helvetica-neue text-[#000000] mb-10">
                     Boost your earnings
                   </h2>
 
-                  <div className="relative">
-                    <ul className="space-y-8 relative">
-                      <li className="flex items-start gap-4 relative">
-                        <div className="w-12 h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg">
-                          <span className="text-xl font-bold text-white">
-                            1
-                          </span>
-                        </div>
-                        <div className="flex-1 flex flex-col justify-center">
-                          <h4 className="text-[20px] md:text-[24px] font-helvetica-neue font-[700] leading-[48px] tracking-[-0.03em] text-[#000000]">
-                            Earn more when it&apos;s busy
-                          </h4>
-                          <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
-                            Maximise your earnings with our dynamic pricing
-                            model, so you get paid more during busy times.
-                          </p>
-                        </div>
-                      </li>
-                      <li className="flex items-start gap-4 relative">
-                        <div className="w-12 h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg">
-                          <span className="text-xl font-bold text-white">
-                            2
-                          </span>
-                        </div>
-                        <div className="flex-1 flex flex-col justify-center">
-                          <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[48px] tracking-[-0.03em] text-[#000000]">
-                            Earn more tips
-                          </h4>
-                          <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
-                            Customers who value your service can now tip you
-                            directly through the app!
-                          </p>
-                        </div>
-                      </li>
-                      <li className="flex items-start gap-4 relative">
-                        <div className="w-12 h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg">
-                          <span className="text-xl font-bold text-white">
-                            3
-                          </span>
-                        </div>
-                        <div className="flex-1 flex flex-col justify-center">
-                          <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[48px] tracking-[-0.03em] text-[#000000]">
-                            Get paid more with bonuses
-                          </h4>
-                          <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
-                            Earn more money for completing deliveries on
-                            weekends, during late hours or on bad weather days.
-                          </p>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
+                  <ul className="space-y-8">
+                    <li className="flex items-start gap-4 relative">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg flex-shrink-0">
+                        <span className="text-sm sm:text-lg lg:text-xl font-bold text-white">
+                          1
+                        </span>
+                      </div>
+                      <div className="flex-1 flex flex-col">
+                        <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[32px] sm:leading-[36px] lg:leading-[48px] tracking-[-0.03em] text-[#000000] mb-2">
+                          Earn more when it&apos;s busy
+                        </h4>
+                        <p className="text-[17px] lg:text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
+                          Maximise your earnings with our dynamic pricing model,
+                          so you get paid more during busy times.
+                        </p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-4 relative">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg flex-shrink-0">
+                        <span className="text-sm sm:text-lg lg:text-xl font-bold text-white">
+                          2
+                        </span>
+                      </div>
+                      <div className="flex-1 flex flex-col">
+                        <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[32px] sm:leading-[36px] lg:leading-[48px] tracking-[-0.03em] text-[#000000] mb-2">
+                          Earn more tips
+                        </h4>
+                        <p className="text-[17px] lg:text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
+                          Customers who value your service can now tip you
+                          directly through the app!
+                        </p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-4 relative">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg flex-shrink-0">
+                        <span className="text-sm sm:text-lg lg:text-xl font-bold text-white">
+                          3
+                        </span>
+                      </div>
+                      <div className="flex-1 flex flex-col">
+                        <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[32px] sm:leading-[36px] lg:leading-[48px] tracking-[-0.03em] text-[#000000] mb-2">
+                          Get paid more with bonuses
+                        </h4>
+                        <p className="text-[17px] lg:text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
+                          Earn more money for completing deliveries on weekends,
+                          during late hours or on bad weather days.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Second Section - Delivery Union */}
-          <div className="py-16">
+          <div className="py-0 lg:py-16">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full mx-0">
               {/* Content Section */}
               <div className="order-1">
                 <div className="w-full">
-                  <h2 className="text-[42px] font-[800] leading-[48px] tracking-[-0.05em]  font-helvetica-neue text-[#000000] mb-10">
+                  <h2 className="text-[30px] lg:text-[42px] font-[800] leading-[48px] tracking-[-0.05em]  font-helvetica-neue text-[#000000] mb-10">
                     Boost your earnings
                   </h2>
 
-                  <div className="relative">
-                    <ul className="space-y-8 relative">
-                      <li className="flex items-start gap-4 relative">
-                        <div className="w-12 h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg">
-                          <span className="text-xl font-bold text-white">
-                            1
-                          </span>
-                        </div>
-                        <div className="flex-1 flex flex-col justify-center">
-                          <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[48px] tracking-[-0.03em] text-[#000000]">
-                            Earn more when it&apos;s busy
-                          </h4>
-                          <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
-                            Maximise your earnings with our dynamic pricing
-                            model, so you get paid more during busy times.
-                          </p>
-                        </div>
-                      </li>
-                      <li className="flex items-start gap-4 relative">
-                        <div className="w-12 h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg">
-                          <span className="text-xl font-bold text-white">
-                            2
-                          </span>
-                        </div>
-                        <div className="flex-1 flex flex-col justify-center">
-                          <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[48px] tracking-[-0.03em] text-[#000000]">
-                            Earn more tips
-                          </h4>
-                          <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
-                            Customers who value your service can now tip you
-                            directly through the app!
-                          </p>
-                        </div>
-                      </li>
-                      <li className="flex items-start gap-4 relative">
-                        <div className="w-12 h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg">
-                          <span className="text-xl font-bold text-white">
-                            3
-                          </span>
-                        </div>
-                        <div className="flex-1 flex flex-col justify-center">
-                          <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[48px] tracking-[-0.03em] text-[#000000]">
-                            Get paid more with bonuses
-                          </h4>
-                          <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
-                            Earn more money for completing deliveries on
-                            weekends, during late hours or on bad weather days.
-                          </p>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
+                  <ul className="space-y-8">
+                    <li className="flex items-start gap-4 relative">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg flex-shrink-0">
+                        <span className="text-sm sm:text-lg lg:text-xl font-bold text-white">
+                          1
+                        </span>
+                      </div>
+                      <div className="flex-1 flex flex-col">
+                        <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[32px] sm:leading-[36px] lg:leading-[48px] tracking-[-0.03em] text-[#000000] mb-2">
+                          Earn more when it&apos;s busy
+                        </h4>
+                        <p className="text-[17px] lg:text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
+                          Maximise your earnings with our dynamic pricing model,
+                          so you get paid more during busy times.
+                        </p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-4 relative">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg flex-shrink-0">
+                        <span className="text-sm sm:text-lg lg:text-xl font-bold text-white">
+                          2
+                        </span>
+                      </div>
+                      <div className="flex-1 flex flex-col">
+                        <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[32px] sm:leading-[36px] lg:leading-[48px] tracking-[-0.03em] text-[#000000] mb-2">
+                          Earn more tips
+                        </h4>
+                        <p className="text-[17px] lg:text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
+                          Customers who value your service can now tip you
+                          directly through the app!
+                        </p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-4 relative">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg flex-shrink-0">
+                        <span className="text-sm sm:text-lg lg:text-xl font-bold text-white">
+                          3
+                        </span>
+                      </div>
+                      <div className="flex-1 flex flex-col">
+                        <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[32px] sm:leading-[36px] lg:leading-[48px] tracking-[-0.03em] text-[#000000] mb-2">
+                          Get paid more with bonuses
+                        </h4>
+                        <p className="text-[17px] lg:text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
+                          Earn more money for completing deliveries on weekends,
+                          during late hours or on bad weather days.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
                 </div>
               </div>
 
@@ -493,7 +489,7 @@ export default function RiderLanding() {
       </section>
 
       {/* How the Rider app works Section */}
-      <section id="how-app-works" data-animate className="py-16">
+      <section id="how-app-works" data-animate className="py-0 lg:py-16">
         <Container>
           <div
             className={`text-center mb-12 transition-all duration-1000 ease-out transform ${
@@ -502,7 +498,7 @@ export default function RiderLanding() {
                 : "translate-y-16 opacity-0"
             }`}
           >
-            <h2 className="text-[50px] font-helvetica-neue font-[800] leading-[88px] tracking-[-0.05em] text-center text-[#000000]">
+            <h2 className="text-[30px] lg:text-[50px] font-helvetica-neue font-[800] leading-[88px] tracking-[-0.05em] text-center text-[#000000]">
               How the Rider app works
             </h2>
             <p className="mt-4 text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.05em] text-center text-[#88878E] max-w-3xl mx-auto">
@@ -527,7 +523,7 @@ export default function RiderLanding() {
                   <h3 className="text-[28px] font-helvetica-neue font-[500] leading-[64px] tracking-[-0.05em] text-[#342CA1] mb-3">
                     Receive orders
                   </h3>
-                  <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298] line-clamp-2">
+                  <p className="text-[17px] lg:text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298] line-clamp-2">
                     View incoming orders, check their details, and get going.
                   </p>
                 </div>
@@ -542,7 +538,7 @@ export default function RiderLanding() {
                   <h3 className="text-[28px] font-helvetica-neue font-[500] leading-[64px] tracking-[-0.05em] text-[#342CA1] mb-3">
                     Pick up the order
                   </h3>
-                  <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298] line-clamp-2">
+                  <p className="text-[17px] lg:text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298] line-clamp-2">
                     Collect the order from the restaurant or store.
                   </p>
                 </div>
@@ -575,7 +571,7 @@ export default function RiderLanding() {
                   <h3 className="text-[28px] font-helvetica-neue font-[500] leading-[64px] tracking-[-0.05em] text-[#342CA1] mb-3">
                     Deliver
                   </h3>
-                  <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298] line-clamp-2">
+                  <p className="text-[17px] lg:text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298] line-clamp-2">
                     Head to the delivery address as quickly and safely as
                     possible.
                   </p>
@@ -591,7 +587,7 @@ export default function RiderLanding() {
                   <h3 className="text-[28px] font-helvetica-neue font-[500] leading-[64px] tracking-[-0.05em] text-[#342CA1] mb-3">
                     Track your earnings
                   </h3>
-                  <p className="text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298] line-clamp-2">
+                  <p className="text-[17px] lg:text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298] line-clamp-2">
                     Track your progress in real-time and view your earnings
                     easily.
                   </p>
@@ -643,9 +639,9 @@ export default function RiderLanding() {
 
       {/* Download App Section - matched structure to shop */}
       <section>
-        <Container className="py-16">
+        <Container className="py-0 lg:py-16">
           <DownloadAppSection
-            title="Download the Rider app now!"
+            title="Download the user app now!"
             subtitle={
               <>
                 Start earning with ZenZop <br /> Download the app and begin your
