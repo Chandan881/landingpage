@@ -5,7 +5,7 @@ export default function Card({
 }) {
   return (
     <div
-      className={`rounded-[24px] px-6 py-10 transition-all duration-300 ease-in-out hover:shadow-lg ${backgroundClassName} ${className}`}
+      className={`rounded-[24px] px-6 py-6 sm:py-8 lg:py-10 transition-all duration-300 ease-in-out hover:shadow-lg ${backgroundClassName} ${className}`}
     >
       {children}
     </div>
