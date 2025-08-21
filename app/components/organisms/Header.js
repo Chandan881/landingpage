@@ -23,9 +23,9 @@ export default function Header() {
   // Dynamic background based on scroll state
   const getHeaderBackground = () => {
     if (isScrolled) {
-      return "bg-white/90 backdrop-blur-sm dark:bg-gray-900/90";
+      return "bg-white/90 backdrop-blur-sm";
     }
-    return "bg-white dark:bg-gray-900";
+    return "bg-white";
   };
 
   return (
@@ -46,19 +46,19 @@ export default function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-4 text-sm lg:text-base lg:gap-6">
           <Link
-            className="hover:underline font-medium lg:font-semibold text-blue-900 dark:text-blue-300 hover:text-blue-700 dark:hover:text-blue-200"
+            className="hover:underline font-medium lg:font-semibold text-blue-900 hover:text-blue-700"
             href="/user"
           >
             User
           </Link>
           <Link
-            className="hover:underline font-medium lg:font-semibold text-blue-900 dark:text-blue-300 hover:text-blue-700 dark:hover:text-blue-200"
+            className="hover:underline font-medium lg:font-semibold text-blue-900 hover:text-blue-700"
             href="/rider"
           >
             Rider
           </Link>
           <Link
-            className="hover:underline font-medium lg:font-semibold text-blue-900 dark:text-blue-300 hover:text-blue-700 dark:hover:text-blue-200"
+            className="hover:underline font-medium lg:font-semibold text-blue-900 hover:text-blue-700"
             href="/shop"
           >
             Shop

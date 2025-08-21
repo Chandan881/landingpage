@@ -72,7 +72,7 @@ body {
   color: inherit !important;
 }
 
-/* Specifically keep "Groceries Delivered in minutes" text in original color */
+/* Specifically keep "Groceries Delivered in minutes" text in original color - same in both themes */
 .dark [data-page="user"] .hero h1 {
   color: #333333 !important;
 }
@@ -81,21 +81,61 @@ body {
   color: #686868 !important;
 }
 
-/* Dark mode hero section background for user page */
-.dark [data-page="user"] .hero {
-  background: linear-gradient(to bottom, #333333, #1e293b) !important;
+/* Keep all hero text colors consistent between light and dark themes */
+.dark [data-page="user"] .hero .text-black,
+.dark [data-page="rider"] .hero .text-black,
+.dark [data-page="shop"] .hero .text-black {
+  color: #000000 !important;
 }
 
-/* Ensure dark mode gradients work on all screen sizes for all pages */
+/* Keep hero buttons consistent between light and dark themes */
+.dark [data-page="user"] .hero [class*="bg-[#171717]"] {
+  background-color: #171717 !important;
+}
+
+.dark [data-page="user"] .hero [class*="text-white"] {
+  color: #ffffff !important;
+}
+
+/* Ensure button hover states also work in dark mode */
+.dark [data-page="user"] .hero [class*="hover:bg-[#2a2a2a]"]:hover {
+  background-color: #2a2a2a !important;
+}
+
+/* Target hero text by their actual color values using attribute selectors */
+.dark [data-page="user"] .hero h1,
+.dark [data-page="user"] .hero .text-gray-900,
+.dark [data-page="rider"] .hero h1,
+.dark [data-page="rider"] .hero .text-gray-900,
+.dark [data-page="shop"] .hero h1,
+.dark [data-page="shop"] .hero .text-gray-900 {
+  color: #333333 !important;
+}
+
+.dark [data-page="user"] .hero p,
+.dark [data-page="user"] .hero .text-gray-600,
+.dark [data-page="rider"] .hero p,
+.dark [data-page="rider"] .hero .text-gray-600,
+.dark [data-page="shop"] .hero p,
+.dark [data-page="shop"] .hero .text-gray-600 {
+  color: #686868 !important;
+}
+
+/* Dark mode hero section background for user page - keep same as light mode */
+.dark [data-page="user"] .hero {
+  background: linear-gradient(to bottom, #ffffff, #e3e1ff) !important;
+}
+
+/* Ensure dark mode gradients work on all screen sizes for all pages - keep same as light mode */
 .dark [data-page="user"] section:first-of-type,
 .dark [data-page="rider"] section:first-of-type,
 .dark [data-page="shop"] section:first-of-type {
-  background: linear-gradient(to bottom, #111827, #1f2937) !important;
+  background: linear-gradient(to bottom, #ffffff, #e3e1ff) !important;
 }
 
-/* Force dark mode gradients to override Tailwind classes */
+/* Force dark mode gradients to override Tailwind classes - keep same as light mode */
 .dark section.bg-gradient-to-b {
-  background: linear-gradient(to bottom, #111827, #1f2937) !important;
+  background: linear-gradient(to bottom, #ffffff, #e3e1ff) !important;
 }
 
 /* Main content text outside cards */
@@ -117,16 +157,16 @@ body {
   background-color: #334155 !important;
 }
 
-/* Override specific card backgrounds using attribute selectors */
+/* Override specific card backgrounds using attribute selectors - keep same as light mode */
 .dark [class*="bg-[#F3F2FA]"] {
-  background-color: #1e293b !important;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5),
-    0 10px 10px -5px rgba(0, 0, 0, 0.4) !important;
+  background-color: #f3f2fa !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.1) !important;
 }
 
 .dark [class*="bg-[#F3F2FA]"]:hover {
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7),
-    0 15px 15px -5px rgba(0, 0, 0, 0.6) !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15),
+    0 15px 15px -5px rgba(0, 0, 0, 0.1) !important;
 }
 
 .dark [class*="bg-[#F3F2FA]"] .text-black,
@@ -135,6 +175,25 @@ body {
 .dark [class*="bg-[#F3F2FA]"] p,
 .dark [class*="bg-[#F3F2FA]"] span {
   color: inherit !important;
+}
+
+/* Force FeatureItem card text colors to stay same in dark mode */
+.dark [class*="bg-[#F3F2FA]"] h3 {
+  color: #000000 !important;
+}
+
+.dark [class*="bg-[#F3F2FA]"] p {
+  color: #858298 !important;
+}
+
+/* Override the dark mode background specifically for FeatureItem cards */
+.dark [class*="dark:bg-[#1E1E1E]"] {
+  background-color: #f3f2fa !important;
+}
+
+/* Force all cards with F3F2FA background to stay light in dark mode */
+.dark [class*="bg-[#F3F2FA]"] {
+  background-color: #f3f2fa !important;
 }
 
 /* Dark mode for cards and containers */

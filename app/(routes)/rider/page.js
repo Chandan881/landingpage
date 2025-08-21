@@ -57,20 +57,22 @@ export default function RiderLanding() {
   return (
     <main className="min-h-screen" data-page="rider">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-white to-[#E3E1FF] dark:from-gray-900 dark:to-gray-800 pt-12 py-16 sm:pt-34 sm:py-28 lg:py-46 transition-all duration-300">
+      <section className="relative overflow-hidden bg-gradient-to-b from-white to-[#E3E1FF] pt-12 py-16 sm:pt-34 sm:py-28 lg:py-46 transition-all duration-300">
         <Container>
-          <div className="text-center max-w-4xl mx-auto animate-fade-in-up">
+          <div className="text-center max-w-4xl mx-auto">
             {/* Headline */}
-            <h1 className="text-[36px] sm:text-[74px] font-[800] text-[#333333] mb-6 leading-[40px] sm:leading-[80px] tracking-[-0.05em] text-center font-helvetica-neue">
-              Deliver with ZenZop and
-              <br className="hidden sm:block" /> earn on your schedule
+            <h1 className="text-[36px] sm:text-[74px] font-[800] text-[#333333] mb-6 leading-[40px] sm:leading-[80px] tracking-[-0.05em] text-center font-helvetica-neue animate-fade-in-up">
+              Make money
+              <br className="hidden sm:block" /> delivering orders
             </h1>
 
             {/* Subheading */}
             <p className="text-[16px] sm:text-[22px] font-helvetica-neue font-[500] text-[#686868] mb-12 leading-[30px] tracking-[-0.05em] text-center max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
-              <span className="block sm:block text-black dark:text-#dadada">
-                ZenZop is everything you need to start earning as a delivery
-                partner.
+              <span className="block sm:block text-#3333">
+                Zenzop is a supermarket in your pocket
+              </span>
+              <span className="block sm:block text-#3333">
+                - try it now in your favourite device
               </span>
             </p>
 

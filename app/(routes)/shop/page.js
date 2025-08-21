@@ -52,19 +52,23 @@ export default function ShopLanding() {
   return (
     <main className="min-h-screen" data-page="shop">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-white to-[#E3E1FF] dark:from-gray-900 dark:to-gray-800 pt-12 py-16 sm:pt-34 sm:py-28 lg:py-46 transition-all duration-300">
+      <section className="relative overflow-hidden bg-gradient-to-b from-white to-[#E3E1FF] pt-12 py-16 sm:pt-34 sm:py-28 lg:py-46 transition-all duration-300">
         <Container>
-          <div className="text-center max-w-4xl mx-auto animate-fade-in-up">
+          <div className="text-center max-w-4xl mx-auto">
             {/* Headline */}
-            <h1 className="text-[36px] sm:text-[74px] font-[800] text-[#333333] mb-6 leading-[40px] sm:leading-[80px] tracking-[-0.05em] text-center font-helvetica-neue">
-              Become a Zenzop merchant and grow your revenue
+            <h1 className="text-[36px] sm:text-[74px] font-[800] text-[#333333] mb-6 leading-[40px] sm:leading-[80px] tracking-[-0.05em] text-center font-helvetica-neue animate-fade-in-up">
+              Become a Zeznop merchant
+              <br className="hidden sm:block" />
+              and grow your revenue
             </h1>
 
             {/* Subheading */}
             <p className="text-[16px] sm:text-[22px] font-helvetica-neue font-[500] text-[#686868] mb-12 leading-[30px] tracking-[-0.05em] text-center max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
-              <span className="block sm:block text-black dark:text-#dadada">
-                Zenzop merchants enjoy more orders, increased sales, and
-                unmatched visibility — sign up today and reap the benefits!
+              <span className="block sm:block text-#3333">
+                Zenzop is a supermarket in your pocket
+              </span>
+              <span className="block sm:block text-#3333">
+                - try it now in your favourite device
               </span>
             </p>
 
@@ -72,7 +76,7 @@ export default function ShopLanding() {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fade-in-up animation-delay-400">
               <Button
                 href="#download"
-                className="bg-[#171717] hover:bg-[#2a2a2a] text-white px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-lg font-semibold rounded-xl transition-colors duration-300 flex items-center gap-2 sm:gap-3 min-w-[140px] sm:min-w-[180px]"
+                className="bg-[#171717] dark:bg-[#2a2a2a] text-white px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105 flex items-center gap-2 sm:gap-3 min-w-[140px] sm:min-w-[180px]"
               >
                 <Image
                   src={appleIcon}
@@ -88,7 +92,7 @@ export default function ShopLanding() {
               </Button>
               <Button
                 href="#download"
-                className="bg-[#171717] hover:bg-[#2a2a2a] text-white px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-lg font-semibold rounded-xl transition-colors duration-300 flex items-center gap-2 sm:gap-3 min-w-[140px] sm:min-w-[180px]"
+                className="bg-[#171717] hover:bg-[#2a2a2a] text-white px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105 flex items-center gap-2 sm:gap-3 min-w-[140px] sm:min-w-[180px]"
               >
                 <Image
                   src={playStoreIcon}

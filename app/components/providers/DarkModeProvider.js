@@ -18,42 +18,21 @@ export default function DarkModeProvider({ children }) {
 
   useEffect(() => {
     setMounted(true);
-    // Check for saved theme preference or default to light mode
-    const savedTheme = localStorage.getItem("theme");
-    const systemPrefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-
-    if (savedTheme === "dark") {
-      // User explicitly chose dark mode
-      setIsDarkMode(true);
-      document.documentElement.classList.add("dark");
-    } else if (savedTheme === "light") {
-      // User explicitly chose light mode
-      setIsDarkMode(false);
-      document.documentElement.classList.remove("dark");
-    } else if (systemPrefersDark) {
-      // No saved preference, but system prefers dark
-      setIsDarkMode(true);
-      document.documentElement.classList.add("dark");
-    } else {
-      // No saved preference and system prefers light (or no preference) - default to light
-      setIsDarkMode(false);
-      document.documentElement.classList.remove("dark");
-    }
+    // Force light mode across the app regardless of system/user preference
+    setIsDarkMode(false);
+    document.documentElement.classList.remove("dark");
+    try {
+      localStorage.setItem("theme", "light");
+    } catch {}
   }, []);
 
   const toggleDarkMode = () => {
-    const newDarkMode = !isDarkMode;
-    setIsDarkMode(newDarkMode);
-
-    if (newDarkMode) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
+    // Disable dark mode toggle: always keep light mode
+    setIsDarkMode(false);
+    document.documentElement.classList.remove("dark");
+    try {
       localStorage.setItem("theme", "light");
-    }
+    } catch {}
   };
 
   // Prevent hydration mismatch
