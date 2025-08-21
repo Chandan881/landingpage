@@ -167,7 +167,7 @@ export default function UserLanding() {
 
         {/* Mobile: Horizontal scroll, Desktop: Grid */}
         <div
-          className={`mt-6  sm:mt-8 lg:hidden overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory px-4 py-6 transition-all duration-1000 ease-out transform delay-300 ${
+          className={`mt-0  sm:mt-8 lg:hidden overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory px-4 py-0 transition-all duration-1000 ease-out transform delay-300 ${
             visibleSections.has("what-is-zenzop")
               ? "translate-y-0 opacity-100"
               : "translate-y-16 opacity-0"

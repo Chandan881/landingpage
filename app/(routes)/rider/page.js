@@ -119,7 +119,7 @@ export default function RiderLanding() {
 
       {/* ZenZop Benefits Section */}
       <section id="zenzop-benefits" data-animate>
-        <Container className="py-10 sm:py-20 xl:py-40">
+        <Container className="py-0 xl:py-40 mt-10 lg:mt-0">
           <div
             className={`text-center xl:mb-12 transition-all duration-1000 ease-out transform ${
               visibleSections.has("zenzop-benefits")
@@ -134,7 +134,7 @@ export default function RiderLanding() {
 
           {/* Mobile: Horizontal scroll, Desktop: Grid */}
           <div
-            className={` sm:mt-8 xl:mt-8 lg:hidden overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory -mx-2 px-2 py-6 transition-all duration-1000 ease-out transform delay-300 ${
+            className={`mt-0 xl:mt-8 lg:hidden overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory -mx-2 px-2 py-0 lg:py-6 transition-all duration-1000 ease-out transform delay-300 ${
               visibleSections.has("zenzop-benefits")
                 ? "translate-y-0 opacity-100"
                 : "translate-y-16 opacity-0"

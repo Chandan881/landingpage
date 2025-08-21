@@ -115,7 +115,7 @@ export default function ShopLanding() {
 
       {/* ZenZop Benefits Section */}
       <section id="shop-benefits" data-animate>
-        <Container className="py-6 lg:py-16 mt-8 lg:mt-30">
+        <Container className="py-0 lg:py-16 mt-8 lg:mt-30">
           <div
             className={`text-center mb-0 lg:mb-12 transition-all duration-1000 ease-out transform ${
               visibleSections.has("shop-benefits")
