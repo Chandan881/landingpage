@@ -6,7 +6,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#0F0F0F] text-white">
+    <footer className="bg-[#0F0F0F] dark:bg-gray-900 text-white">
       {/* Desktop Footer - Large screens */}
       <div className="hidden xl:block">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 md:px-16 lg:px-24 py-16">

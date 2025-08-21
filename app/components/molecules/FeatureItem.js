@@ -3,7 +3,10 @@ import Image from "next/image";
 
 export default function FeatureItem({ title, description, image }) {
   return (
-    <Card backgroundClassName="bg-[#F3F2FA]" className="group">
+    <Card
+      backgroundClassName="bg-[#F3F2FA] dark:bg-[#1E1E1E]"
+      className="group shadow-xl hover:shadow-2xl transition-all duration-300 my-6"
+    >
       <h3 className="mt-0 lg:mt-4 text-[20px] sm:text-[28px] font-[700] text-[#000000] leading-[32px] sm:leading-[64px] tracking-[-0.05em] text-center font-helvetica-neue">
         {title}
       </h3>

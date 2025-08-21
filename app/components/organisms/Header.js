@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import appIcon from "@/app/assests/mainLanding/appIcon.png";
+import DarkModeToggle from "@/app/components/atoms/DarkModeToggle";
 
 export default function Header() {
   const pathname = usePathname();
@@ -46,23 +47,24 @@ export default function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-4 text-sm lg:text-base lg:gap-6">
           <Link
-            className="hover:underline font-medium lg:font-semibold text-blue-900 hover:text-blue-700"
+            className="hover:underline font-medium lg:font-semibold text-blue-900 dark:text-blue-300 hover:text-blue-700 dark:hover:text-blue-200"
             href="/user"
           >
             User
           </Link>
           <Link
-            className="hover:underline font-medium lg:font-semibold text-blue-900 hover:text-blue-700"
+            className="hover:underline font-medium lg:font-semibold text-blue-900 dark:text-blue-300 hover:text-blue-700 dark:hover:text-blue-200"
             href="/rider"
           >
             Rider
           </Link>
           <Link
-            className="hover:underline font-medium lg:font-semibold text-blue-900 hover:text-blue-700"
+            className="hover:underline font-medium lg:font-semibold text-blue-900 dark:text-blue-300 hover:text-blue-700 dark:hover:text-blue-200"
             href="/shop"
           >
             Shop
           </Link>
+          <DarkModeToggle />
           <Link
             href="/register"
             className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium lg:font-semibold transition-colors duration-300"
@@ -72,11 +74,14 @@ export default function Header() {
         </nav>
 
         {/* Mobile Navigation Text */}
-        <nav className="lg:hidden flex items-center gap-6">
+        <nav className="lg:hidden flex items-center gap-4">
+          <DarkModeToggle />
           <Link
             href="/user"
             className={`text-sm font-medium transition-colors duration-200 ${
-              pathname === "/user" ? "text-blue-600" : "text-blue-900"
+              pathname === "/user"
+                ? "text-blue-600 dark:text-blue-400"
+                : "text-blue-900 dark:text-blue-300"
             }`}
             aria-label="User"
           >
@@ -86,7 +91,9 @@ export default function Header() {
           <Link
             href="/rider"
             className={`text-sm font-medium transition-colors duration-200 ${
-              pathname === "/rider" ? "text-blue-600" : "text-blue-900"
+              pathname === "/rider"
+                ? "text-blue-600 dark:text-blue-400"
+                : "text-blue-900 dark:text-blue-300"
             }`}
             aria-label="Rider"
           >
@@ -96,7 +103,9 @@ export default function Header() {
           <Link
             href="/shop"
             className={`text-sm font-medium transition-colors duration-200 ${
-              pathname === "/shop" ? "text-blue-600" : "text-blue-900"
+              pathname === "/shop"
+                ? "text-blue-600 dark:text-blue-400"
+                : "text-blue-900 dark:text-blue-300"
             }`}
             aria-label="Shop"
           >

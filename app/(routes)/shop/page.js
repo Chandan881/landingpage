@@ -50,9 +50,9 @@ export default function ShopLanding() {
   }, []);
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen" data-page="shop">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-white to-[#E3E1FF] pt-12 py-16 sm:pt-24 sm:py-20 lg:py-32">
+      <section className="relative overflow-hidden bg-gradient-to-b from-white to-[#E3E1FF] dark:from-[#bg-gray-900] dark:to-[#E3E1FF] pt-12 py-16 sm:pt-34 sm:py-28 lg:py-46">
         <Container>
           <div className="text-center max-w-4xl mx-auto animate-fade-in-up">
             {/* Headline */}
@@ -62,7 +62,7 @@ export default function ShopLanding() {
 
             {/* Subheading */}
             <p className="text-[16px] sm:text-[22px] font-helvetica-neue font-[500] text-[#686868] mb-12 leading-[30px] tracking-[-0.05em] text-center max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
-              <span className="block sm:block">
+              <span className="block sm:block text-black dark:text-#dadada">
                 Zenzop merchants enjoy more orders, increased sales, and
                 unmatched visibility — sign up today and reap the benefits!
               </span>
@@ -124,13 +124,13 @@ export default function ShopLanding() {
 
           {/* Mobile: Horizontal scroll using FeatureItem structure */}
           <div
-            className={`mt-0 lg:mt-8 lg:hidden overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory px-4 transition-all duration-1000 ease-out transform delay-300 ${
+            className={`mt-0 lg:mt-8 lg:hidden overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory px-4 py-6 transition-all duration-1000 ease-out transform delay-300 ${
               visibleSections.has("shop-benefits")
                 ? "translate-y-0 opacity-100"
                 : "translate-y-16 opacity-0"
             }`}
           >
-            <div className="flex gap-4 min-w-max pr-4">
+            <div className="flex gap-6 min-w-max pr-4">
               {[
                 {
                   t: "Increase Your Sales",
@@ -160,7 +160,7 @@ export default function ShopLanding() {
 
           {/* Desktop: Grid layout using FeatureItem */}
           <div
-            className={`mt-8 hidden lg:grid grid-cols-3 gap-6 transition-all duration-1000 ease-out transform delay-400 ${
+            className={`mt-8 hidden lg:grid grid-cols-3 gap-8 py-10 transition-all duration-1000 ease-out transform delay-400 ${
               visibleSections.has("shop-benefits")
                 ? "translate-y-0 opacity-100"
                 : "translate-y-16 opacity-0"
