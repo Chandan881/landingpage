@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import appIcon from "@/app/assests/mainLanding/appIcon.png";
-import DarkModeToggle from "@/app/components/atoms/DarkModeToggle";
 
 export default function Header() {
   const pathname = usePathname();
@@ -64,7 +63,6 @@ export default function Header() {
           >
             Shop
           </Link>
-          <DarkModeToggle />
           <Link
             href="/register"
             className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium lg:font-semibold transition-colors duration-300"
@@ -75,7 +73,6 @@ export default function Header() {
 
         {/* Mobile Navigation Text */}
         <nav className="lg:hidden flex items-center gap-4">
-          <DarkModeToggle />
           <Link
             href="/user"
             className={`text-sm font-medium transition-colors duration-200 ${

@@ -56,7 +56,7 @@ export default function UserLanding() {
   return (
     <main className="min-h-screen" data-page="user">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-white to-[#E3E1FF] dark:from-[#bg-gray-900] dark:to-[#E3E1FF] pt-12 py-16 sm:pt-34 sm:py-28 lg:py-46">
+      <section className="relative overflow-hidden bg-gradient-to-b from-white to-[#E3E1FF] dark:from-gray-900 dark:to-gray-800 pt-12 py-16 sm:pt-34 sm:py-28 lg:py-46 transition-all duration-300">
         <Container>
           <div className="text-center max-w-4xl mx-auto">
             {/* Headline */}
@@ -249,7 +249,7 @@ export default function UserLanding() {
 
       {/* How to order groceries with Zenzop */}
       <section>
-        <Container className="sm:pt-4 xl:pt-16 ">
+        <Container className="sm:pt-4 xl:pt-16 pb-8">
           <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-[32px] sm:text-[50px] font-[800] text-[#000000]  leading-[40px] sm:leading-[88px] tracking-[-0.05em] text-center font-helvetica-neue">
               How to order groceries
@@ -262,7 +262,7 @@ export default function UserLanding() {
 
       {/* Local Stores Carousel */}
       <section>
-        <Container className="sm:py-2 xl:py-6">
+        <Container className="sm:py-8 xl:py-16">
           <LocalStoresCarousel />
         </Container>
       </section>

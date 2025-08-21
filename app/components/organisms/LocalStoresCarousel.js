@@ -72,7 +72,10 @@ export default function LocalStoresCarousel() {
         <ul className="flex gap-6 min-w-max pr-2">
           {items.map((card, i) => (
             <li key={`${card.title}-${i}`} className="snap-start">
-              <div className="w-[280px] sm:w-[320px] md:w-[410px] rounded-2xl bg-[#F3F2FA] p-6 flex flex-col min-h-[380px] sm:min-h-[400px] md:min-h-[450px]">
+              <div
+                className="w-[280px] sm:w-[320px] md:w-[410px] rounded-2xl bg-[#F3F2FA] p-6 flex flex-col min-h-[380px] sm:min-h-[400px] md:min-h-[450px]"
+                data-card-type="grocery"
+              >
                 <h4 className="mt-2 text-[16px] sm:text-[18px] md:text-[24px] font-[700] tracking-[-0.05em] text-[#000000] font-helvetica-neue leading-[24px]">
                   {card.title}
                 </h4>

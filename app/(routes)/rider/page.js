@@ -57,7 +57,7 @@ export default function RiderLanding() {
   return (
     <main className="min-h-screen" data-page="rider">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-white to-[#E3E1FF] dark:from-[#bg-gray-900] dark:to-[#E3E1FF] pt-12 py-16 sm:pt-34 sm:py-28 lg:py-46">
+      <section className="relative overflow-hidden bg-gradient-to-b from-white to-[#E3E1FF] dark:from-gray-900 dark:to-gray-800 pt-12 py-16 sm:pt-34 sm:py-28 lg:py-46 transition-all duration-300">
         <Container>
           <div className="text-center max-w-4xl mx-auto animate-fade-in-up">
             {/* Headline */}

@@ -86,6 +86,18 @@ body {
   background: linear-gradient(to bottom, #333333, #1e293b) !important;
 }
 
+/* Ensure dark mode gradients work on all screen sizes for all pages */
+.dark [data-page="user"] section:first-of-type,
+.dark [data-page="rider"] section:first-of-type,
+.dark [data-page="shop"] section:first-of-type {
+  background: linear-gradient(to bottom, #111827, #1f2937) !important;
+}
+
+/* Force dark mode gradients to override Tailwind classes */
+.dark section.bg-gradient-to-b {
+  background: linear-gradient(to bottom, #111827, #1f2937) !important;
+}
+
 /* Main content text outside cards */
 .dark .text-black {
   color: #ffffff !important;
@@ -108,6 +120,13 @@ body {
 /* Override specific card backgrounds using attribute selectors */
 .dark [class*="bg-[#F3F2FA]"] {
   background-color: #1e293b !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5),
+    0 10px 10px -5px rgba(0, 0, 0, 0.4) !important;
+}
+
+.dark [class*="bg-[#F3F2FA]"]:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7),
+    0 15px 15px -5px rgba(0, 0, 0, 0.6) !important;
 }
 
 .dark [class*="bg-[#F3F2FA]"] .text-black,
@@ -150,13 +169,30 @@ body {
 
 /* Dark mode for shadows */
 .dark .shadow-lg {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3),
-    0 4px 6px -2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5),
+    0 4px 6px -2px rgba(0, 0, 0, 0.4);
 }
 
 .dark .shadow-xl {
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3),
-    0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5),
+    0 10px 10px -5px rgba(0, 0, 0, 0.4);
+}
+
+/* Enhanced dark mode shadows for feature cards */
+.dark .shadow-2xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6),
+    0 15px 15px -5px rgba(0, 0, 0, 0.5);
+}
+
+/* Dark mode shadows for grocery order cards - using data attributes instead */
+.dark [data-page="user"] [data-card-type="grocery"] {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5),
+    0 10px 10px -5px rgba(0, 0, 0, 0.4) !important;
+}
+
+.dark [data-page="user"] [data-card-type="grocery"]:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7),
+    0 15px 15px -5px rgba(0, 0, 0, 0.6) !important;
 }
 
 /* Custom font family for hero text */
