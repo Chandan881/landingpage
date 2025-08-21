@@ -196,6 +196,35 @@ body {
   background-color: #f3f2fa !important;
 }
 
+/* Force Download Now buttons to maintain light mode styling in dark mode */
+.dark [data-page="user"] .hero [class*="bg-[#171717]"] {
+  background-color: #171717 !important;
+}
+
+.dark [data-page="user"] .hero [class*="text-white"] {
+  color: #ffffff !important;
+}
+
+.dark [data-page="user"] .hero [class*="hover:bg-[#2a2a2a]"]:hover {
+  background-color: #2a2a2a !important;
+}
+
+/* More specific targeting for the Download Now buttons */
+.dark [data-page="user"] .hero button,
+.dark [data-page="user"] .hero [class*="bg-[#171717]"] {
+  background-color: #171717 !important;
+}
+
+.dark [data-page="user"] .hero button .text-white,
+.dark [data-page="user"] .hero [class*="text-white"] {
+  color: #ffffff !important;
+}
+
+/* Force hover state */
+.dark [data-page="user"] .hero button:hover {
+  background-color: #2a2a2a !important;
+}
+
 /* Dark mode for cards and containers */
 .dark .bg-gray-50 {
   background-color: #1e293b;

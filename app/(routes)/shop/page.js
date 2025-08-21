@@ -74,38 +74,40 @@ export default function ShopLanding() {
 
             {/* Call-to-Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fade-in-up animation-delay-400">
-              <Button
-                href="#download"
-                className="bg-[#171717] dark:bg-[#2a2a2a] text-white px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105 flex items-center gap-2 sm:gap-3 min-w-[140px] sm:min-w-[180px]"
-              >
-                <Image
-                  src={appleIcon}
-                  alt="App Store Icon"
-                  width={24}
-                  height={24}
-                  className="w-5 h-5 sm:w-6 sm:h-6"
-                  unoptimized
-                />
-                <span className="font-helvetica-neue font-[400] text-[14px] sm:text-[16px] leading-[22px] sm:leading-[25.6px] tracking-[-0.16px] text-center">
-                  Download now
-                </span>
-              </Button>
-              <Button
-                href="#download"
-                className="bg-[#171717] hover:bg-[#2a2a2a] text-white px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105 flex items-center gap-2 sm:gap-3 min-w-[140px] sm:min-w-[180px]"
-              >
-                <Image
-                  src={playStoreIcon}
-                  alt="Play Store Icon"
-                  width={24}
-                  height={24}
-                  className="w-5 h-5 sm:w-6 sm:h-6"
-                  unoptimized
-                />
-                <span className="font-helvetica-neue font-[400] text-[14px] sm:text-[16px] leading-[22px] sm:leading-[25.6px] tracking-[-0.16px] text-center">
-                  Download now
-                </span>
-              </Button>
+              <div className=" flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fade-in-up animation-delay-400">
+                <div
+                  href="#download"
+                  className="bg-[#171717] text-white px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105 flex items-center gap-2 sm:gap-3 min-w-[140px] sm:min-w-[180px] mx-auto"
+                >
+                  <Image
+                    src={appleIcon}
+                    alt="App Store Icon"
+                    width={24}
+                    height={24}
+                    className="w-5 h-5 sm:w-6 sm:h-6"
+                    unoptimized
+                  />
+                  <span className="font-helvetica-neue font-[400] text-[14px] sm:text-[16px] leading-[22px] sm:leading-[25.6px] tracking-[-0.16px] text-center">
+                    Download now
+                  </span>
+                </div>
+                <div
+                  href="#download"
+                  className="bg-[#171717] text-white px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-lg font-semibold rounded-xl transition-all duration-300 hover:scale-105 flex items-center gap-2 sm:gap-3 min-w-[140px] sm:min-w-[180px] mx-auto"
+                >
+                  <Image
+                    src={playStoreIcon}
+                    alt="Play Store Icon"
+                    width={24}
+                    height={24}
+                    className="w-5 h-5 sm:w-6 sm:h-6"
+                    unoptimized
+                  />
+                  <span className="font-helvetica-neue font-[400] text-[14px] sm:text-[16px] leading-[22px] sm:leading-[25.6px] tracking-[-0.16px] text-center">
+                    Download now
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </Container>
