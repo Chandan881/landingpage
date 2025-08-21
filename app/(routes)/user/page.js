@@ -173,7 +173,7 @@ export default function UserLanding() {
               : "translate-y-16 opacity-0"
           }`}
         >
-          <div className="flex gap-6 min-w-max pl-4 pr-4 ">
+          <div className="flex gap-6 min-w-max pl-4 pr-4 ml-10">
             {[
               {
                 t: "Support Local Businesses",

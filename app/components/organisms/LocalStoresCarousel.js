@@ -67,7 +67,7 @@ export default function LocalStoresCarousel() {
     <div className="relative">
       <div
         ref={scrollRef}
-        className="mt-8 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory -mx-2 px-2"
+        className="mt-0 lg:mt-8 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory -mx-2 px-2"
       >
         <ul className="flex gap-6 min-w-max pr-2">
           {items.map((card, i) => (
