@@ -82,9 +82,9 @@ export default function ShopLanding() {
                   <Image
                     src={appleIcon}
                     alt="App Store Icon"
-                    width={24}
-                    height={24}
-                    className="w-5 h-5 sm:w-6 sm:h-6"
+                    width={22}
+                    height={22}
+                    className="w-5 h-5 sm:w-6 sm:h-6 mb-1"
                     unoptimized
                   />
                   <span className="font-helvetica-neue font-[400] text-[14px] sm:text-[16px] leading-[22px] sm:leading-[25.6px] tracking-[-0.16px] text-center">
