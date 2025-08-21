@@ -130,7 +130,7 @@ export default function ShopLanding() {
 
           {/* Mobile: Horizontal scroll using FeatureItem structure */}
           <div
-            className={`mt-0 lg:mt-8 lg:hidden overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory px-4 py-6 transition-all duration-1000 ease-out transform delay-300 ${
+            className={`mt-0 lg:mt-8 lg:hidden overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory px-4 py-0 lg:py-6 transition-all duration-1000 ease-out transform delay-300 ${
               visibleSections.has("shop-benefits")
                 ? "translate-y-0 opacity-100"
                 : "translate-y-16 opacity-0"
@@ -166,7 +166,7 @@ export default function ShopLanding() {
 
           {/* Desktop: Grid layout using FeatureItem */}
           <div
-            className={`mt-8 hidden lg:grid grid-cols-3 gap-8 py-10 transition-all duration-1000 ease-out transform delay-400 ${
+            className={` mt-8 hidden lg:grid grid-cols-3 gap-8 py-10 transition-all duration-1000 ease-out transform delay-400 ${
               visibleSections.has("shop-benefits")
                 ? "translate-y-0 opacity-100"
                 : "translate-y-16 opacity-0"
