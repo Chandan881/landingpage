@@ -18,16 +18,26 @@ export default function DarkModeProvider({ children }) {
 
   useEffect(() => {
     setMounted(true);
-    // Check for saved theme preference or default to system preference
+    // Check for saved theme preference or default to light mode
     const savedTheme = localStorage.getItem("theme");
     const systemPrefersDark = window.matchMedia(
       "(prefers-color-scheme: dark)"
     ).matches;
 
-    if (savedTheme === "dark" || (!savedTheme && systemPrefersDark)) {
+    if (savedTheme === "dark") {
+      // User explicitly chose dark mode
+      setIsDarkMode(true);
+      document.documentElement.classList.add("dark");
+    } else if (savedTheme === "light") {
+      // User explicitly chose light mode
+      setIsDarkMode(false);
+      document.documentElement.classList.remove("dark");
+    } else if (systemPrefersDark) {
+      // No saved preference, but system prefers dark
       setIsDarkMode(true);
       document.documentElement.classList.add("dark");
     } else {
+      // No saved preference and system prefers light (or no preference) - default to light
       setIsDarkMode(false);
       document.documentElement.classList.remove("dark");
     }
