@@ -105,7 +105,7 @@ export default function TestimonialsCarousel() {
           {slides.map((s, i) => (
             <li
               key={i}
-              className={`flex-[0_0_60vw] min-w-0 transition-opacity duration-300 ${
+              className={`flex-[0_0_80vw] sm:flex-[0_0_60vw] min-w-0 transition-opacity duration-300 ${
                 i === selectedIndex ? "opacity-100" : "opacity-50"
               }`}
             >
@@ -113,10 +113,10 @@ export default function TestimonialsCarousel() {
                 className="rounded-3xl text-center h-[360px] sm:h-[420px] md:h-[480px] px-6 sm:px-8 md:px-12 flex flex-col items-center justify-center group transition-all duration-300 hover:shadow-2xl mb-4"
                 style={{ backgroundColor: s.bg }}
               >
-                <p className="mx-auto max-w-3xl text-[16px] sm:text-[18px] md:text-[24px] font-[500] text-[#333333] font-helvetica-neue leading-[32px] tracking-[-0.03em] text-center">
+                <p className="mx-auto max-w-3xl text-[14px] sm:text-[18px] md:text-[24px] font-[500] text-[#333333] font-helvetica-neue leading-[32px] tracking-[-0.03em] text-center">
                   “{s.quote}”
                 </p>
-                <div className="mt-6 text-[18px] font-[500] text-[#333333] font-helvetica-neue leading-[32px] tracking-[-0.03em] text-center">
+                <div className="mt-6 text-[12px] sm:text-[12px] md:text-[18px] font-[500] text-[#333333] font-helvetica-neue leading-[32px] tracking-[-0.03em] text-center">
                   {s.author}, {s.role}
                 </div>
               </div>
@@ -129,7 +129,7 @@ export default function TestimonialsCarousel() {
         type="button"
         aria-label="Previous testimonial"
         onClick={scrollPrev}
-        className="absolute left-[calc(50%-30vw+20px)] sm:left-[calc(50%-30vw+20px)] md:left-[calc(50%-30vw+20px)] top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-white text-black shadow-sm hover:bg-white/90 z-10"
+        className="hidden sm:block absolute left-[calc(50%-30vw+20px)] sm:left-[calc(50%-30vw+20px)] md:left-[calc(50%-30vw+20px)] top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-white text-black shadow-sm hover:bg-white/90 z-10"
       >
         <span className="inline-block w-full text-center text-2xl font-bold">
           ‹
@@ -139,7 +139,7 @@ export default function TestimonialsCarousel() {
         type="button"
         aria-label="Next testimonial"
         onClick={scrollNext}
-        className="absolute right-[calc(50%-30vw+20px)] sm:right-[calc(50%-30vw+20px)] md:right-[calc(50%-30vw+20px)] top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-white text-black shadow-sm hover:bg-white/90 z-10"
+        className="hidden sm:block absolute right-[calc(50%-30vw+20px)] sm:right-[calc(50%-30vw+20px)] md:right-[calc(50%-30vw+20px)] top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-white text-black shadow-sm hover:bg-white/90 z-10"
       >
         <span className="inline-block w-full text-center text-2xl font-bold">
           ›

@@ -52,10 +52,10 @@ export default function DownloadAppSection({
   return (
     <section>
       <div className="text-center max-w-2xl mx-auto">
-        <h3 className="text-[50px] font-[800] leading-[88px] tracking-[-0.05em] text-center font-helvetica-neue text-[#000000]">
+        <h3 className="text-[30px] lg:text-[50px] font-[800] leading-[88px] tracking-[-0.05em] text-center font-helvetica-neue text-[#000000]">
           {title}
         </h3>
-        <p className="mt-4 text-[22px] font-[500] leading-[32px] tracking-[-0.05em] text-center font-helvetica-neue text-[#88878E]">
+        <p className="mt-0 md:mt-4 lg:mt-4 text-[16px] lg:text-[22px] font-[500] leading-[32px] tracking-[-0.05em] text-center font-helvetica-neue text-[#88878E]">
           {subtitle}
         </p>
         <div className="mt-8 flex items-center justify-center gap-3">

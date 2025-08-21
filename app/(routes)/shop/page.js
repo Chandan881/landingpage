@@ -520,13 +520,22 @@ export default function ShopLanding() {
         </Container>
       </section>
 
+      {/* Download App Section - matched structure to rider */}
       <section>
         <Container className="py-16">
-          <DownloadAppSection image={iPhone16} />
+          <DownloadAppSection
+            title="Download the Shop app now!"
+            subtitle={
+              <>
+                Start selling with ZenZop <br /> Download the app and begin your
+                journey
+              </>
+            }
+            image={iPhone16}
+            imageFit="contain"
+          />
         </Container>
       </section>
-
-      {/* Download App Section */}
     </main>
   );
 }

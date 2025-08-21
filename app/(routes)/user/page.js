@@ -291,9 +291,9 @@ export default function UserLanding() {
       <section
         id="cta-sell"
         data-animate
-        className="bg-[#110C58] text-white mt-30"
+        className="bg-[#110C58] text-white mt-10 md:mt-10 lg:mt-30"
       >
-        <Container className="py-40">
+        <Container className="py-16 md:mt-20 lg:py-40">
           <div
             className={`text-center transition-all duration-1000 ease-out transform ${
               visibleSections.has("cta-sell")
@@ -340,7 +340,7 @@ export default function UserLanding() {
 
       {/* FAQ */}
       <section id="faq" data-animate>
-        <Container className="py-50">
+        <Container className="py-16 md:py-30 lg:py-50">
           <div
             className={`transition-all duration-1000 ease-out transform ${
               visibleSections.has("faq")
@@ -376,10 +376,20 @@ export default function UserLanding() {
         </Container>
       </section>
 
-      {/* Download App - reusable */}
+      {/* Download App Section - matched structure to rider */}
       <section>
-        <Container className="pb-16">
-          <DownloadAppSection image={iPhone17} />
+        <Container className="py-8 md:py-10 lg:py-10">
+          <DownloadAppSection
+            title="Download the User app now!"
+            subtitle={
+              <>
+                Start shopping with ZenZop <br /> Download the app and begin
+                your journey
+              </>
+            }
+            image={iPhone17}
+            imageFit="contain"
+          />
         </Container>
       </section>
     </main>
