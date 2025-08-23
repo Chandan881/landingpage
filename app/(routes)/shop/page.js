@@ -115,7 +115,7 @@ export default function ShopLanding() {
 
       {/* ZenZop Benefits Section */}
       <section id="shop-benefits" data-animate>
-        <Container className="py-0 lg:py-16 mt-8 lg:mt-30">
+        <Container className="py-0 lg:py-16 mt-16 lg:mt-30">
           <div
             className={`text-center mb-0 lg:mb-12 transition-all duration-1000 ease-out transform ${
               visibleSections.has("shop-benefits")
@@ -123,7 +123,7 @@ export default function ShopLanding() {
                 : "translate-y-16 opacity-0"
             }`}
           >
-            <h2 className="font-helvetica-neue font-[800] text-[28px] lg:text-[50px] leading-[58px] lg:leading-[80px] tracking-[-0.05em] text-center text-[#000000]">
+            <h2 className=" font-helvetica-neue font-[800] text-[28px] lg:text-[50px] leading-[18px] lg:leading-[80px] tracking-[-0.05em] text-center text-[#000000]">
               Achieve more with Zenzop
             </h2>
           </div>
@@ -201,7 +201,7 @@ export default function ShopLanding() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-8 lg:py-26">
+      <section className="py-4 lg:py-26">
         <Container>
           {/* <div className="text-center mb-12">
             <h2 className="font-helvetica-neue font-[800] text-[50px] leading-[88px] tracking-[-0.05em] text-center text-[#000000] mb-4">

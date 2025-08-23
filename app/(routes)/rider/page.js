@@ -206,7 +206,7 @@ export default function RiderLanding() {
 
       {/* ZenZop Rider Requirements Section */}
       <section id="rider-requirements" data-animate className="mt-6 xl:mt-16">
-        <Container className=" sm:py-6 xl:py-16">
+        <Container className="py:0 sm:py-6 xl:py-16">
           <div
             className={`text-center mb-12 transition-all duration-1000 ease-out transform ${
               visibleSections.has("rider-requirements")
