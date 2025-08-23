@@ -121,13 +121,13 @@ export default function RiderLanding() {
       <section id="zenzop-benefits" data-animate>
         <Container className="py-0 xl:py-40 mt-10 lg:mt-0">
           <div
-            className={`text-center xl:mb-12 transition-all duration-1000 ease-out transform ${
+            className={`text-center mb-0 xl:mb-12 transition-all duration-1000 ease-out transform ${
               visibleSections.has("zenzop-benefits")
                 ? "translate-y-0 opacity-100"
                 : "translate-y-16 opacity-0"
             }`}
           >
-            <h2 className="text-[30px] lg:text-[50px] font-[800] leading-[88px] tracking-[-0.05em] text-center font-helvetica-neue text-[#000000]">
+            <h2 className="text-[30px] lg:text-[50px] font-[800] leading-[48px] lg:leading-[80px] tracking-[-0.05em] text-center font-helvetica-neue text-[#000000]">
               ZenZop Benefits
             </h2>
           </div>
@@ -357,7 +357,7 @@ export default function RiderLanding() {
 
                   <ul className="space-y-8">
                     <li className="flex gap-3 relative">
-                      <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border border-white shadow mt-1">
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border border-white shadow mt-2 lg:mt-1">
                         <span className="text-[10px] sm:text-xs lg:text-sm font-bold text-white">
                           1
                         </span>
@@ -374,7 +374,7 @@ export default function RiderLanding() {
                     </li>
 
                     <li className="flex gap-3 relative">
-                      <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border border-white shadow mt-1">
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border border-white shadow mt-2 lg:mt-1">
                         <span className="text-[10px] sm:text-xs lg:text-sm font-bold text-white">
                           2
                         </span>
@@ -391,7 +391,7 @@ export default function RiderLanding() {
                     </li>
 
                     <li className="flex gap-3 relative">
-                      <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border border-white shadow mt-1">
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border border-white shadow mt-2 lg:mt-1">
                         <span className="text-[10px] sm:text-xs lg:text-sm font-bold text-white">
                           3
                         </span>
@@ -424,7 +424,7 @@ export default function RiderLanding() {
 
                   <ul className="space-y-8">
                     <li className="flex gap-3 relative">
-                      <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border border-white shadow mt-1">
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border border-white shadow mt-2 lg:mt-1">
                         <span className="text-[10px] sm:text-xs lg:text-sm font-bold text-white">
                           1
                         </span>
@@ -441,7 +441,7 @@ export default function RiderLanding() {
                     </li>
 
                     <li className="flex gap-3 relative">
-                      <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border border-white shadow mt-1">
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border border-white shadow mt-2 lg:mt-1">
                         <span className="text-[10px] sm:text-xs lg:text-sm font-bold text-white">
                           2
                         </span>
@@ -458,7 +458,7 @@ export default function RiderLanding() {
                     </li>
 
                     <li className="flex gap-3 relative">
-                      <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border border-white shadow mt-1">
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border border-white shadow mt-2 lg:mt-1">
                         <span className="text-[10px] sm:text-xs lg:text-sm font-bold text-white">
                           3
                         </span>
