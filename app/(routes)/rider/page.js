@@ -522,7 +522,7 @@ export default function RiderLanding() {
               {/* Left Column - 2 cards stacked */}
               <div className="space-y-4 order-1 lg:order-1 h-[614px] flex flex-col justify-center">
                 {/* Step 1 */}
-                <div className="bg-purple-50 dark:bg-purple-900/20 rounded-2xl p-6 text-center lg:text-left h-[296px] flex flex-col justify-center w-full lg:w-[414px] max-w-full">
+                <div className="bg-[#F3F2FA] dark:bg-[#F3F2FA] rounded-2xl p-6 text-center lg:text-left h-[296px] flex flex-col justify-center w-full lg:w-[414px] max-w-full">
                   <div className="inline-flex items-center justify-center w-12 h-12 rounded-full mb-4">
                     <span className="text-[12px] font-helvetica-neue font-[500] leading-[27px] tracking-[0.05em] text-[#858298]">
                       STEP 1
@@ -537,7 +537,7 @@ export default function RiderLanding() {
                 </div>
 
                 {/* Step 2 */}
-                <div className="bg-purple-50 dark:bg-purple-900/20 rounded-2xl p-6 text-center lg:text-left h-[296px] flex flex-col justify-center w-full lg:w-[414px] max-w-full">
+                <div className="bg-[#F3F2FA] dark:bg-[#F3F2FA] rounded-2xl p-6 text-center lg:text-left h-[296px] flex flex-col justify-center w-full lg:w-[414px] max-w-full">
                   <div className="inline-flex items-center justify-center w-12 h-12 rounded-full mb-4">
                     <span className="text-[12px] font-helvetica-neue font-[500] leading-[27px] tracking-[0.05em] text-[#858298]">
                       STEP 2
@@ -554,7 +554,7 @@ export default function RiderLanding() {
 
               {/* Center Column - Phone Image */}
               <div className="flex justify-center order-2 lg:order-2 h-[614px] flex items-center">
-                <div className="relative bg-purple-50 dark:bg-purple-900/20 rounded-2xl px-[100px] py-8 h-[614px] flex items-center justify-center w-full lg:w-[500px] max-w-full">
+                <div className="relative bg-[#F3F2FA] dark:bg-[#F3F2FA] rounded-2xl px-[100px] py-8 h-[614px] flex items-center justify-center w-full lg:w-[500px] max-w-full">
                   <Image
                     src={iPhoneMax}
                     alt="Rider App Interface"
@@ -570,7 +570,7 @@ export default function RiderLanding() {
               {/* Right Column - 2 cards stacked */}
               <div className="space-y-4 order-3 lg:order-3 h-[614px] flex flex-col justify-center">
                 {/* Step 3 */}
-                <div className="bg-purple-50 dark:bg-purple-900/20 rounded-2xl p-6 text-center lg:text-left h-[296px] flex flex-col justify-center w-full lg:w-[414px] max-w-full">
+                <div className="bg-[#F3F2FA] dark:bg-[#F3F2FA] rounded-2xl p-6 text-center lg:text-left h-[296px] flex flex-col justify-center w-full lg:w-[414px] max-w-full">
                   <div className="inline-flex items-center justify-center w-12 h-12 rounded-full mb-4">
                     <span className="text-[12px] font-helvetica-neue font-[500] leading-[27px] tracking-[0.05em] text-[#858298]">
                       STEP 3
@@ -586,7 +586,7 @@ export default function RiderLanding() {
                 </div>
 
                 {/* Step 4 */}
-                <div className="bg-purple-50 dark:bg-purple-900/20 rounded-2xl p-6 text-center lg:text-left h-[296px] flex flex-col justify-center w-full lg:w-[414px] max-w-full">
+                <div className="bg-[#F3F2FA] dark:bg-[#F3F2FA] rounded-2xl p-6 text-center lg:text-left h-[296px] flex flex-col justify-center w-full lg:w-[414px] max-w-full">
                   <div className="inline-flex items-center justify-center w-12 h-12 rounded-full mb-4">
                     <span className="text-[12px] font-helvetica-neue font-[500] leading-[27px] tracking-[0.05em] text-[#858298]">
                       STEP 4
