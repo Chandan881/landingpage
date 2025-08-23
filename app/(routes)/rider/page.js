@@ -57,7 +57,7 @@ export default function RiderLanding() {
   return (
     <main className="min-h-screen" data-page="rider">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-white to-[#E3E1FF] pt-12 py-16 sm:pt-34 sm:py-28 lg:py-46 transition-all duration-300">
+      <section className="relative overflow-hidden bg-gradient-to-b from-white to-[#E3E1FF] pt-12 py-16 sm:pt-34 sm:py-28 lg:py-36 transition-all duration-300">
         <Container>
           <div className="text-center max-w-4xl mx-auto">
             {/* Headline */}
@@ -356,49 +356,51 @@ export default function RiderLanding() {
                   </h2>
 
                   <ul className="space-y-8">
-                    <li className="flex items-start gap-4 relative">
-                      <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg flex-shrink-0">
-                        <span className="text-sm sm:text-lg lg:text-xl font-bold text-white">
+                    <li className="flex gap-3 relative">
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border border-white shadow mt-1">
+                        <span className="text-[10px] sm:text-xs lg:text-sm font-bold text-white">
                           1
                         </span>
                       </div>
                       <div className="flex-1 flex flex-col">
-                        <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[32px] sm:leading-[36px] lg:leading-[48px] tracking-[-0.03em] text-[#000000] mb-2">
+                        <h4 className="text-[20px] sm:text-[22px] lg:text-[24px] font-helvetica-neue font-[700] leading-[28px] sm:leading-[32px] lg:leading-[36px] tracking-[-0.03em] text-[#000000] mt-1">
                           Earn more when it&apos;s busy
                         </h4>
-                        <p className="text-[17px] lg:text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
+                        <p className="mt-4 text-[15px] sm:text-[16px] lg:text-[20px] font-helvetica-neue font-[500] leading-[24px] sm:leading-[26px] lg:leading-[27px] tracking-[-0.03em] text-[#858298]">
                           Maximise your earnings with our dynamic pricing model,
                           so you get paid more during busy times.
                         </p>
                       </div>
                     </li>
-                    <li className="flex items-start gap-4 relative">
-                      <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg flex-shrink-0">
-                        <span className="text-sm sm:text-lg lg:text-xl font-bold text-white">
+
+                    <li className="flex gap-3 relative">
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border border-white shadow mt-1">
+                        <span className="text-[10px] sm:text-xs lg:text-sm font-bold text-white">
                           2
                         </span>
                       </div>
                       <div className="flex-1 flex flex-col">
-                        <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[32px] sm:leading-[36px] lg:leading-[48px] tracking-[-0.03em] text-[#000000] mb-2">
+                        <h4 className="text-[20px] sm:text-[22px] lg:text-[24px] font-helvetica-neue font-[700] leading-[28px] sm:leading-[32px] lg:leading-[36px] tracking-[-0.03em] text-[#000000] mt-1">
                           Earn more tips
                         </h4>
-                        <p className="text-[17px] lg:text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
+                        <p className="mt-4 text-[15px] sm:text-[16px] lg:text-[20px] font-helvetica-neue font-[500] leading-[24px] sm:leading-[26px] lg:leading-[27px] tracking-[-0.03em] text-[#858298]">
                           Customers who value your service can now tip you
                           directly through the app!
                         </p>
                       </div>
                     </li>
-                    <li className="flex items-start gap-4 relative">
-                      <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg flex-shrink-0">
-                        <span className="text-sm sm:text-lg lg:text-xl font-bold text-white">
+
+                    <li className="flex gap-3 relative">
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border border-white shadow mt-1">
+                        <span className="text-[10px] sm:text-xs lg:text-sm font-bold text-white">
                           3
                         </span>
                       </div>
                       <div className="flex-1 flex flex-col">
-                        <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[32px] sm:leading-[36px] lg:leading-[48px] tracking-[-0.03em] text-[#000000] mb-2">
+                        <h4 className="text-[20px] sm:text-[22px] lg:text-[24px] font-helvetica-neue font-[700] leading-[28px] sm:leading-[32px] lg:leading-[36px] tracking-[-0.03em] text-[#000000] mt-1">
                           Get paid more with bonuses
                         </h4>
-                        <p className="text-[17px] lg:text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
+                        <p className="mt-4 text-[15px] sm:text-[16px] lg:text-[20px] font-helvetica-neue font-[500] leading-[24px] sm:leading-[26px] lg:leading-[27px] tracking-[-0.03em] text-[#858298]">
                           Earn more money for completing deliveries on weekends,
                           during late hours or on bad weather days.
                         </p>
@@ -421,49 +423,51 @@ export default function RiderLanding() {
                   </h2>
 
                   <ul className="space-y-8">
-                    <li className="flex items-start gap-4 relative">
-                      <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg flex-shrink-0">
-                        <span className="text-sm sm:text-lg lg:text-xl font-bold text-white">
+                    <li className="flex gap-3 relative">
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border border-white shadow mt-1">
+                        <span className="text-[10px] sm:text-xs lg:text-sm font-bold text-white">
                           1
                         </span>
                       </div>
                       <div className="flex-1 flex flex-col">
-                        <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[32px] sm:leading-[36px] lg:leading-[48px] tracking-[-0.03em] text-[#000000] mb-2">
+                        <h4 className="text-[20px] sm:text-[22px] lg:text-[24px] font-helvetica-neue font-[700] leading-[28px] sm:leading-[32px] lg:leading-[36px] tracking-[-0.03em] text-[#000000] mt-1">
                           Earn more when it&apos;s busy
                         </h4>
-                        <p className="text-[17px] lg:text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
+                        <p className="mt-4 text-[15px] sm:text-[16px] lg:text-[20px] font-helvetica-neue font-[500] leading-[24px] sm:leading-[26px] lg:leading-[27px] tracking-[-0.03em] text-[#858298]">
                           Maximise your earnings with our dynamic pricing model,
                           so you get paid more during busy times.
                         </p>
                       </div>
                     </li>
-                    <li className="flex items-start gap-4 relative">
-                      <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg flex-shrink-0">
-                        <span className="text-sm sm:text-lg lg:text-xl font-bold text-white">
+
+                    <li className="flex gap-3 relative">
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border border-white shadow mt-1">
+                        <span className="text-[10px] sm:text-xs lg:text-sm font-bold text-white">
                           2
                         </span>
                       </div>
                       <div className="flex-1 flex flex-col">
-                        <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[32px] sm:leading-[36px] lg:leading-[48px] tracking-[-0.03em] text-[#000000] mb-2">
+                        <h4 className="text-[20px] sm:text-[22px] lg:text-[24px] font-helvetica-neue font-[700] leading-[28px] sm:leading-[32px] lg:leading-[36px] tracking-[-0.03em] text-[#000000] mt-1">
                           Earn more tips
                         </h4>
-                        <p className="text-[17px] lg:text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
+                        <p className="mt-4 text-[15px] sm:text-[16px] lg:text-[20px] font-helvetica-neue font-[500] leading-[24px] sm:leading-[26px] lg:leading-[27px] tracking-[-0.03em] text-[#858298]">
                           Customers who value your service can now tip you
                           directly through the app!
                         </p>
                       </div>
                     </li>
-                    <li className="flex items-start gap-4 relative">
-                      <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg flex-shrink-0">
-                        <span className="text-sm sm:text-lg lg:text-xl font-bold text-white">
+
+                    <li className="flex gap-3 relative">
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border border-white shadow mt-1">
+                        <span className="text-[10px] sm:text-xs lg:text-sm font-bold text-white">
                           3
                         </span>
                       </div>
                       <div className="flex-1 flex flex-col">
-                        <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[32px] sm:leading-[36px] lg:leading-[48px] tracking-[-0.03em] text-[#000000] mb-2">
+                        <h4 className="text-[20px] sm:text-[22px] lg:text-[24px] font-helvetica-neue font-[700] leading-[28px] sm:leading-[32px] lg:leading-[36px] tracking-[-0.03em] text-[#000000] mt-1">
                           Get paid more with bonuses
                         </h4>
-                        <p className="text-[17px] lg:text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
+                        <p className="mt-4 text-[15px] sm:text-[16px] lg:text-[20px] font-helvetica-neue font-[500] leading-[24px] sm:leading-[26px] lg:leading-[27px] tracking-[-0.03em] text-[#858298]">
                           Earn more money for completing deliveries on weekends,
                           during late hours or on bad weather days.
                         </p>

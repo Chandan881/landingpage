@@ -56,7 +56,7 @@ export default function UserLanding() {
   return (
     <main className="min-h-screen" data-page="user">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-white to-[#E3E1FF] pt-12 py-16 sm:pt-34 sm:py-28 lg:py-46 transition-all duration-300">
+      <section className="relative overflow-hidden bg-gradient-to-b from-white to-[#E3E1FF] pt-12 py-16 sm:pt-34 sm:py-28 lg:py-36 transition-all duration-300">
         <Container>
           <div className="text-center max-w-4xl mx-auto">
             {/* Headline */}
@@ -67,10 +67,10 @@ export default function UserLanding() {
 
             {/* Subheading */}
             <p className="text-[16px] sm:text-[22px] font-helvetica-neue font-[500] text-[#686868] mb-12 leading-[30px] tracking-[-0.05em] text-center max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
-              <span className="block sm:block text-#3333">
+              <span className="block sm:block text-##686868">
                 Zenzop is a supermarket in your pocket
               </span>
-              <span className="block sm:block text-#3333">
+              <span className="block sm:block text-##686868">
                 - try it now in your favourite device
               </span>
             </p>

@@ -10,14 +10,14 @@ function FaqItem({ q, a, defaultOpen = false }) {
     open && contentRef.current ? contentRef.current.scrollHeight : 0;
 
   return (
-    <div className="border-b border-black/10 dark:border-white/15">
+    <div className="border-b border-black/10 dark:border-white/15 py-4">
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
         className="w-full flex items-center justify-between py-4 text-left"
         aria-expanded={open}
       >
-        <span className="text-[18px] md:text-[24px] font-[500] leading-[27px] tracking-[-0.05em] font-helvetica-neue text-[#88878E]">
+        <span className="text-[18px] md:text-[22px] font-[500] leading-[27px] tracking-[-0.05em] font-helvetica-neue text-[#88878E]">
           {q}
         </span>
         <svg
