@@ -105,12 +105,15 @@ export default function TestimonialsCarousel() {
           {slides.map((s, i) => (
             <li
               key={i}
-              className={`flex-[0_0_80vw] sm:flex-[0_0_60vw] min-w-0 transition-opacity duration-300 ${
+              className={`group flex-[0_0_80vw] sm:flex-[0_0_60vw] min-w-0 transition-opacity duration-300 ${
                 i === selectedIndex ? "opacity-100" : "opacity-50"
               }`}
             >
               <div
-                className="rounded-3xl text-center h-[360px] sm:h-[420px] md:h-[480px] px-6 sm:px-8 md:px-12 flex flex-col items-center justify-center group transition-all duration-300 hover:shadow-2xl mb-4"
+                className="rounded-3xl text-center h-[360px] sm:h-[420px] md:h-[480px] 
+                       px-6 sm:px-8 md:px-12 flex flex-col items-center justify-center 
+                       transition-all duration-300 mb-4 
+                       sm:group-hover:shadow-2xl sm:group-hover:scale-[1.02]"
                 style={{ backgroundColor: s.bg }}
               >
                 <p className="mx-auto max-w-3xl text-[14px] sm:text-[18px] md:text-[24px] font-[500] text-[#333333] font-helvetica-neue leading-[32px] tracking-[-0.03em] text-center">

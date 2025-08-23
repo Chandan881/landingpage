@@ -54,7 +54,7 @@ export default function LocalStoresSection() {
       flex: isMobile ? "none" : "1",
     },
     title: {
-      fontSize: isMobile ? "28px" : "40px",
+      fontSize: isMobile ? "28px" : "38px",
       fontWeight: "700",
       color: "#000000",
       lineHeight: isMobile ? "40px" : "64px",
