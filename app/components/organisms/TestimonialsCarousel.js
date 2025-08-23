@@ -13,11 +13,24 @@ export default function TestimonialsCarousel() {
   });
   const [selectedIndex, setSelectedIndex] = useState(0);
 
+  // useEffect(() => {
+  //   if (!emblaApi) return;
+  //   const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
+  //   emblaApi.on("select", onSelect);
+  //   onSelect();
+  //   return () => emblaApi.off("select", onSelect);
+  // }, [emblaApi]);
+
   useEffect(() => {
     if (!emblaApi) return;
+
+    // Scroll to second slide on load
+    emblaApi.scrollTo(1);
+
     const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
     emblaApi.on("select", onSelect);
     onSelect();
+
     return () => emblaApi.off("select", onSelect);
   }, [emblaApi]);
 

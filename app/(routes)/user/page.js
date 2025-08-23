@@ -253,7 +253,7 @@ export default function UserLanding() {
       <section>
         <Container className="sm:pt-4 xl:pt-16 pb-8">
           <div className="text-center max-w-4xl mx-auto">
-            <h2 className="text-[32px] sm:text-[50px] font-[800] text-[#000000]  leading-[40px] lg:leading-[78px] tracking-[-0.05em] text-center font-helvetica-neue">
+            <h2 className="text-[30px] sm:text-[50px] font-[800] text-[#000000]  leading-[40px] lg:leading-[78px] tracking-[-0.05em] text-center font-helvetica-neue">
               How to order groceries
               <br />
               with Zenzop
@@ -281,7 +281,7 @@ export default function UserLanding() {
                 : "translate-y-16 opacity-0"
             }`}
           >
-            <h3 className="text-[32px] sm:text-[50px] font-[800] text-[#000000] mb-8 mt-10 leading-[40px] sm:leading-[64px] tracking-[-0.05em] text-center font-helvetica-neue">
+            <h3 className="text-[30px] sm:text-[50px] font-[800] text-[#000000] mb-8 mt-16 lg:mt-10 leading-[20px] sm:leading-[64px] tracking-[-0.05em] text-center font-helvetica-neue">
               What our users has to say
             </h3>
             <TestimonialsCarousel />
