@@ -228,7 +228,7 @@ export default function ShopLanding() {
           >
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center justify-center">
               {/* Left Section - iPhone Image */}
-              <div className="w-full lg:w-1/2 flex justify-center order-2 lg:order-1">
+              <div className="mt-8 lg:mt-0 w-full lg:w-1/2 flex justify-center order-2 lg:order-1">
                 <div className="bg-white rounded-2xl p-4 sm:p-6 max-w-[320px] sm:max-w-[380px] lg:max-w-none transform transition-transform duration-300 ease-out group-hover:scale-110">
                   <Image
                     src={iPhone16}
@@ -245,7 +245,7 @@ export default function ShopLanding() {
               {/* Right Section - Title and Numbered Points */}
               <div className="w-full lg:w-1/2 space-y-8 order-1 lg:order-2 max-w-[640px] mx-auto lg:mx-0">
                 {/* Section Title */}
-                <h2 className="mb-10  font-helvetica-neue font-[800]  text-[28px] lg:text-[50px] leading-[32px] sm:leading-[50px] lg:leading-[88px] tracking-[-0.05em]  text-[#000000] mb-6">
+                <h2 className="mb-5  font-helvetica-neue font-[800]  text-[28px] lg:text-[48px] leading-[32px] sm:leading-[50px] lg:leading-[88x] tracking-[-0.05em]  text-[#000000] mb-12">
                   <span className="whitespace-nowrap">
                     Smart insights for smart
                   </span>
@@ -255,16 +255,18 @@ export default function ShopLanding() {
 
                 {/* Point 1 */}
                 <div className="flex items-start gap-4 relative">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg flex-shrink-0">
-                    <span className="text-sm sm:text-lg lg:text-xl font-bold text-white">
+                  {/* <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg flex-shrink-0">
+                    <span className="text-sm sm:text-lg lg:text-xl font-bold text-white"> */}
+                  <div className="mt-1 lg:mt-2 w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border border-white shadow-md">
+                    <span className="text-[10px] sm:text-xs lg:text-sm font-bold text-white">
                       1
                     </span>
                   </div>
                   <div className="flex-1 flex flex-col">
-                    <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[32px] sm:leading-[36px] lg:leading-[48px] tracking-[-0.03em] text-[#000000] mb-2">
+                    <h4 className="text-[20px] lg:text-[24px] font-helvetica-neue font-[700] leading-[32px] sm:leading-[36px] lg:leading-[48px] tracking-[-0.03em] text-[#000000] ">
                       Unique users
                     </h4>
-                    <p className="text-[17px] lg:text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
+                    <p className="text-[16px] lg:text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
                       The number of users who made their first order from your
                       restaurant during the week.
                     </p>
@@ -273,16 +275,16 @@ export default function ShopLanding() {
 
                 {/* Point 2 */}
                 <div className="flex items-start gap-4 relative">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg flex-shrink-0">
-                    <span className="text-sm sm:text-lg lg:text-xl font-bold text-white">
+                  <div className="mt-1 lg:mt-2 w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border border-white shadow-md">
+                    <span className="text-[10px] sm:text-xs lg:text-sm font-bold text-white">
                       2
                     </span>
                   </div>
                   <div className="flex-1 flex flex-col">
-                    <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[32px] sm:leading-[36px] lg:leading-[48px] tracking-[-0.03em] text-[#000000] mb-2">
+                    <h4 className="text-[20px] lg:text-[24px] font-helvetica-neue font-[700] leading-[32px] sm:leading-[36px] lg:leading-[48px] tracking-[-0.03em] text-[#000000] ">
                       Revenue
                     </h4>
-                    <p className="text-[17px] lg:text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
+                    <p className="text-[16px] lg:text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
                       Total order value before discounts, including VAT and
                       excluding delivery fees.
                     </p>
@@ -291,16 +293,16 @@ export default function ShopLanding() {
 
                 {/* Point 3 */}
                 <div className="flex items-start gap-4 relative">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border-2 border-white shadow-lg flex-shrink-0">
-                    <span className="text-sm sm:text-lg lg:text-xl font-bold text-white">
+                  <div className="mt-1 lg:mt-2 w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 bg-[#342CA1] rounded-full flex items-center justify-center flex-shrink-0 border border-white shadow-md">
+                    <span className="text-[10px] sm:text-xs lg:text-sm font-bold text-white">
                       3
                     </span>
                   </div>
                   <div className="flex-1 flex flex-col">
-                    <h4 className="text-[24px] font-helvetica-neue font-[700] leading-[32px] sm:leading-[36px] lg:leading-[48px] tracking-[-0.03em] text-[#000000] mb-2">
+                    <h4 className="text-[20px] lg:text-[24px] font-helvetica-neue font-[700] leading-[32px] sm:leading-[36px] lg:leading-[48px] tracking-[-0.03em] text-[#000000] ">
                       Average order value
                     </h4>
-                    <p className="text-[17px] lg:text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
+                    <p className="text-[16px] lg:text-[20px] font-helvetica-neue font-[500] leading-[27px] tracking-[-0.03em] text-[#858298]">
                       Better understand your customers&apos; average
                       pre-discount spend.
                     </p>
